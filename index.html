@@ -429,6 +429,41 @@ $(function () {
                     
 
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'true' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"我曾(Cover:隔壁老樊)","artist":"鱼大仙儿","url":"http://sp.sycdn.kuwo.cn/362bb05df92b57ce5d0a61baac87b27a/5d5e9b50/resource/n2/14/89/764889769.mp3","cover":"http://imgessl.kugou.com/stdmusic/20190401/20190401211143594375.jpg"}]')
+    });
+});
+</script>
+                    
 
                     
 
@@ -499,6 +534,9 @@ $(function () {
             <a href="https://hexo.io/" target="_blank">Hexo</a> 的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
 
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">125</span>
             
 
             
