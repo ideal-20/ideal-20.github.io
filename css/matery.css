@@ -4,9 +4,11 @@
     .container {
         width: 95%;
     }
+
     header .brand-logo .logo-span {
         font-size: 1rem;
     }
+
     .bg-cover .title {
         font-size: 3rem;
         font-weight: 700;
@@ -14,7 +16,6 @@
         margin-bottom: 20px;
         position: relative;
     }
-
 }
 
 /*中等屏幕下(平板类)的样式*/
@@ -22,9 +23,11 @@
     .container {
         width: 90%;
     }
+
     header .brand-logo .logo-span {
         font-size: 2rem;
-    } 
+    }
+    
     .bg-cover .title {
         font-size: 4rem;
         font-weight: 700;
@@ -32,7 +35,6 @@
         margin-bottom: 20px;
         position: relative;
     }
-
 }
 
 /*大屏幕下(桌面类)的样式*/
