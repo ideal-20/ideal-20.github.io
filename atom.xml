@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>BWH_Steven&#39;s blog</title>
   
-  
+  <subtitle>理想二旬不止-专注Java技术</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ideal-20.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://ideal-20.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>BWH_Steven</name>
     
   </author>
   
