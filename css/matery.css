@@ -1,20 +1,20 @@
 /*全局基础样式*/
 /*小屏幕下(手机类)的样式*/
 @media only screen and (max-width: 601px) {
-    .container {
-        width: 95%;
-    }
-
+    
     header .brand-logo .logo-span {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
-
     .bg-cover .title {
         font-size: 3rem;
         font-weight: 700;
         line-height: 1.85em;
         margin-bottom: 20px;
         position: relative;
+    }
+
+    .container {
+        width: 95%;
     }
 }
 
@@ -23,11 +23,9 @@
     .container {
         width: 90%;
     }
-
     header .brand-logo .logo-span {
         font-size: 2rem;
     }
-    
     .bg-cover .title {
         font-size: 4rem;
         font-weight: 700;
@@ -36,24 +34,20 @@
         position: relative;
     }
 }
-
 /*大屏幕下(桌面类)的样式*/
 @media only screen and (min-width: 993px) {
     .container {
         width: 85%;
         max-width: 1125px;
     }
-
     .post-container {
         width: 90%;
         margin: 0 auto;
         max-width: 1250px;
     }
-
     header .brand-logo .logo-span {
         font-size: 2rem;
     }
-
     .bg-cover .title {
         font-size: 4rem;
         font-weight: 700;
@@ -253,9 +247,7 @@ header .brand-logo .logo-img {
     padding-bottom: 6px;
 }
 
-header .brand-logo .logo-span {
-    font-size: 2rem;
-}
+
 
 header .button-collapse i {
     font-size: 1.5rem;
@@ -421,13 +413,6 @@ header .go-back i {
     z-index: 2;
 }
 
-.bg-cover .title {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.85em;
-    margin-bottom: 20px;
-    position: relative;
-}
 
 .bg-cover .description {
     font-size: 1.25rem;
