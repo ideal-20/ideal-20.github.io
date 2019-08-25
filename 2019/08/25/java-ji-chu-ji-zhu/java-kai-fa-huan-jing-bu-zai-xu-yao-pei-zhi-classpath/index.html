@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Java,javaweb,MySQL,JavaScript,HTML,CSS">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="Java开发环境不再需要配置classpath, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="description" content="
+前言：之前发布了关于java开发环境配置的文章，经过与网友的交流，我了解到在jdk1.5以后，java开发环境配置的时候，确实不需要对classpath进行配置，但市面上的书籍，以及一些博客、还是老一套，继续推荐配置classpath，并">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | 理想二旬不止|Blog</title>
+    <title>Java开发环境不再需要配置classpath | 理想二旬不止|Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -55,15 +56,6 @@
             <i class="fa fa-home"></i>
             
             <span>首页</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>标签</span>
         </a>
     </li>
     
@@ -138,15 +130,6 @@
         </li>
         
         <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
             <a href="/categories" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-bookmark"></i>
@@ -197,13 +180,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        Java开发环境不再需要配置classpath
                     </div>
                 </div>
             </div>
@@ -312,12 +295,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/环境变量/" target="_blank">
+                                <span class="chip bg-color">环境变量</span>
+                            </a>
+                        
+                            <a href="/tags/classpath/" target="_blank">
+                                <span class="chip bg-color">classpath</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java基础技术/" class="post-category" target="_blank">
+                                Java基础技术
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -325,21 +329,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-22
+                    2019-08-25
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        125
+                        1.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -355,34 +359,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+                <p><img src="http://upload-images.jianshu.io/upload_images/17955338-6966a126cfa37c9d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="undefined"></p>
+<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>之前发布了关于java开发环境配置的文章，经过与网友的交流，我了解到在jdk1.5以后，java开发环境配置的时候，确实不需要对classpath进行配置，但市面上的书籍，以及一些博客、还是老一套，继续推荐配置classpath，并且关于不需要配置classpath网络上没有什么完整细致，能令人信服的答案，所以我查阅了一些资料以及与别人交流，今天和大家分享一下这些内容。</p>
+<h2 id="原配置代码："><a href="#原配置代码：" class="headerlink" title="原配置代码："></a>原配置代码：</h2><blockquote>
+<p>.;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar </p>
+</blockquote>
+<h3 id="原代码详解："><a href="#原代码详解：" class="headerlink" title="原代码详解："></a>原代码详解：</h3><p>Java_Home代表了我们jdk的路径</p>
+<ul>
+<li>dt.jar是关于运行环境的类库，主要是用于swing的包，如果不使用可以不配置。</li>
+<li>tools.jar是工具类库,它在编译和运行一个类时被使用</li>
+</ul>
+<p>当我们配置classpath后，系统会根据我们所配置的classpath加载类</p>
+<p>例如：在我们使用javac命令编译程序时，系统加载tools.jar其实就封装了下面这样一条命令</p>
+<blockquote>
+<p>javac XXX.java</p>
+</blockquote>
+<blockquote>
+<p>java -Classpath=%JAVA_HOME%\lib\tools.jar  xx.xxx.Main  XXX.java  </p>
+</blockquote>
+<p>当然tools的功能可不止这一点，但是确实它为我们提供了很多便利</p>
+<h2 id="我们不再需要配置classpath了！"><a href="#我们不再需要配置classpath了！" class="headerlink" title="我们不再需要配置classpath了！"></a>我们不再需要配置classpath了！</h2><p>在JDK1.5以后，classpath并不是必须配置了，在JDK1.5之前，是没有办法在当前目录下加载类的（找不到 JDK目录下lib文件夹中的.jar文件），所以我们需要通过配置classpath，但JDK1.5之后，JRE能自动搜索目录下类文件，并且加载dt.jar和tool.jar的类。</p>
+<h2 id="官方文档解释（JDK-Tools-and-Utilities）"><a href="#官方文档解释（JDK-Tools-and-Utilities）" class="headerlink" title="官方文档解释（JDK Tools and Utilities）"></a>官方文档解释（JDK Tools and Utilities）</h2><blockquote>
+<p>The class path tells the JDK tools and applications where to find third-party and user-defined classes that are not extensions or part of the Java platform. See The Extension Mechanism at </p>
+</blockquote>
+<blockquote>
+<p>类路径告诉JDK工具和应用程序在哪里可以找到第三方和用户定义的类，这些类既不是Java平台的扩展，也不是Java平台的一部分。参见扩展机制</p>
+</blockquote>
+<blockquote>
+<p>If you upgrade from an earlier release of the JDK, then your startup settings might include CLASSPATH settings that are no longer needed. You should remove any settings that are not application-specific, such as classes.zip. Some third-party applications that use the Java Virtual Machine (JVM) can modify your CLASSPATH environment variable to include the libraries they use. Such settings can remain.</p>
+</blockquote>
+<blockquote>
+<p>如果您从JDK的早期版本升级，那么您的启动设置可能包括不再需要的类路径设置。您应该删除任何与应用程序无关的设置，比如classes.zip。一些使用Java虚拟机(JVM)的第三方应用程序可以修改类路径环境变量，以包含它们使用的库。这样的设置可以保留。</p>
+</blockquote>
+<blockquote>
+<p>You can change the class path by using the -classpath or -cp option of some Java commands when you call the JVM or other JDK tools or by using the CLASSPATH environment variable. See JDK Commands Class Path Options. Using the -classpath option is preferred over setting the CLASSPATH environment variable because you can set it individually for each application without affecting other applications and without other applications modifying its value. See CLASSPATH Environment Variable.</p>
+</blockquote>
+<blockquote>
+<p>在调用JVM或其他JDK工具时，可以使用一些Java命令的-classpath或-cp选项，或者使用CLASSPATH环境变量，来更改类路径。参见JDK命令类路径选项。使用-classpath选项优于设置CLASSPATH环境变量，因为您可以为每个应用程序单独设置它，而不影响其他应用程序，也不需要其他应用程序修改它的值。参见CLASSPATH环境变量。</p>
+</blockquote>
+<p>通过官方的文档说明我们可以看到，rt.jar和tool.jar这两种属于java平台自身的包就不需要添加到classpath中，只有一些第三方类或者自定义类需要，也并不推荐使用配置CLASSPATH的方法，更推荐使用-classpath选项</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>在JDK1.5之后的版本，配置Java环境变量的时候我们不再需要配置classpath，只需要配置Java_Home以及path即可！</strong></p>
+<h2 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h2><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！_</p>
+<p>如果能帮到你的话，那就来关注我吧！</p>
+<blockquote>
+<p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
+<p>一个坚持推送原创Java技术的公众号：理想二旬不止</p>
+</blockquote>
+<p><img src="https://user-gold-cdn.xitu.io/2019/6/10/16b411942a044f9a?w=258&h=258&f=jpeg&s=17478" alt="img"> </p>
+
             </div>
             <hr/>
 
@@ -540,9 +564,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《Java开发环境不再需要配置classpath》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/22/hello-world/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/" property="cc:attributionName"
                rel="cc:attributionURL">
                 BWH_Steven
             </a> 采用
@@ -609,34 +633,54 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/08/22/hello-world/">
+                <a href="/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java开发环境不再需要配置classpath">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Java开发环境不再需要配置classpath</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            【JDK 1.5+】你还在配置classpath吗？
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            BWH_Steven
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java基础技术/" class="post-category" target="_blank">
+                                    Java基础技术
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/环境变量/" target="_blank">
+                        <span class="chip bg-color">环境变量</span>
+                    </a>
+                    
+                    <a href="/tags/classpath/" target="_blank">
+                        <span class="chip bg-color">classpath</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -647,34 +691,54 @@
                 本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/22/hello-world/">
+                <a href="/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java开发环境不再需要配置classpath">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Java开发环境不再需要配置classpath</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            【JDK 1.5+】你还在配置classpath吗？
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            BWH_Steven
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java基础技术/" class="post-category" target="_blank">
+                                    Java基础技术
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/环境变量/" target="_blank">
+                        <span class="chip bg-color">环境变量</span>
+                    </a>
+                    
+                    <a href="/tags/classpath/" target="_blank">
+                        <span class="chip bg-color">classpath</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -790,7 +854,7 @@
             <div>@2019 BWH_Steven · 版权所有</div>
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">125</span>
+                <span class="white-color">1.1k</span>
             
 
             
@@ -826,6 +890,8 @@
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
+
+
 </div>
     </div>
 </footer>
@@ -876,5 +942,5 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>

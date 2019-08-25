@@ -189,7 +189,7 @@ mark {
 }
 
 .container .row {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .bg-color {
@@ -1063,6 +1063,7 @@ table tr:nth-child(2n), thead {
     }
 }
 
+
 .chip-container {
     margin-top: -60px;
 }
@@ -1112,6 +1113,21 @@ table tr:nth-child(2n), thead {
 .chip-container .chip:hover {
     color: #fff;
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+}
+
+
+.chip-container {
+    margin-top: 10px;
+}
+
+.chip2-container .chip2-default {
+    color: #34495e;
+}
+
+.chip2-container .chip2-active {
+    color: #FFF !important;
+    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%) !important;
+    box-shadow: 2px 5px 10px #aaa !important;
 }
 
 .chip .tag-length {
@@ -1469,18 +1485,30 @@ table tr:nth-child(2n), thead {
 }
 
 .post-charts,
+.my-introduction,
 .my-projects,
 .my-skills,
 .post-charts {
     padding: 3.8rem 1.5rem 0.8rem 1.5rem;
 }
 
-.post-charts, .title,
+.post-charts .title,
+.my-introduction .title,
 .my-projects .title,
 .my-skills .title,
 .my-gallery .title {
     font-size: 2rem;
     margin-bottom: 2.25rem;
+}
+
+.my-introduction .info {
+    width: 860px;
+    /*让div水平居中*/
+    margin: auto;
+}
+
+.my-introduction .info .table1 {
+    border: 0;
 }
 
 .my-projects .info {

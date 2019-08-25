@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ideal-20.github.io/"/>
-  <updated>2019-08-22T12:50:35.977Z</updated>
+  <updated>2019-08-25T12:05:15.810Z</updated>
   <id>https://ideal-20.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://ideal-20.github.io/2019/08/22/hello-world/"/>
-    <id>https://ideal-20.github.io/2019/08/22/hello-world/</id>
-    <published>2019-08-22T12:50:35.977Z</published>
-    <updated>2019-08-22T12:50:35.977Z</updated>
+    <title>Java开发环境不再需要配置classpath</title>
+    <link href="https://ideal-20.github.io/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/"/>
+    <id>https://ideal-20.github.io/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/</id>
+    <published>2019-08-25T07:03:00.000Z</published>
+    <updated>2019-08-25T12:05:15.810Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,20 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/17955338-6966a126cfa37c9d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot;
         
       
     
     </summary>
     
+      <category term="Java基础技术" scheme="https://ideal-20.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="java" scheme="https://ideal-20.github.io/tags/java/"/>
+    
+      <category term="环境变量" scheme="https://ideal-20.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    
+      <category term="classpath" scheme="https://ideal-20.github.io/tags/classpath/"/>
     
   </entry>
   
