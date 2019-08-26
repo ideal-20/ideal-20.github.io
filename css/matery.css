@@ -1504,7 +1504,7 @@ table tr:nth-child(2n), thead {
 .my-introduction .info {
     width: 75%;
     /*让div水平居中*/
-    margin: auto;
+    margin: 0 auto;
     border: 0;
 }
 
