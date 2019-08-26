@@ -16,6 +16,12 @@
     .container {
         width: 95%;
     }
+
+    .my-introduction .info {
+    width: 88%;
+    /*让div水平居中*/
+    margin: 0 auto;
+    }
 }
 
 /*中等屏幕下(平板类)的样式*/
@@ -32,6 +38,12 @@
         line-height: 1.85em;
         margin-bottom: 20px;
         position: relative;
+    }
+
+    .my-introduction .info {
+    width: 75%;
+    /*让div水平居中*/
+    margin: 0 auto;
     }
 }
 /*大屏幕下(桌面类)的样式*/
@@ -54,6 +66,12 @@
         line-height: 1.85em;
         margin-bottom: 20px;
         position: relative;
+    }
+
+    .my-introduction .info {
+    width: 75%;
+    /*让div水平居中*/
+    margin: 0 auto;
     }
 }
 
@@ -1501,16 +1519,11 @@ table tr:nth-child(2n), thead {
     margin-bottom: 2.25rem;
 }
 
-.my-introduction .info {
+/*.my-introduction .info {
     width: 75%;
     /*让div水平居中*/
     margin: 0 auto;
-    border: 0;
-}
-
-.my-introduction .info .table1 {
-    border: 0;
-}
+}*/
 
 .my-projects .info {
     max-width: 360px;
