@@ -1502,9 +1502,10 @@ table tr:nth-child(2n), thead {
 }
 
 .my-introduction .info {
-    width: 860px;
+    width: 75%;
     /*让div水平居中*/
     margin: auto;
+    border: 0;
 }
 
 .my-introduction .info .table1 {
