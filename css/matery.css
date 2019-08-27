@@ -23,7 +23,7 @@
         margin: 0 auto;
     }
 
-    .my-contribute .info{
+    .my-contribute .info {
         width: 95;
         margin: 0 auto;
     }
@@ -84,7 +84,7 @@
         margin: 0 auto;
     }
 
-    .my-contribute .info{
+    .my-contribute .info {
         width: 75%;
         margin: 0 auto;
     }
@@ -1536,11 +1536,7 @@ table tr:nth-child(2n), thead {
     margin-bottom: 2.25rem;
 }
 
-/*.my-introduction .info {
-    width: 75%;
-    /*让div水平居中*/
-    margin: 0 auto;
-}*/
+
 
 .my-projects .info {
     max-width: 360px;
