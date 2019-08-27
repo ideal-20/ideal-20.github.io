@@ -17,10 +17,15 @@
         width: 95%;
     }
 
-    .my-introduction .info {
-    width: 100%;
-    /*让div水平居中*/
-    margin: 0 auto;
+    .my-introduction-blog .info {
+        width: 95%;
+        /*让div水平居中*/
+        margin: 0 auto;
+    }
+
+    .my-contribute .info{
+        width: 95;
+        margin: 0 auto;
     }
 }
 
@@ -40,10 +45,15 @@
         position: relative;
     }
 
-    .my-introduction .info {
-    width: 75%;
-    /*让div水平居中*/
-    margin: 0 auto;
+    .my-introduction-blog .info {
+        width: 75%;
+        /*让div水平居中*/
+        margin: 0 auto;
+    }
+
+    .my-contribute .info {
+        width: 75%;
+        margin: 0 auto;
     }
 }
 /*大屏幕下(桌面类)的样式*/
@@ -68,10 +78,15 @@
         position: relative;
     }
 
-    .my-introduction .info {
-    width: 75%;
-    /*让div水平居中*/
-    margin: 0 auto;
+    .my-introduction-blog .info {
+        width: 75%;
+        /*让div水平居中*/
+        margin: 0 auto;
+    }
+
+    .my-contribute .info{
+        width: 75%;
+        margin: 0 auto;
     }
 }
 
@@ -1503,7 +1518,8 @@ table tr:nth-child(2n), thead {
 }
 
 .post-charts,
-.my-introduction,
+.my-introduction-blog,
+.my-contribute,
 .my-projects,
 .my-skills,
 .post-charts {
@@ -1511,7 +1527,8 @@ table tr:nth-child(2n), thead {
 }
 
 .post-charts .title,
-.my-introduction .title,
+.my-introduction-blog .title,
+.my-contribute .title,
 .my-projects .title,
 .my-skills .title,
 .my-gallery .title {
