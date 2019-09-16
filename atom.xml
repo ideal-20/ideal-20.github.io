@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ideal-20.github.io/"/>
-  <updated>2019-08-25T12:05:15.810Z</updated>
+  <updated>2019-09-16T10:26:19.270Z</updated>
   <id>https://ideal-20.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Java开发环境不再需要配置classpath</title>
-    <link href="https://ideal-20.github.io/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/"/>
-    <id>https://ideal-20.github.io/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/</id>
-    <published>2019-08-25T07:03:00.000Z</published>
-    <updated>2019-08-25T12:05:15.810Z</updated>
+    <link href="https://ideal-20.github.io/2019/09/16/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/"/>
+    <id>https://ideal-20.github.io/2019/09/16/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/</id>
+    <published>2019-09-16T07:03:00.000Z</published>
+    <updated>2019-09-16T10:26:19.270Z</updated>
     
     <summary type="html">
     
@@ -43,6 +43,37 @@
       <category term="环境变量" scheme="https://ideal-20.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
     
       <category term="classpath" scheme="https://ideal-20.github.io/tags/classpath/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dos命令与开发环境的配置</title>
+    <link href="https://ideal-20.github.io/2019/08/25/java-ji-chu-ji-zhu/dos-ming-ling-yu-kai-fa-huan-jing-de-pei-zhi/"/>
+    <id>https://ideal-20.github.io/2019/08/25/java-ji-chu-ji-zhu/dos-ming-ling-yu-kai-fa-huan-jing-de-pei-zhi/</id>
+    <published>2019-08-25T10:03:00.000Z</published>
+    <updated>2019-09-16T10:27:41.252Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8dc8d5183?w=600&amp;h=242&amp;f=jpeg&amp;s=18782&quot; alt=&quot;undefined&quot;&gt;&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础技术" scheme="https://ideal-20.github.io/categories/Java%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="java" scheme="https://ideal-20.github.io/tags/java/"/>
+    
+      <category term="环境变量" scheme="https://ideal-20.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    
+      <category term="dos" scheme="https://ideal-20.github.io/tags/dos/"/>
     
   </entry>
   

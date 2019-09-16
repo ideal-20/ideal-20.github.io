@@ -4,9 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java开发环境不再需要配置classpath, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="keywords" content="Dos命令与开发环境的配置, Java,javaweb,MySQL,JavaScript,HTML,CSS">
     <meta name="description" content="
-前言：之前发布了关于java开发环境配置的文章，经过与网友的交流，我了解到在jdk1.5以后，java开发环境配置的时候，确实不需要对classpath进行配置，但市面上的书籍，以及一些博客、还是老一套，继续推荐配置classpath，并">
+第一阶段 JAVA基础知识第一章 开发环境的配置知识铺垫：Dos 命令
+在正式进入Java学习之前我们来了解一个看起来B格很高的东西——Dos命令
+DOS命令，计算机术语，是指DOS操作系统的命令，是一种面向磁盘的操作命令，主要包括目录操">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java开发环境不再需要配置classpath | 理想二旬不止|Blog</title>
+    <title>Dos命令与开发环境的配置 | 理想二旬不止|Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -180,13 +182,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java开发环境不再需要配置classpath
+                        Dos命令与开发环境的配置
                     </div>
                 </div>
             </div>
@@ -305,8 +307,8 @@
                                 <span class="chip bg-color">环境变量</span>
                             </a>
                         
-                            <a href="/tags/classpath/" target="_blank">
-                                <span class="chip bg-color">classpath</span>
+                            <a href="/tags/dos/" target="_blank">
+                                <span class="chip bg-color">dos</span>
                             </a>
                         
                     </div>
@@ -336,14 +338,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        6 分
                     </div>
                     
                 
@@ -359,53 +361,167 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="http://upload-images.jianshu.io/upload_images/17955338-6966a126cfa37c9d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="undefined"></p>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>之前发布了关于java开发环境配置的文章，经过与网友的交流，我了解到在jdk1.5以后，java开发环境配置的时候，确实不需要对classpath进行配置，但市面上的书籍，以及一些博客、还是老一套，继续推荐配置classpath，并且关于不需要配置classpath网络上没有什么完整细致，能令人信服的答案，所以我查阅了一些资料以及与别人交流，今天和大家分享一下这些内容。</p>
-<h2 id="原配置代码："><a href="#原配置代码：" class="headerlink" title="原配置代码："></a>原配置代码：</h2><blockquote>
-<p>.;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar </p>
+                <p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8dc8d5183?w=600&h=242&f=jpeg&s=18782" alt="undefined"></p>
+<h2 id="第一阶段-JAVA基础知识"><a href="#第一阶段-JAVA基础知识" class="headerlink" title="第一阶段 JAVA基础知识"></a><strong>第一阶段 JAVA基础知识</strong></h2><h3 id="第一章-开发环境的配置"><a href="#第一章-开发环境的配置" class="headerlink" title="第一章 开发环境的配置"></a>第一章 开发环境的配置</h3><h4 id="知识铺垫：Dos-命令"><a href="#知识铺垫：Dos-命令" class="headerlink" title="知识铺垫：Dos 命令"></a>知识铺垫：Dos 命令</h4><blockquote>
+<p>在正式进入Java学习之前我们来了解一个看起来B格很高的东西——Dos命令</p>
+<p>DOS命令，计算机术语，是指DOS操作系统的命令，是一种面向磁盘的操作命令，主要包括目录操作类命令、磁盘操作类命令、文件操作类命令和其它命令。</p>
 </blockquote>
-<h3 id="原代码详解："><a href="#原代码详解：" class="headerlink" title="原代码详解："></a>原代码详解：</h3><p>Java_Home代表了我们jdk的路径</p>
-<ul>
-<li>dt.jar是关于运行环境的类库，主要是用于swing的包，如果不使用可以不配置。</li>
-<li>tools.jar是工具类库,它在编译和运行一个类时被使用</li>
-</ul>
-<p>当我们配置classpath后，系统会根据我们所配置的classpath加载类</p>
-<p>例如：在我们使用javac命令编译程序时，系统加载tools.jar其实就封装了下面这样一条命令</p>
+<p>这是什么意思呢？我们先来看一看这究竟是什么东西呢</p>
+<p>通过 快捷键<strong>Win + R</strong>可以调出 运行窗口</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8e8f9342f?w=411&h=218&f=png&s=22506" alt="img"> </p>
+<p>我们输入cmd 后回车即可调出<strong>命令提示符界面</strong>，是不是感觉B格马上就起来了。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8eb93f641?w=511&h=218&f=png&s=26704" alt="img"> </p>
+<p>简单的理解就是：在cmd中输入一些“<strong>特定</strong>”的代码 <strong>系统中的一些目录、文件等进行操作（运行、关闭、删除、移动、创建等等）</strong></p>
+<p>我们首先来了解一些学习Java中常用到的Dos命令</p>
+<table>
+<thead>
+<tr>
+<th><strong>Dos命令</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>d:</strong></td>
+<td>回车 盘符切换</td>
+</tr>
+<tr>
+<td><strong>dir</strong></td>
+<td>列出当前目录下的文件以及文件夹</td>
+</tr>
+<tr>
+<td><strong>md</strong></td>
+<td>创建目录（创建文件夹）</td>
+</tr>
+<tr>
+<td><strong>rd</strong></td>
+<td>删除目录（删除文件夹，注意：前提是文件夹必须是 空的！！）如果想删除不是空的文件夹（比如删除aaaaa文件夹），可以用命令 rd /s aaaaa(会有删除提示)或者rd /s /q aaaaa(静默删除)</td>
+</tr>
+<tr>
+<td><strong>cd</strong></td>
+<td>改变指定目录(进入指定目录)</td>
+</tr>
+<tr>
+<td><strong>cd..</strong></td>
+<td>退回到上一级目录</td>
+</tr>
+<tr>
+<td>cd\</td>
+<td>退回到根目录</td>
+</tr>
+<tr>
+<td><strong>del</strong></td>
+<td>(delete): 删除文件,删除一堆后缀名一样的文件*.txt</td>
+</tr>
+<tr>
+<td><strong>exit</strong></td>
+<td>退出dos命令行</td>
+</tr>
+<tr>
+<td><strong>cls</strong></td>
+<td>(clear screen)清屏</td>
+</tr>
+</tbody></table>
+<h4 id="第一个程序-HelloWorld"><a href="#第一个程序-HelloWorld" class="headerlink" title="第一个程序 HelloWorld"></a><strong>第一个程序 HelloWorld</strong></h4><p>万物皆可HelloWorld，我们首先通过一个HelloWorld例程来看一下我们的Java语言到底是怎么样的呢</p>
+<p>首先，我们创建一个名字为HelloWorld的记事本文件保存后缀为“.java”，写入如下代码：</p>
+<p> <img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8d9465430?w=433&h=174&f=png&s=24214" alt="img"></p>
+<p><strong>（一）程序解释</strong></p>
+<ol>
+<li>Java程序的最<strong>基本单位是类</strong>，所以我们定义一个class类</li>
+</ol>
+<p>格式： class 类名 {}</p>
+<ol start="2">
+<li>程序执行<strong>必须有main方法</strong>，这是程序与OS（操作系统）的接口</li>
+</ol>
+<p>格式：public static void main (String[] args){}</p>
+<ol start="3">
+<li>输出语句</li>
+</ol>
+<p>格式：System.out.println(“HelloWorld”);</p>
+<p><strong>（二）注意</strong></p>
+<ol>
+<li><p><strong>Class 后为类名</strong>，并且需要与<strong>保存的文件名相一致</strong></p>
+</li>
+<li><p>main的作用可以理解为，帮助操作系统找到一个入口，即执行main中的  代码</p>
+</li>
+</ol>
+<p><strong>（三）常见错误</strong></p>
+<ol>
+<li><p>代码中的任何符号，均需要在英文状态下进行输入</p>
+</li>
+<li><p>String 中的“S”字母要大写</p>
+</li>
+<li><p>System 中的“S”要大写</p>
+<p>从C++中到java 被大小写疯狂安排（无奈状）</p>
+</li>
+</ol>
+<p><strong>（四）Java程序的开发执行流程</strong></p>
+<ol>
+<li><p><strong>编写java源程序(.java)</strong></p>
+</li>
+<li><p>通过javac命令编译生成.class文件（javac HelloWorld.java）</p>
+</li>
+<li><p>通过java命令运行.class文件 （java HelloWorld）</p>
+</li>
+</ol>
+<p>我们仅仅完成了HelloWorld源代码的编写，如何编译运行这个源代码呢？</p>
+<p>我们首先需要做两件事：</p>
+<p><strong>1. 安装JDK</strong></p>
+<p><strong>2. 配置环境变量</strong></p>
+<h4 id="第一步：安装JDK"><a href="#第一步：安装JDK" class="headerlink" title="第一步：安装JDK"></a><strong>第一步：安装JDK</strong></h4><p>JDK即使<strong>Java运行的环境</strong>，其中包含了J<strong>ava虚拟机</strong>、<strong>java基础类库</strong>。只有安装了JDK我们才能编译运行我们的java代码</p>
+<p>我们首先可以百度 JDK</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8d93f0052?w=554&h=179&f=jpeg&s=17995" alt="img"> </p>
+<p>进入网站后选择合适的JDK版本，我所装的是JDK8的版本，现在最新版本为12，其实就是在低版本的基础上增加了一些新特性，但是我们暂时也不会涉及到一些很新的特性，所以<strong>JDK版本一般不低于8即可</strong>。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d8d944d4d0?w=554&h=335&f=jpeg&s=26769" alt="img"></p>
+<p>点击对应版本<strong>DOWNLOAD按钮</strong>，进入系统版本选择页面</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d906fb3d59?w=554&h=303&f=jpeg&s=49000" alt="img"> </p>
+<p>如果对自己系统版本不清楚的朋友可以 鼠标右击桌面计算机图标 点击属性 打开<strong>计算机属性界面</strong>查看</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d90715d228?w=554&h=281&f=jpeg&s=25216" alt="img"> </p>
+<p>然后按部就班安装即可，最好修改默认路径<strong>不要在C盘</strong>，并且安装路径中<strong>最好不要有中文或者空格</strong>。</p>
+<p>安装结束后，我们在cmd中输入<strong>java</strong>这个命令，如果返回如下内容，即安装成功</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d90b789273?w=391&h=252&f=jpeg&s=22926" alt="img"> </p>
+<h4 id="第二步：配置环境变量"><a href="#第二步：配置环境变量" class="headerlink" title="第二步：配置环境变量"></a><strong>第二步：配置环境变量</strong></h4><p>我们想要在cmd中使用命令运行任何程序的时候 都需要<strong>告诉系统，我们要执行的程序所在的位置</strong>，例如我们想要编译在 D:\develeop目录下的 HelloWorld.java代码 我们需要在cmd中<strong>利用 Dos命令将目录指定到我们被编译文件所处的位置</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d90b71ecbf?w=361&h=103&f=png&s=18021" alt="img"> </p>
+<p>但是问题又来了，为什么 我输入javac HelloWorld.java后 会提示</p>
+<p><strong>‘javac’不是内部或者外部命令呢，也不是可运行的程序，或批处理文件。</strong></p>
+<p>系统：我也一脸蒙圈<img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d917e03c94?w=24&h=24&f=gif&s=1245" alt="img">，你又没告诉我javac是从哪里冒出来的，只能给你报错了</p>
+<p>我们找到我们JDK的安装路径下的 bin目录</p>
+<p>我们可以看到有很多 .exe 可执行程序，其中 java.exe和javac.exe原来就是我们输入代码所想要执行的两个程序，可是如何帮助系统每一次找到我想运行的这两个程序呢？</p>
+<p>我们配置环境变量就可以解决这个问题</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d91e2df371?w=542&h=238&f=jpeg&s=22314" alt="img"></p>
+<p>那么如何配置环境变量呢，我们只需要打开<strong>计算机属性→高级系统设置→环境变量</strong>即可开始配置</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d939a4a1ab?w=554&h=356&f=jpeg&s=26137" alt="img"></p>
+<p><strong>(1) path环境变量的作用</strong></p>
+<p>保证javac命令可以在任意目录下运行。</p>
+<p><strong>path配置的方案：</strong></p>
+<p>找到环境变量的位置，在系统变量里面</p>
+<p><strong>新建：</strong></p>
+<p>变量名：JAVA_HOME</p>
+<p>（变量值根据自己实际的安装路径填写）</p>
+<p>变量值：D:\develop\Java\jdk1.8.0_201</p>
+<p><strong>修改</strong>：</p>
+<p>​    变量名：Path</p>
+<p>​    变量值：%Java_Home%\bin;%Java_Home%\jre\bin;以前的内容</p>
+<p>Path环境变量里面记录的是可执行文件如.exe文件，对可执行文件现在当前 路径中去找，如果没找到就去path环境变量中去找</p>
+<p><strong>(2) classpath环境变量</strong></p>
 <blockquote>
-<p>javac XXX.java</p>
+<p><strong>注意：</strong>使用1.5及以上版本的JDK，不必继续设置classpath。详情内容将进行专篇讲解（已发表）</p>
 </blockquote>
-<blockquote>
-<p>java -Classpath=%JAVA_HOME%\lib\tools.jar  xx.xxx.Main  XXX.java  </p>
-</blockquote>
-<p>当然tools的功能可不止这一点，但是确实它为我们提供了很多便利</p>
-<h2 id="我们不再需要配置classpath了！"><a href="#我们不再需要配置classpath了！" class="headerlink" title="我们不再需要配置classpath了！"></a>我们不再需要配置classpath了！</h2><p>在JDK1.5以后，classpath并不是必须配置了，在JDK1.5之前，是没有办法在当前目录下加载类的（找不到 JDK目录下lib文件夹中的.jar文件），所以我们需要通过配置classpath，但JDK1.5之后，JRE能自动搜索目录下类文件，并且加载dt.jar和tool.jar的类。</p>
-<h2 id="官方文档解释（JDK-Tools-and-Utilities）"><a href="#官方文档解释（JDK-Tools-and-Utilities）" class="headerlink" title="官方文档解释（JDK Tools and Utilities）"></a>官方文档解释（JDK Tools and Utilities）</h2><blockquote>
-<p>The class path tells the JDK tools and applications where to find third-party and user-defined classes that are not extensions or part of the Java platform. See The Extension Mechanism at </p>
-</blockquote>
-<blockquote>
-<p>类路径告诉JDK工具和应用程序在哪里可以找到第三方和用户定义的类，这些类既不是Java平台的扩展，也不是Java平台的一部分。参见扩展机制</p>
-</blockquote>
-<blockquote>
-<p>If you upgrade from an earlier release of the JDK, then your startup settings might include CLASSPATH settings that are no longer needed. You should remove any settings that are not application-specific, such as classes.zip. Some third-party applications that use the Java Virtual Machine (JVM) can modify your CLASSPATH environment variable to include the libraries they use. Such settings can remain.</p>
-</blockquote>
-<blockquote>
-<p>如果您从JDK的早期版本升级，那么您的启动设置可能包括不再需要的类路径设置。您应该删除任何与应用程序无关的设置，比如classes.zip。一些使用Java虚拟机(JVM)的第三方应用程序可以修改类路径环境变量，以包含它们使用的库。这样的设置可以保留。</p>
-</blockquote>
-<blockquote>
-<p>You can change the class path by using the -classpath or -cp option of some Java commands when you call the JVM or other JDK tools or by using the CLASSPATH environment variable. See JDK Commands Class Path Options. Using the -classpath option is preferred over setting the CLASSPATH environment variable because you can set it individually for each application without affecting other applications and without other applications modifying its value. See CLASSPATH Environment Variable.</p>
-</blockquote>
-<blockquote>
-<p>在调用JVM或其他JDK工具时，可以使用一些Java命令的-classpath或-cp选项，或者使用CLASSPATH环境变量，来更改类路径。参见JDK命令类路径选项。使用-classpath选项优于设置CLASSPATH环境变量，因为您可以为每个应用程序单独设置它，而不影响其他应用程序，也不需要其他应用程序修改它的值。参见CLASSPATH环境变量。</p>
-</blockquote>
-<p>通过官方的文档说明我们可以看到，rt.jar和tool.jar这两种属于java平台自身的包就不需要添加到classpath中，只有一些第三方类或者自定义类需要，也并不推荐使用配置CLASSPATH的方法，更推荐使用-classpath选项</p>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>在JDK1.5之后的版本，配置Java环境变量的时候我们不再需要配置classpath，只需要配置Java_Home以及path即可！</strong></p>
-<h2 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h2><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！_</p>
+<p>(1) classpath环境变量的作用</p>
+<p>保证class文件可以在任意目录下运行</p>
+<p>(2) classpath环境变量的配置</p>
+<p>找到环境变量的位置，在系统变量里面</p>
+<p>新建：</p>
+<p>变量名：CLASSPATH</p>
+<p>变量值：.;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar</p>
+<p><strong>好了，我们来测试一下我们的HelloWorld程序</strong></p>
+<p>我们成功在控制台中输出了一句 HelloWorld </p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/5/22/16adf3d9400baff9?w=404&h=264&f=jpeg&s=17801" alt="img"> </p>
+<h3 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h3><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！^_^</p>
 <p>如果能帮到你的话，那就来关注我吧！</p>
 <blockquote>
 <p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
 <p>一个坚持推送原创Java技术的公众号：理想二旬不止</p>
 </blockquote>
-<p><img src="https://user-gold-cdn.xitu.io/2019/6/10/16b411942a044f9a?w=258&h=258&f=jpeg&s=17478" alt="img"> </p>
 
             </div>
             <hr/>
@@ -564,9 +680,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Java开发环境不再需要配置classpath》
+                    《Dos命令与开发环境的配置》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/25/java-ji-chu-ji-zhu/dos-ming-ling-yu-kai-fa-huan-jing-de-pei-zhi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 BWH_Steven
             </a> 采用
@@ -628,12 +744,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/">
+                <a href="/2019/09/16/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/">
                     <div class="card-image">
                         
                         
@@ -649,9 +764,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -664,7 +779,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -691,19 +805,19 @@
                 本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/25/java-ji-chu-ji-zhu/java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/">
+                <a href="/2019/08/25/java-ji-chu-ji-zhu/dos-ming-ling-yu-kai-fa-huan-jing-de-pei-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java开发环境不再需要配置classpath">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Dos命令与开发环境的配置">
                         
-                        <span class="card-title">Java开发环境不再需要配置classpath</span>
+                        <span class="card-title">Dos命令与开发环境的配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            【JDK 1.5+】你还在配置classpath吗？
+                            Java学习就从这里出发！
                         
                     </div>
                     <div class="publish-info">
@@ -734,8 +848,8 @@
                         <span class="chip bg-color">环境变量</span>
                     </a>
                     
-                    <a href="/tags/classpath/" target="_blank">
-                        <span class="chip bg-color">classpath</span>
+                    <a href="/tags/dos/" target="_blank">
+                        <span class="chip bg-color">dos</span>
                     </a>
                     
                 </div>
@@ -850,30 +964,34 @@
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-
             <div>@2019 BWH_Steven · 版权所有</div>
             
-                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">1.1k</span>
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">2.8k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
             
 
-            
-			
-                <br>
-                
-                <span id="busuanzi_container_site_pv">
-                    <i class="fa fa-heart-o"></i>
-                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                
-                
-                <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
-                
-            
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
         </div>
+
         <div class="col s12 m4 l4 social-link social-statis">    
     <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>

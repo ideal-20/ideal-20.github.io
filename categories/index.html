@@ -216,11 +216,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
-                <a href="/categories/Java基础技术/" title="Java基础技术: 1">
+                <a href="/categories/Java基础技术/" title="Java基础技术: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">Java基础技术
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -241,20 +241,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
-                <a href="/tags/java/" title="java: 1">
+                <a href="/tags/java/" title="java: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip2-default "
                             data-tagname="java" style="background-color: #F9EBEA;">java
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/环境变量/" title="环境变量: 1">
+                <a href="/tags/环境变量/" title="环境变量: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip2-default "
                             data-tagname="环境变量" style="background-color: #F5EEF8;">环境变量
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -263,6 +263,15 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <span class="chip center-align waves-effect waves-light
                              chip2-default "
                             data-tagname="classpath" style="background-color: #D5F5E3;">classpath
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/dos/" title="dos: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip2-default "
+                            data-tagname="dos" style="background-color: #E8F8F5;">dos
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -308,7 +317,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Java基础技术","max":2}],
+            indicator: [{"name":"Java基础技术","max":4}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -319,7 +328,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1],
+                    value : [2],
                     name : '文章分类数量'
                 }
             ]
@@ -389,7 +398,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,1,0],
+                data: [0,0,0,0,0,0,0,0,0,0,0,1,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -431,7 +440,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Java基础技术","value":1}],
+                data: [{"name":"Java基础技术","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -455,7 +464,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["java","环境变量","classpath"]
+                data: ["java","环境变量","classpath","dos"]
             }
         ],
         yAxis: [
@@ -468,7 +477,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1,1,1],
+                data: [2,2,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -502,30 +511,34 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-
             <div>@2019 BWH_Steven · 版权所有</div>
             
-                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">1.1k</span>
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">2.8k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
             
 
-            
-			
-                <br>
-                
-                <span id="busuanzi_container_site_pv">
-                    <i class="fa fa-heart-o"></i>
-                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                
-                
-                <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
-                
-            
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
         </div>
+
         <div class="col s12 m4 l4 social-link social-statis">    
     <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
