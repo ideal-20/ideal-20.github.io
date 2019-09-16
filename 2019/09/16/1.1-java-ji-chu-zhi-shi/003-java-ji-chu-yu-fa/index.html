@@ -1,0 +1,1839 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="003-Java基础语法, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="description" content="
+第一阶段 JAVA基础知识第二章 Java基础语法知识在我们开始讲解程序之前，命名规范是我们不得不提的一个话题，虽说命名本应该是自由的，但是仍然有一定的“潜规则”，通过你对命名的书写，别人一眼就能看出你是不是一个“行家”。我们先来看一下有">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>003-Java基础语法 | 理想二旬不止|Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">理想二旬不止|Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">理想二旬不止|Blog</div>
+        <div class="logo-desc">
+            
+            这城市总是风很大 孤独的人总是晚回家
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        003-Java基础语法
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Java基础语法/" target="_blank">
+                                <span class="chip bg-color">Java基础语法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-Java基础知识/" class="post-category" target="_blank">
+                                1.1-Java基础知识
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-16
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        6.6k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        24 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="http://image.ideal-20.cn/basic/1.1-01-001.png" alt></p>
+<h1 id="第一阶段-JAVA基础知识"><a href="#第一阶段-JAVA基础知识" class="headerlink" title="第一阶段 JAVA基础知识"></a>第一阶段 JAVA基础知识</h1><h2 id="第二章-Java基础语法知识"><a href="#第二章-Java基础语法知识" class="headerlink" title="第二章 Java基础语法知识"></a>第二章 Java基础语法知识</h2><p>在我们开始讲解程序之前，命名规范是我们不得不提的一个话题，虽说命名本应该是自由的，但是仍然有一定的“潜规则”，通过你对命名的书写，别人一眼就能看出你是不是一个“行家”。我们先来看一下有哪些规则。</p>
+<table>
+<thead>
+<tr>
+<th>A：包名：</th>
+<th>全部小写用.隔开  eg： com.ideal.www</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>B:类名</strong>或<strong>接口：</strong></td>
+<td>类的首字母大写。如果类名由若干个单词组成，那么每个单词首字母大写。</td>
+</tr>
+<tr>
+<td><strong>C: 方法</strong>或<strong>变量名：</strong></td>
+<td>所有的方法名都应该小写字母开头。如果方法名     含有若干个单词，那么其后每个单词首字母大写。</td>
+</tr>
+<tr>
+<td><strong>D:</strong> <strong>常量名：</strong></td>
+<td>全部大写 用 _ 隔开</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>E：原文件名：</th>
+<th>原文件名必须和类名相同  类名.java</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>F:</strong> <strong>主方法入口</strong>：</td>
+<td>所有的Java 程序由public static void main(String []args)方法开始执行。</td>
+</tr>
+</tbody></table>
+<p>我们暂时对于这些名词还没有什么概念，但是对于我们前一篇所写到的HelloWorld例程来说，我们就用到了 类名、主方法这两点。</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-001.png" alt> </p>
+<p>HelloWorld 作为类名自然需要满足首字母大写，又由于HelloWorld由两个单词组成，所以两个单词首字母分别大写。</p>
+<h3 id="2-1关键字"><a href="#2-1关键字" class="headerlink" title="2.1关键字"></a>2.1关键字</h3><p>(1) 被Java语言赋予特定含义的单词，他们有着特定的使用位置和方式</p>
+<p>(2) 特点：</p>
+<p>全部小写。</p>
+<p>(3) 注意事项：</p>
+<p>A : goto和const作为保留字存在。</p>
+<p>B : 类似于Notepad++、sublime等编辑器对关键字有特殊颜色标记</p>
+<p>（这是两款和好用的编辑器，可以简单的理解为可以使代码带着好看色彩的高级记事本）</p>
+<table>
+<thead>
+<tr>
+<th><strong>类别</strong></th>
+<th><strong>关键字</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>访问控制</td>
+<td>private</td>
+<td>私有的</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>受保护的</td>
+<td></td>
+</tr>
+<tr>
+<td>public</td>
+<td>公共的</td>
+<td></td>
+</tr>
+<tr>
+<td>类、方法和变量修饰符</td>
+<td>abstract</td>
+<td>声明抽象</td>
+</tr>
+<tr>
+<td>class</td>
+<td>类</td>
+<td></td>
+</tr>
+<tr>
+<td>extends</td>
+<td>扩充,继承</td>
+<td></td>
+</tr>
+<tr>
+<td>final</td>
+<td>最终值,不可改变的</td>
+<td></td>
+</tr>
+<tr>
+<td>implements</td>
+<td>实现（接口）</td>
+<td></td>
+</tr>
+<tr>
+<td>interface</td>
+<td>接口</td>
+<td></td>
+</tr>
+<tr>
+<td>native</td>
+<td>本地，原生方法（非Java实现）</td>
+<td></td>
+</tr>
+<tr>
+<td>new</td>
+<td>新,创建</td>
+<td></td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态</td>
+<td></td>
+</tr>
+<tr>
+<td>strictfp</td>
+<td>严格,精准</td>
+<td></td>
+</tr>
+<tr>
+<td>synchronized</td>
+<td>线程,同步</td>
+<td></td>
+</tr>
+<tr>
+<td>transient</td>
+<td>短暂</td>
+<td></td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>易失</td>
+<td></td>
+</tr>
+<tr>
+<td>程序控制语句</td>
+<td>break</td>
+<td>跳出循环</td>
+</tr>
+<tr>
+<td>case</td>
+<td>定义一个值以供switch选择</td>
+<td></td>
+</tr>
+<tr>
+<td>continue</td>
+<td>继续</td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>默认</td>
+<td></td>
+</tr>
+<tr>
+<td>do</td>
+<td>运行</td>
+<td></td>
+</tr>
+<tr>
+<td>else</td>
+<td>否则</td>
+<td></td>
+</tr>
+<tr>
+<td>for</td>
+<td>循环</td>
+<td></td>
+</tr>
+<tr>
+<td>if</td>
+<td>如果</td>
+<td></td>
+</tr>
+<tr>
+<td>instanceof</td>
+<td>实例</td>
+<td></td>
+</tr>
+<tr>
+<td>return</td>
+<td>返回</td>
+<td></td>
+</tr>
+<tr>
+<td>switch</td>
+<td>根据值选择执行</td>
+<td></td>
+</tr>
+<tr>
+<td>while</td>
+<td>循环</td>
+<td></td>
+</tr>
+<tr>
+<td>错误处理</td>
+<td>assert</td>
+<td>断言表达式是否为真</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>捕捉异常</td>
+<td></td>
+</tr>
+<tr>
+<td>finally</td>
+<td>有没有异常都执行</td>
+<td></td>
+</tr>
+<tr>
+<td>throw</td>
+<td>抛出一个异常对象</td>
+<td></td>
+</tr>
+<tr>
+<td>throws</td>
+<td>声明一个异常可能被抛出</td>
+<td></td>
+</tr>
+<tr>
+<td>try</td>
+<td>捕获异常</td>
+<td></td>
+</tr>
+<tr>
+<td>包相关</td>
+<td>import</td>
+<td>引入</td>
+</tr>
+<tr>
+<td>package</td>
+<td>包</td>
+<td></td>
+</tr>
+<tr>
+<td>基本类型</td>
+<td>boolean</td>
+<td>布尔型</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>字节型</td>
+<td></td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符型</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点</td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td>单精度浮点</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td></td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整型</td>
+<td></td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td></td>
+</tr>
+<tr>
+<td>变量引用</td>
+<td>super</td>
+<td>父类,超类</td>
+</tr>
+<tr>
+<td>this</td>
+<td>本类</td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td>无返回值</td>
+<td></td>
+</tr>
+<tr>
+<td>保留关键字</td>
+<td>goto</td>
+<td>是关键字，但不能使用</td>
+</tr>
+<tr>
+<td>const</td>
+<td>是关键字，但不能使用</td>
+<td></td>
+</tr>
+<tr>
+<td>null</td>
+<td>空</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2-2-标识符"><a href="#2-2-标识符" class="headerlink" title="2.2 标识符"></a>2.2 标识符</h3><p>(1)就是给类，接口，方法，变量等<strong>起名字</strong>的字符序列</p>
+<p>(2)组成规则：</p>
+<p><strong>A: 首字符：</strong>字母（A-Z、a-z）、美元符（$）、下划线（_）</p>
+<p><strong>B: 首字符之后：</strong>字母（A-Z、a-z）、美元符（$）、下划线（_）或者<strong>数字</strong>的任何字符组合</p>
+<p>(3)注意事项：</p>
+<p>A:不能以数字开头</p>
+<p>B:关键字不能作为标识符</p>
+<p>C:区分大小写</p>
+<h3 id="2-3-注释"><a href="#2-3-注释" class="headerlink" title="2.3 注释"></a>2.3 注释</h3><p>  ( 讨厌写自己写注释，讨厌别人不写注释 ~）</p>
+<p>注释就是为了方便自己或别人后期阅读这部分代码的提示，能够快速的让阅读者，了解这部分代码的作用。</p>
+<p>(1)<strong>注释就是对程序进行解释说明的文字（不会被编译运行）</strong></p>
+<p>(2)分类：</p>
+<p><strong>A:单行注释 // + 内容</strong></p>
+<p><strong>B:多行注释 /*内容*/</strong></p>
+<p>C:文档注释 /** */ 被javadoc工具解析成一个说明书，后期会讲到</p>
+<p>在我们前期的学习中，只需要掌握基本的<strong>单行注释</strong>和<strong>多行注释</strong>即可</p>
+<p><strong>注释规范：</strong></p>
+<p>1、<strong>类注释  注释模板如下：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+* Copyright (C), 2006-2010, ChengDu Lovo info. Co., Ltd.
+* FileName: Test.java
+* 类的详细说明
+*
+* @author 类创建者姓名
+* @Date    创建日期
+* @version 1.00
+*/</span></code></pre>
+<p>2、<strong>属性注释 注释模板如下：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 提示信息 */</span><span class="token keyword">private</span> String strMsg <span class="token operator">=</span> null<span class="token punctuation">;</span></code></pre>
+<p>3、<strong>方法注释  注释模板如下：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+* 类方法的详细使用说明
+*
+* @param 参数1 参数1的使用说明
+* @return 返回结果的说明
+* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
+*/</span></code></pre>
+<p>4、<strong>构造方法注释  注释模板如下：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+* 构造方法的详细使用说明
+*
+* @param 参数1 参数1的使用说明
+* @throws 异常类型.错误代码 注明从此类方法中抛出异常的说明
+*/</span></code></pre>
+<p>5、<strong>方法内部注释  在方法内部使用单行或者多行注释</strong></p>
+<p><strong>（根据实际情况添加）注释模板如下：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//背景颜色Color bgColor = Color.RED</span></code></pre>
+<h3 id="2-4-常量"><a href="#2-4-常量" class="headerlink" title="2.4 常量"></a>2.4 常量</h3><p><strong>(1) 常量就是在程序执行的过程中，其值不发生改变的量</strong>（例如π、重力加速度，光速等）</p>
+<p>而在Java中我们使用final关键字来修饰常量</p>
+<p>Eg：final double PI = 3.1415927</p>
+<p>习惯 ：虽然常量名也可以用小写，但为了便于识别，通常使用大写字母   表示常量(随大流就好啦)</p>
+<p>(2)分类：</p>
+<p><strong>A:字面值常量</strong></p>
+<p><strong>B:自定义常量</strong></p>
+<p><strong>字面值常量：</strong></p>
+<p>C++ primer：像42这样的值，在程序中被当作字面值常量：字面值是因为仅能用它的值称呼它，常量是因为它的值不能修改。每个字面值都有相应的类型，例如：0是int型，3.14159是double型。字面值仅存在于内置类型，没有类类型的字面值。因此，也没有任何标准库类型的字面值</p>
+<p><strong>简单理解：例如 int a = 6; 它的字面值就是a， 它的实际值是 6</strong></p>
+<p><strong>(3)字面值常量</strong></p>
+<p>A:字符串常量 “bwh”</p>
+<p>B:整数常量 666,888</p>
+<p>C:小数常量 123.456</p>
+<p>D:字符常量 ‘a’,’Z’,’0’</p>
+<p>E:布尔常量 true,false</p>
+<p>F:空常量 null</p>
+<p><strong>(4)在Java中针对整数常量提供了四种表现形式</strong></p>
+<p><strong>A:二进制</strong> 由0，1组成。以<strong>0b开头</strong>。</p>
+<p><strong>B:八进制</strong> 由0，1，…7组成。以<strong>0开头</strong>。</p>
+<p><strong>C:十进制</strong> 由0，1，…9组成。整数默认是十进制。</p>
+<p><strong>D:十六进制</strong> 由0，1，…9,a,b,c,d,e,f(大小写均可)组成。以<strong>0x开头</strong>。</p>
+<p><strong>A：常见进制</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-002.png" alt></p>
+<p>常见进制的转化：</p>
+<p>常见进制 → 十进制 ： 忽略前缀和0，对1进行运算</p>
+<pre><code>0b10101 （二进制）
+= 12^4 + 12^3 + 1*2^0
+= 16 + 14 + 1
+= 21
+
+0123 （八进制）
+= 18^2 + 28^1 + 3*8^0
+= 64 + 16 + 3
+= 83
+
+0x3c （十六进制）
+= 316^1 + 1216^0
+= 48 + 12
+=60</code></pre><p><strong>十进制  → 常见进制 ：</strong></p>
+<p><strong>除基取余，直到商为0，余数反转。（转换几进制就将基数除以几）</strong></p>
+<p>其他进制的转换可以通过十进制这个中间进制进行转换</p>
+<p>熟悉2的倍数对我们也是很有帮助的</p>
+<p><strong>B: 补充：补码、原码、反码</strong></p>
+<p>为什么我们要学习这些呢？首先我们要知道，在计算机内，有符号数有三种表示方法，源码、反码、和补码。而<strong>所有的数据运算都是采用补码进行的</strong>。它的重要性可想而知。</p>
+<p><strong>1、原码：</strong>二进制点表示法，最高位为符号位，“0”表示正，“1”表示负，其   余位置表示数值大小，可直观反映出数据的大小。</p>
+<p><strong>2、反码：</strong>解决负数加法运算问题，将减法运算转换为加法运算，从而简化运算规则。</p>
+<p><strong>3、补码：</strong>解决负数加法运算正负零问题，弥补了反码的不足。</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-003.png" alt></p>
+<p>7的二进制 ：111</p>
+<table>
+<thead>
+<tr>
+<th>原码</th>
+<th>正数的原码最高位是0的原码最高位是1其他的是数值位</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>符号位</td>
+<td>数值位数</td>
+</tr>
+<tr>
+<td>+7</td>
+<td>0</td>
+<td>0000111（补够8个字节，在左面补4个0）</td>
+</tr>
+<tr>
+<td>-7</td>
+<td>1</td>
+<td>0000111</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>反码</th>
+<th>正数的反码与原码相同负数的反码与源码符号位相同，数值位取反1 → 0 、 0 → 1</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>符号位</td>
+<td>数值位数</td>
+</tr>
+<tr>
+<td>+7</td>
+<td>0</td>
+<td>0000111（补够8个字节，在左面补4个0）</td>
+</tr>
+<tr>
+<td>-7</td>
+<td>1</td>
+<td>1111000</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong>补码</strong></th>
+<th>正数的补码与原码相同负数的补码是在反码的基础上+1</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>符号位</td>
+<td>数值位数</td>
+</tr>
+<tr>
+<td>+7</td>
+<td>0</td>
+<td>0000111（补够8个字节，在左面补4个0）</td>
+</tr>
+<tr>
+<td>-7</td>
+<td>1</td>
+<td>1111001</td>
+</tr>
+</tbody></table>
+<h3 id="2-5-变量"><a href="#2-5-变量" class="headerlink" title="2.5 变量"></a>2.5 变量</h3><p>我们刚介绍了什么是常量，那么什么是变量呢，顾名思义，<strong>变量就是在某个范围内可以变化的量</strong>，其实它就是一个被你所定义的变量，<strong>在一个数据类型的约束下</strong>，可以在数据类型所允许的范围内进行，被赋值，运算，等操作。</p>
+<p>（变量可以不在定义的时候就赋初始化值，但是在<strong>运行编译时，如果被编译变量仍没被赋值，则是没有意义的，编译器将会报错</strong>）</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-004.png" alt></p>
+<p><strong>格式： 数据类型 变量名 = 初始化值</strong></p>
+<p><strong>注意：可以在一行中声明多个变量，但是我们不推荐这种方式。</strong></p>
+<p><strong>逐一声明变量能提高程序的可读性</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-005.png" alt></p>
+<p><strong>变量类型：</strong></p>
+<ul>
+<li><p>局部变量</p>
+</li>
+<li><p>实例变量</p>
+</li>
+<li><p>类变量（静态变量）</p>
+</li>
+</ul>
+<p><strong>局部变量：</strong>定义在<strong>方法、构造方法、或者语句块中</strong>的变量</p>
+<p>（生而带来 死而带去 只能活在自己的世界）</p>
+<p>只能在一定范围内使用的变量，随着这个方法等的结束变量也就无效了</p>
+<p>对于局部变量的理解，刚入门可能也不会太深，等后面几篇我们学习到方 法后，再回过头来看这部分内容，就会有一种明了的感觉。</p>
+<p><strong>实例变量：</strong>声明在类中，但在方法、构造方法和语句块之外</p>
+<p>实例变量对于类中的方法、构造方法或者语句块是可见的。一般情况下应该把实例变量设为私有。通过使用访问修饰符可以使实例变量对子类可见</p>
+<p>暂时在学习基础语法知识的时候可以<strong>暂时忽略</strong>实例变量这部分内容，这部分内容主要被使用在<strong>面向对象</strong>的部分，但是<strong>极其重要。</strong></p>
+<p><strong>过了很久，你也不愿回头看，学习的进度就会很慢~</strong></p>
+<p>类变量：    后期补充</p>
+<h3 id="2-6-数据类型"><a href="#2-6-数据类型" class="headerlink" title="2.6 数据类型"></a>2.6 数据类型</h3><h5 id="❤-2-6-1"><a href="#❤-2-6-1" class="headerlink" title="❤ 2.6.1"></a>❤ 2.6.1</h5><p> Java是一种强类型的语言，针对每一种数据都定义了明确的数据类型（就是将一些值的范围做了约束，从而为不同类型的值在内存中分配不同的内存空间）</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-006.png" alt> </p>
+<p><strong>注意：</strong>在此部分暂时不用深究引用类型，着重认熟悉一下基本数据类型，引用类型在面向对象的部分会详细解释。</p>
+<p>我们来看一下<strong>八种基本数据类型</strong>的详细说明：</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Size*</th>
+<th>Rang</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>byte</strong></td>
+<td>1byte|8bit</td>
+<td>存放的数据范围是-128~127之间</td>
+</tr>
+<tr>
+<td><strong>short</strong></td>
+<td>2bytes|16bit</td>
+<td>最大数据存储量是65536，数据范围是-32768~32767之间。</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td>4bytes|32bit</td>
+<td>数据范围是负的2的31次方到正的2的31次方减1。</td>
+</tr>
+<tr>
+<td><strong>long</strong></td>
+<td>4bytes|64bit</td>
+<td>数据范围为负的2的63次方到正的2的63次方减1。</td>
+</tr>
+<tr>
+<td><strong>float</strong></td>
+<td>4bytes|32bit</td>
+<td>数据范围在3.4e-45~1.4e38，直接赋值时必须在数字后加上f或F</td>
+</tr>
+<tr>
+<td><strong>double</strong></td>
+<td>8bytes|64bit</td>
+<td>数据范围在4.9e-324~1.8e308，赋值时可以加d或D也可以不加。</td>
+</tr>
+<tr>
+<td><strong>boolean</strong></td>
+<td></td>
+<td>只有true和false两个取值。</td>
+</tr>
+<tr>
+<td><strong>char</strong></td>
+<td>2bytes</td>
+<td>存储Unicode码，用单引号赋值。</td>
+</tr>
+</tbody></table>
+<p>注意：</p>
+<ul>
+<li><p>整数默认是int类型</p>
+<p>声明long型常量的时候长整数要加L或者l</p>
+<p>如：long l = 66666666666666L//否则报错</p>
+</li>
+<li><p>浮点数默认是double（双精度浮点型）</p>
+<p>声明float型（单精度的浮点数）要加F或者</p>
+<p>如：double d = 521.1 //正确 float f = 52.1f //必须加f</p>
+</li>
+<li><p>boolean一般用来进行逻辑运算→流程控制中</p>
+</li>
+<li><p>Byte、short类型被赋值时，其实接收的是一个int类型的值，不 在范围内即报错</p>
+</li>
+<li><p>一个中文字符占据两用字节，Java中字符可以存储一个汉字，是 因为Java字符采用<strong>Unicode编码</strong>，每个字符占用两个字节。</p>
+</li>
+<li><p>Java中提供了三个特殊的浮点数值，正无穷大（正数除以0），负无穷大（负数除以0），NaN（不是一个数字,0除以0，负数开根号）</p>
+</li>
+</ul>
+<h4 id="❤-2-6-2数据类型转换"><a href="#❤-2-6-2数据类型转换" class="headerlink" title="❤ 2.6.2数据类型转换"></a>❤ 2.6.2数据类型转换</h4><p>一般来说，我们在运算的时候，要求参与运算的数值类型必须一致</p>
+<p><strong>(1)</strong> 默认转换（从小到大的转换）—自动类型转换**</p>
+<p>A：byte，short,  char  （ → int → long → float → double ）</p>
+<p>B：byte，short,  char  相互之间不转换</p>
+<p>他们参与运算首先转换为int类型</p>
+<p><strong>疑惑：**</strong>为什么 float（4个字节）在 long（8个字节）后面**</p>
+<p><strong>A: 它们底层的存储结构不同</strong></p>
+<p><strong>B:  float表示的数据范围比long范围要大</strong></p>
+<pre><code>long：2^63-1
+float：3.410^38  &gt;  210^38  &gt; 28^38  &gt; 22^3^38
+= 2*2^144  &gt; 2^63 -1</code></pre><p><strong>例子一 ：低精度byte到高精度int 会根据默认转换，自动转换类型</strong></p>
+<p> <img src="http://image.ideal-20.cn/basic/1.1-03-007.png" alt></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-008.png" alt></p>
+<p><strong>例子二 ：高精度int到低精度byte 可能会损失精</strong>度</p>
+<p> <img src="http://image.ideal-20.cn/basic/1.1-03-009.png" alt></p>
+<p> <img src="http://image.ideal-20.cn/basic/1.1-03-010.png" alt></p>
+<p>byte数据类型是 1个字节、8位</p>
+<p>int  数据类型是 4个字节、32位</p>
+<p>但是有没有办法能够让我们输出这种运算的结果呢？这就需要我们用到强制类型转换的知识。</p>
+<p><strong>(2) 强制类型转换</strong></p>
+<p> <strong>格式：目标数据类型 变量 = （目标数据类型）（被转换的数据）</strong></p>
+<p><strong>注意：</strong>不要随便的去用强制转化，因为它隐含了精度损失的问题</p>
+<p>在把容量大的类型转换为容量小的类型时必须使用强制类型转换。</p>
+<p>例子：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>   
+<span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>i<span class="token punctuation">;</span></code></pre>
+<p>因为byte类型是8位，最大值为127，所以当int强制转换为byte类</p>
+<p>型的时候，值128就会导致溢出</p>
+<p><strong>很经典的题目 1： 永远做不对系列</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-011.png" alt></p>
+<p>第一句： byte类型的 b1 ,b2相加 自动类型转换为 int型</p>
+<p>int类型的（b1 + b2） 赋值给byte类型的b</p>
+<p>属于大单位转换为小单位 可能造成精度损失</p>
+<p>第二句： 3 和4 为常量，编译过程中 先把结果计算出来，</p>
+<p>然后看是否在byte的范围内，如果在就不报错</p>
+<p><strong>总结：</strong></p>
+<p>变量相加，会首先看类型问题，最终把结果赋值也会考虑类型问题</p>
+<p>常量相加，首先做加法，然后看结果是否在赋值的数据类型范围内，如果不是，才报错</p>
+<p><strong>很经典的题目 2： 永远不会做系列</strong></p>
+<p><strong>求输出结果：</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-012.png" alt></p>
+<p>分析过程：</p>
+<p>我们想要知道结果是什么，就应该知道是如何计算的</p>
+<p>而我们又知道<strong>计算机中数据的运算都是补码进行的</strong></p>
+<p>得到补码，首先要计算出数据的二进制</p>
+<ul>
+<li><p>A:  求出130的二进制 10000010</p>
+<p>​     130 是一个整数 所以补齐4个字节 （一个字节8位）</p>
+<p>​     0000000  00000000  00000000  10000010</p>
+</li>
+<li><p>B: 做截取操作，截成byte类型的了</p>
+<p>​    10000010</p>
+<p>​    这个结果是补码</p>
+</li>
+<li><p>C: 已知补码求原码。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>符号位</strong></th>
+<th><strong>数值位</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>补码：</td>
+<td>1</td>
+<td>0000010</td>
+</tr>
+<tr>
+<td>反码：</td>
+<td>1</td>
+<td>0000001</td>
+</tr>
+<tr>
+<td>原码</td>
+<td>1</td>
+<td>1111110</td>
+</tr>
+<tr>
+<td>11111110转换为十进制为 -126</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2-7-字符"><a href="#2-7-字符" class="headerlink" title="2.7 字符"></a>2.7 字符</h3><p><strong>字符</strong>是指在计算机中所使用的 字母、数字、汉字、和符号，表示时用单引号包含在内。</p>
+<p>例如： ‘5’ ‘R’ ‘。’均是字符</p>
+<p>在内存中，字符数据以ASCII码存储 ，即以整数表示</p>
+<p>需要记忆的常见字符‘a’→ 97   ‘A’→ 65  ‘0’→ 48</p>
+<p>其余字符依次递推即可</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-013.png" alt> </p>
+<p><strong>一种特殊的字符——转义字符</strong></p>
+<p>转移字符 = 转义 + 字符 → 转变含义的字符（不再是本来字符的意思）</p>
+<p>结构：<strong>\ + 一些特定的字母</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-014.png" alt> </p>
+<p><strong>其中 \n （换行）和 \t（制表符）最为常用</strong></p>
+<p>(一) 下面两种输出变量love的方法均有换行效果</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-015.png" alt> </p>
+<p><strong>补充： \r和 \n的区别</strong></p>
+<p>回车 \r 意思是<strong>光标重新回到本行的开头</strong></p>
+<p>换行 \n <strong>光标移动到下一行</strong>，<strong>不一定是行首</strong>,取决于其后是否还有内容</p>
+<p>(因为我们常用在一行的句末，所以会误以为会在下一行的行首)</p>
+<p><strong>针对不同系统的换行符：</strong></p>
+<pre><code>苹果系统Mac \n
+Unix、Linux系统 \n
+Windows系统 \r\n</code></pre><p>在windows中，如果在两端字符串的中间使用转义字符，<strong>只有使用 \r\n才能真正的达到了我们日常操作中，回车换行的那种效果</strong>。</p>
+<p><strong>(一) \t是补全当前字符串长度到8</strong>，最少1个，最多8个空格</p>
+<p>所以灵活的使用制表符可以达到对齐两行数据的作用</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-016.png" alt> </p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-017.png" alt> </p>
+<h3 id="2-8-字符串"><a href="#2-8-字符串" class="headerlink" title="2.8 字符串"></a>2.8 字符串</h3><p><strong>字符串是由零个或者多个字符组成的有限序列</strong>，它是编程中表示文本的数据类型</p>
+<p>字符串使用的时候用双引号括起来</p>
+<p>String并不是Java中的基本方法，而是一个类。</p>
+<p>我们在此部分不做过多的介绍，但要知道，String类是一个非常非常重要的类！！！</p>
+<p>我们会在后面有专门一大篇介绍</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-018.png" alt></p>
+<p><strong>总结：</strong></p>
+<p>字符串和其他数据做加法运算的时候，结果是字符串类型。</p>
+<p>这里的 + 不是加法运算，而是字符串连接符</p>
+<h3 id="2-9-运算符"><a href="#2-9-运算符" class="headerlink" title="2.9 运算符"></a>2.9 运算符</h3><ul>
+<li><p>算数运算符</p>
+</li>
+<li><p>赋值运算符</p>
+</li>
+<li><p>比较运算符</p>
+</li>
+<li><p>逻辑运算符</p>
+</li>
+<li><p>位运算符</p>
+</li>
+<li><p>三目运算符</p>
+</li>
+</ul>
+<h4 id="❤-2-9-1-算数运算符：-–"><a href="#❤-2-9-1-算数运算符：-–" class="headerlink" title="❤ 2.9.1 算数运算符： +   -  *  /  %  ++  –"></a>❤ 2.9.1 算数运算符： +   -  *  /  %  ++  –</h4><p>A:  整数相除只能得到整数（想得到小数 需将其中任意的一个数据变成浮点数）</p>
+<p>Eg：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token operator">/</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>  →System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x <span class="token operator">*</span> <span class="token number">1.0</span> <span class="token operator">/</span> y <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>B:  <strong>/</strong>除法求商 <strong>%</strong>除法取余</p>
+<p>C:  <strong>++</strong>, <strong>–</strong> 就是对变量进行自增1或者自减1. 参与运算 前置后置有区别</p>
+<p>来一道例题，大家就整明白了：</p>
+<p>Eg : </p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token punctuation">(</span> x<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span> <span class="token operator">++</span>x <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span> x <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> y <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+首先 x后置<span class="token operator">++</span> 所以括号<span class="token number">1</span>中 x运算时取<span class="token number">4</span> 然后自增为<span class="token number">5</span>
+其次 x前置<span class="token operator">++</span> 所以括号<span class="token number">2</span>中 x <span class="token operator">=</span> <span class="token number">6</span>
+最后 x <span class="token operator">*</span> <span class="token number">10</span>  <span class="token operator">=</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token number">10</span>  <span class="token operator">=</span> <span class="token number">60</span>
+Output y → <span class="token number">4</span> <span class="token operator">+</span> <span class="token number">6</span> <span class="token operator">+</span> <span class="token number">60</span> <span class="token operator">=</span> <span class="token number">70</span></code></pre>
+<h4 id="❤2-92-赋值运算符"><a href="#❤2-92-赋值运算符" class="headerlink" title="❤2.92 赋值运算符"></a>❤2.92 赋值运算符</h4><p><strong>基本的赋值运算符：=</strong></p>
+<p><strong>扩展的赋值运算符：+=，-=，*=，/=，%=</strong></p>
+<p>在刚开始的时候我们书写赋值语句，还是推荐使用 基本的方法，待到日后熟练，再转为扩展的赋值语句</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-019.png" alt> </p>
+<p><strong>很经典的题目 1： 你猜到底对不对</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-020.png" alt></p>
+<p>编译第一个语句报错：</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-021.png" alt> </p>
+<p>编译第二个语句没有报错：（? ? ?）</p>
+<p>扩展的赋值运算符其实隐含了一个强制类型转换</p>
+<p>s += 1； 不是等价于 s = s + 1  而是等价于 s = ( s的数据类型 ) （s + 1）;</p>
+<h5 id="❤-2-9-3关系运算符-gt-gt-lt-lt"><a href="#❤-2-9-3关系运算符-gt-gt-lt-lt" class="headerlink" title="❤ 2.9.3关系运算符 ==, != , &gt; , &gt;= , &lt; , &lt;="></a>❤ 2.9.3关系运算符 ==, != , &gt; , &gt;= , &lt; , &lt;=</h5><p>== 无论你的操作是简单还是复杂木结构是boolean类型</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-022.png" alt> </p>
+<p>Output → flase</p>
+<h4 id="❤2-9-4-逻辑运算符-amp-amp-amp-！"><a href="#❤2-9-4-逻辑运算符-amp-amp-amp-！" class="headerlink" title="❤2.9.4 逻辑运算符  &amp; |   &amp;&amp; || ！"></a>❤2.9.4 逻辑运算符  &amp; |   &amp;&amp; || ！</h4><p><img src="http://image.ideal-20.cn/basic/1.1-03-023.png" alt> </p>
+<p>逻辑运算符用于连接布尔型表达式，在java中。不可以写成3 &lt; x &lt; 6 应该写 成 x &gt; 3 &amp; x &lt; 6</p>
+<p>&amp;&amp;和&amp;的区别？ 同理||和|的区别</p>
+<p>A： 最终结果一样</p>
+<p>B： &amp;&amp;具有短路作用。左边是false，右边不执行。（<strong>&amp;&amp;效率更高</strong>）</p>
+<p><strong>eg：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+        <span class="token keyword">boolean</span> b1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">++</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>y<span class="token operator">++</span> <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//运行结果</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+<span class="token boolean">true</span></code></pre>
+<h4 id="❤2-9-5-位运算符"><a href="#❤2-9-5-位运算符" class="headerlink" title="❤2.9.5 位运算符"></a>❤2.9.5 位运算符</h4><p>（3 &amp; 4） （3 | 4） （3 ^ 4） （~3） （3 &lt;&lt; 2） （&gt;&gt;） （&gt;&gt;&gt;）</p>
+<p>因为是位运算，所以我们需要把数据换算成二进制</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-024.png" alt> </p>
+<p>^的特点：一个数据对另一个数据位异或两次，该数本身不变</p>
+<p><strong>很经典的题目 1： 交换两个整型数的值</strong></p>
+<p><strong>做一个灵活的交换者</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-025.png" alt> </p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-026.png" alt></p>
+<p><strong>我们先直接给出位运算的结论</strong></p>
+<p> <img src="http://image.ideal-20.cn/basic/1.1-03-027.png" alt></p>
+<p><strong>这是详细的运算过程，但是我们使用时直接用结论即可</strong></p>
+<p> <img src="http://image.ideal-20.cn/basic/1.1-03-030.png" alt="img"></p>
+<p>题目：</p>
+<p>请用最有效率的方式写出计算2乘以8的结果？</p>
+<p>2 * 8</p>
+<p>2  &lt;&lt;  3</p>
+<h4 id="❤2-9-6-三目运算符"><a href="#❤2-9-6-三目运算符" class="headerlink" title="❤2.9.6 三目运算符"></a>❤2.9.6 三目运算符</h4><p><strong>这一部分要与下面马上要学习的if语句进行对照学习</strong></p>
+<p>满足表达式则执行冒号前的表达式，反之则时候后面的</p>
+<p>格式 ： （条件表达式）？（条件真的表达式）：（条件假的表达式）</p>
+<p>条件表达式：结果是一个boolean型</p>
+<p>Eg：  </p>
+<pre class=" language-java"><code class="language-java">将a<span class="token punctuation">,</span>b 中的较小数赋值给x
+x <span class="token operator">=</span> a  <span class="token operator">&lt;</span> b <span class="token operator">?</span> a <span class="token operator">:</span> b  → <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;</span> b<span class="token punctuation">)</span> x <span class="token operator">=</span> a<span class="token punctuation">;</span>  <span class="token keyword">else</span> x <span class="token operator">=</span> b</code></pre>
+<h3 id="2-10-键盘录入"><a href="#2-10-键盘录入" class="headerlink" title="2.10 键盘录入"></a>2.10 键盘录入</h3><p>我们之前所写的程序中，数据的值都是固定的，在源码中就写好的，而我们有时候想要让用户来决定一些值的具体数据（例如：学生成绩录入），所以键盘录入就是让用户输入一些值，使得程序更加灵活。</p>
+<p>现在我们对于导包以及对象的概念仍然比较模糊，但是我们在介绍别的知识的时候也会频繁的用到，所以大家暂时按照以下的格式记忆下来。</p>
+<ul>
+<li><p>A：导包：</p>
+<ul>
+<li><p>格式：import java.util.Scanner;</p>
+</li>
+<li><p>位置：在class上面</p>
+</li>
+</ul>
+</li>
+<li><p>B：创建键盘录入对象</p>
+<ul>
+<li>格式：Scanner sc = new Scanner(System.in);</li>
+</ul>
+</li>
+<li><p>C:通过对象获取数据</p>
+<ul>
+<li><p>格式： int  x  =  sc.nextint();</p>
+</li>
+<li><p>String s = sc.nextLine();（字符串录入）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-032.png" alt></p>
+<h3 id="2-11-选择结构（分支结构）"><a href="#2-11-选择结构（分支结构）" class="headerlink" title="2.11 选择结构（分支结构）"></a>2.11 选择结构（分支结构）</h3><p><strong>· if 语句</strong></p>
+<p><strong>· switch 语句</strong></p>
+<p>认识选择结构后我们的程序就会变得很有趣了，我们先来学习一下最常见的If条 件语句</p>
+<h4 id="一-if语句"><a href="#一-if语句" class="headerlink" title="(一)  if语句"></a>(一)  if语句</h4><p><img src="http://image.ideal-20.cn/basic/1.1-03-033.png" alt> </p>
+<p><strong>更正：满足就执行，不满足就出去</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-034.png" alt></p>
+<p>我们对照三元运算符和if语句，这两个是不是完全一样的呢？</p>
+<p>三元运算符的操作都可以使用if语句改进，反之不成立</p>
+<p>什么时候不成立呢？</p>
+<p>当if语句控制的语句体是一条输出语句的时候，就不成立。</p>
+<p>因为三元运算符是一个运算符，必须要求有一个结果返回。</p>
+<p>而输出语句却不能作为一个返回结果</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-035.png" alt></p>
+<p><strong>三个数中求最大值：</strong>可以用三目运算 跳转2.9.6</p>
+<p>用if语句实现：</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-037.png" alt></p>
+<h3 id="二-switch语句"><a href="#二-switch语句" class="headerlink" title="(二) switch语句"></a>(二) switch语句</h3><p> <img src="http://image.ideal-20.cn/basic/1.1-03-038.png" alt></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-040.png" alt> </p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-039.png" alt></p>
+<p><strong>注意：</strong> </p>
+<ul>
+<li><p>case后面只能是常量，不能是变量，而且不能出现相同的</p>
+</li>
+<li><p>default可以省略 但是一般不建议，</p>
+</li>
+</ul>
+<p>（除非判断的值是固定的，单选题）</p>
+<ul>
+<li><p>break 可以省略，一般不建议</p>
+</li>
+<li><p>default可以出现在switch语句的任意位置</p>
+</li>
+<li><p>switch语句的结束条件：</p>
+</li>
+</ul>
+<p>遇到break  或者  执行到程序的末尾</p>
+<p><strong>以下条件选用switch</strong></p>
+<ul>
+<li><p>条件分支有多个</p>
+</li>
+<li><p>条件的值是整数或一个字符型</p>
+</li>
+</ul>
+<p><strong>原因</strong></p>
+<ul>
+<li><p>如果条件分支太多时用if语句，一定会出现if的嵌套，if嵌套的越多，程序 的开销就会随着增大，这样整个程序的运行效率就一定会大大降低</p>
+</li>
+<li><p>switch值比较一次就可以找出条件的结果</p>
+</li>
+</ul>
+<p><strong>我们在下面将上面的if成绩例程改为switch版本是不是简洁了很多呢</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-041.png" alt></p>
+<h3 id="2-12-循环语句"><a href="#2-12-循环语句" class="headerlink" title="2.12 循环语句"></a>2.12 循环语句</h3><ul>
+<li><p><strong>for循环</strong></p>
+</li>
+<li><p><strong>while循环</strong></p>
+</li>
+<li><p><strong>do …while循环</strong></p>
+</li>
+</ul>
+<p><strong>我们如果存在大量的重复语句，我们就可以使用循环语句，进行处理。</strong></p>
+<h4 id="一-for循环"><a href="#一-for循环" class="headerlink" title="(一) for循环"></a>(一) for循环</h4><p><img src="http://image.ideal-20.cn/basic/1.1-03-042.png" alt></p>
+<p>for 语句不仅适用于循环次数明确的情况，也适用于循环次数不明确的情况  <strong>（满足条件继续循环，不满足跳出循环）</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-043.png" alt></p>
+<p><strong>求偶数和还有一种方法：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">int</span> x <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> x<span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Sum <span class="token operator">+=</span> x
+<span class="token punctuation">}</span></code></pre>
+<p><strong>求5的阶乘</strong></p>
+<p>分析 什么是阶乘  n! = n * ( n -1 ) * ( n - 2) * … * 3 * 2 *1</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> jc <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义最终结果变量</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> x <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> x<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Jc <span class="token operator">*=</span> x
+<span class="token punctuation">}</span></code></pre>
+<p><strong>在控制台输出所有的水仙花数</strong></p>
+<p>水仙花数就是指一个三位数，其各位数字的立方等于该数本身</p>
+<p>Eg：153 = 1*1<em>1 +5</em>5<em>5+ 3</em>3*3 = 125 +27 =153</p>
+<p><strong>通过 for循环我们可以实现获取一个三位数</strong></p>
+<p><strong>获取这个三位数的个十百位上的数据</strong></p>
+<p><strong>获取方法： 假设有一个数据为 153</strong></p>
+<pre class=" language-java"><code class="language-java">Ge： <span class="token number">153</span> <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">=</span><span class="token number">3</span>
+Shi ：<span class="token number">153</span> <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">=</span> <span class="token number">5</span>
+Bai： <span class="token number">153</span> <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">/</span> <span class="token number">10</span> <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">=</span> <span class="token number">1</span>
+Qian： x<span class="token operator">/</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">%</span><span class="token number">10</span>
+Wan ：x<span class="token operator">/</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">%</span><span class="token number">10</span></code></pre>
+<p><strong>利用嵌套循环：可以输出各种样式的三角形</strong></p>
+<p><strong>外循环控制行数，内循环控制列数</strong></p>
+<p><strong>System.out.print() → 不换行</strong></p>
+<p><strong>System.out.println() → 换行</strong></p>
+<p><strong>九九乘法表</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-047.png" alt></p>
+<h4 id="二-while循环"><a href="#二-while循环" class="headerlink" title="(二) while循环"></a>(二) while循环</h4><p><img src="http://image.ideal-20.cn/basic/1.1-03-044.png" alt> </p>
+<p>判断条件表达式的值为逻辑真时，重复执行循环体（不满足出去）</p>
+<p><strong>死循环：</strong></p>
+<p>第一种：</p>
+<p>for(;;){}</p>
+<p>第二种：</p>
+<p>while(true){}</p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-045.png" alt></p>
+<p><strong>While循环和for循环的区别？</strong></p>
+<p>使用区别：</p>
+<p>for循环 控制条件定义的变量，只能在循环内使用</p>
+<p>while 循环 ….. 可以在循环外使用</p>
+<p>因为变量及早的从内存中消失，可以提高内存的使用效率</p>
+<p>另一种理解：</p>
+<p>for 语句不仅适用于循环次数明确的情况，也适用于循环次数不明确的情况</p>
+<p>while 循环适用于循环次数不明确的情况</p>
+<h4 id="三-do-…-while循环"><a href="#三-do-…-while循环" class="headerlink" title="(三) do … while循环"></a>(三) do … while循环</h4><p><img src="http://image.ideal-20.cn/basic/1.1-03-046.png" alt></p>
+<p>先执行循环体，再判断继续条件不为逻辑真时，再执行循环体并判断条 件， 直到条件为假转去执行while下面的语句（不满足出去）</p>
+<p>至少要执行一次</p>
+<p><strong>2.12 跳转控制语句</strong></p>
+<ul>
+<li><p><strong>break：中断</strong></p>
+</li>
+<li><p><strong>continue: 继续</strong></p>
+</li>
+<li><p><strong>return: 返回</strong></p>
+</li>
+</ul>
+<p><strong>(一) break</strong> 的意思是<strong>中断</strong></p>
+<p>适用：switch、循环语句中(循环语句中加入了if判断的情况)</p>
+<p><strong>跳出单层循环（</strong>从最近的封闭循环体中跳出<strong>）</strong></p>
+<p>若想跳出多层循环 需要使用带标签的语句</p>
+<p><strong>格式：标签名：语句</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-048.png" alt></p>
+<p><strong>(二) continue 继续</strong>的意思是</p>
+<p><strong>跳出一次循环进入下一次的执行</strong></p>
+<p><strong>（</strong>结束本次循环，进入下次循环的判定。<strong>）</strong></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-049.png" alt></p>
+<p><img src="http://image.ideal-20.cn/basic/1.1-03-050.png" alt></p>
+<p><strong>(三) retuen</strong></p>
+<p>return关键字不是为了跳出循环体，更常用的功能是<strong>（结束一个方法），</strong>也就是退出一个方法。跳转到上层调用的方法。</p>
+<h2 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h2><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见， 蟹蟹大家 ！^_^</p>
+<p>如果能帮到你的话，那就来关注我吧！</p>
+<blockquote>
+<p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
+<p>一个坚持推送原创Java技术的公众号：理想二旬不止</p>
+</blockquote>
+<p><img src="http://image.ideal-20.cn/img/QRcode258.jpg" alt> </p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《003-Java基础语法》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/16/1.1-java-ji-chu-zhi-shi/003-java-ji-chu-yu-fa/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                BWH_Steven
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80NjIzNy8yMjc0OA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/09/16/1.1-java-ji-chu-zhi-shi/004-fang-fa-he-shu-zu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="004-Java方法和数组">
+                        
+                        <span class="card-title">004-Java方法和数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java方法和数组知识讲解
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-Java基础知识/" class="post-category" target="_blank">
+                                    1.1-Java基础知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/方法/" target="_blank">
+                        <span class="chip bg-color">方法</span>
+                    </a>
+                    
+                    <a href="/tags/数组/" target="_blank">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/16/1.1-java-ji-chu-zhi-shi/002-java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="002-Java开发环境不再需要配置classpath">
+                        
+                        <span class="card-title">002-Java开发环境不再需要配置classpath</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            【JDK 1.5+】你还在配置classpath吗？
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-Java基础知识/" class="post-category" target="_blank">
+                                    1.1-Java基础知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/环境变量/" target="_blank">
+                        <span class="chip bg-color">环境变量</span>
+                    </a>
+                    
+                    <a href="/tags/classpath/" target="_blank">
+                        <span class="chip bg-color">classpath</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            <div>@2019 BWH_Steven · 版权所有</div>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">112.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
+            
+
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">    
+    <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ideal_bwh@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

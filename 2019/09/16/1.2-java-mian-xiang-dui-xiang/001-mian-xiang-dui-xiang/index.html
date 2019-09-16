@@ -1,0 +1,1230 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="001-Java面向对象, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="description" content="
+第一章 面向对象
+小白：Java是一门完全面向对象的编程语言！嗯？什么是面向过程？什么又是面向对象呢？
+
+
+大佬：在我们正式进入学习这部分前，了解一下面向过程和面向对象这两个概念，对于我们 接下来的学习有很大的好处。别急，下面我就来和你说">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>001-Java面向对象 | 理想二旬不止|Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">理想二旬不止|Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">理想二旬不止|Blog</div>
+        <div class="logo-desc">
+            
+            这城市总是风很大 孤独的人总是晚回家
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        001-Java面向对象
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Java面向对象/" target="_blank">
+                                <span class="chip bg-color">Java面向对象</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-2-Java面向对象/" class="post-category" target="_blank">
+                                1.2-Java面向对象
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-16
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        5.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        18 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="http://image.ideal-20.cn/basic/1.1-01-001.png" alt></p>
+<h2 id="第一章-面向对象"><a href="#第一章-面向对象" class="headerlink" title="第一章 面向对象"></a>第一章 面向对象</h2><blockquote>
+<p>小白：Java是一门完全面向对象的编程语言！嗯？什么是面向过程？什么又是面向对象呢？</p>
+</blockquote>
+<blockquote>
+<p>大佬：在我们正式进入学习这部分前，了解一下面向过程和面向对象这两个概念，对于我们 接下来的学习有很大的好处。别急，下面我就来和你说一说。</p>
+</blockquote>
+<h3 id="面向过程——步骤化"><a href="#面向过程——步骤化" class="headerlink" title="面向过程——步骤化"></a>面向过程——步骤化</h3><p>面向过程就是分析出实现需求所需要的步骤，通过函数一步一步实现这些步骤，接着依次调用即可</p>
+<h3 id="面向对象——行为化"><a href="#面向对象——行为化" class="headerlink" title="面向对象——行为化"></a>面向对象——行为化</h3><p>面向对象是把整个需求按照特点、功能划分，将这些存在共性的部分封装成对象，创建了对象不是为了完成某一个步骤，而是描述某个事物在解决问题的步骤中的行为</p>
+<blockquote>
+<p>小白：面向过程还挺明白的，面向对象也太难理解了吧（哭了）</p>
+</blockquote>
+<blockquote>
+<p>大佬：我再来举个例子再给你好好说一说</p>
+</blockquote>
+<h3 id="桌球实例-帮助理解"><a href="#桌球实例-帮助理解" class="headerlink" title="桌球实例-帮助理解"></a>桌球实例-帮助理解</h3><p><strong>我们先提出一个需求：</strong></p>
+<p>设计一个桌球游戏（略过开球，只考虑中间过程）</p>
+<h4 id="面向过程方式思考："><a href="#面向过程方式思考：" class="headerlink" title="面向过程方式思考："></a>面向过程方式思考：</h4><p>1.palyer1 击球 </p>
+<p>2.实现画面击球效果  </p>
+<p>3.判断是否进球及有效  </p>
+<p>4.palyer2击球  </p>
+<p>5.实现画面击球效果  </p>
+<p>6.判断是否进球及有效   </p>
+<p>7.返回步骤1     </p>
+<p>8.输出游戏结果</p>
+<p><strong>把上面的步骤通过函数一步一步实现</strong>，这个需求就完成了。</p>
+<h4 id="面向对象方式思考："><a href="#面向对象方式思考：" class="headerlink" title="面向对象方式思考："></a>面向对象方式思考：</h4><p>经过观察我们可以看到，其实在上面的流程中存在很多<strong>共性</strong>的地方</p>
+<p>所以我们将这些共性部分全集中起来，做成一个<strong>通用的结构</strong></p>
+<ol>
+<li><p>玩家系统（包括palyer1和palyer2）</p>
+</li>
+<li><p>击球效果系统，负责展示给用户游戏时的画面</p>
+</li>
+<li><p>规则系统，判断是否犯规，输赢等</p>
+</li>
+</ol>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-001.png" alt> </p>
+<p>我们将繁琐的步骤，通过行为、功能，<strong>模块化</strong>，这就是面向对象，我们甚至可以利用该程序，分别快速实现8球和斯诺克的不同游戏（只需要修改规则即可，玩家系统，击球效果系统都是一致的）</p>
+<h3 id="面向过程和面向对象的优缺点："><a href="#面向过程和面向对象的优缺点：" class="headerlink" title="面向过程和面向对象的优缺点："></a>面向过程和面向对象的优缺点：</h3><h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h4><p><strong>优点</strong>：性能上它是优于面向对象的，因为类在调用的时候需要实例化，开销过大。</p>
+<p><strong>缺点</strong>：不易维护、复用、扩展</p>
+<p>用途：单片机、嵌入式开发、Linux/Unix等对性能要求较高的地方</p>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p><strong>优点：</strong>易维护、易复用、易扩展，由于面向对象有<strong>封装</strong>、<strong>继承</strong>、<strong>多态性</strong>的特性，可以设计出<strong>低耦合</strong>的系统，使系统更加灵活、更加易于维护<br><strong>缺点：</strong>性能比面向过程低</p>
+<p><strong>低耦合</strong>，简单的理解就是说，模块与模块之间尽可能的独立，两者之间的关系尽可能简单，尽量使其独立的完成成一些子功能，这避免了牵一发而动全身的问题。这一部分我们会在面向对象学习结束后进行系统的整理和总结。</p>
+<p>只通过教科书后的例题是无法体会到面向过程所存在的问题的，在一些小例程中，面向过程感觉反而会更加的简单，但是一旦面临较大的项目，我们需要编写N个功能相似的函数，函数越来越多，代码量越来越多，Bug之路也就此开始了。</p>
+<h3 id="1-1-类和对象"><a href="#1-1-类和对象" class="headerlink" title="1.1 类和对象"></a>1.1 类和对象</h3><p>面向对象的思想是如何在java展现的呢？ 就是通过类和对象</p>
+<p><strong>类</strong>是一组相关的属性和行为的集合。是一个抽象的概念。<br><strong>对象</strong>是该类事物的具体表现形式。具体存在的个体。</p>
+<p><strong>成员变量</strong>事物的属性</p>
+<p><strong>成员方法</strong>事物的行为</p>
+<p>上面我们说了这几个概念，那么到底应该怎么理解呢？</p>
+<p>类就是对一些具有<strong>共性特征</strong>，并且<strong>行为相似</strong>的个体的描述。</p>
+<p>比如小李和老张都有姓名、年龄、身高、体重等一些<strong>属性，</strong>并且两人都能够进行聊天、运动等<strong>相似的行为</strong>。</p>
+<p>由于这两个人具有这些共性的地方，所以我们把它抽象出来，定义为一个<strong>类</strong>——<strong>人类</strong>，而小李、老王正是这个类中的个体（对象），而个体才是真正具体的存在，光提到人类，你只知道应该有哪些属性行为，但你不知道他具体的一些值，比如你知道他属于“人类”所以他应该有姓名，年龄等属性，但你并不知道他具体叫什么，年龄多大了。而小李和老王这两个具体的对象，却能够实实在在的知道老王今年30岁了、身高175等值。</p>
+<p><strong>结合上面的例子再总结一下：</strong></p>
+<p>成员变量就是用来描述这个类的属性的，比如人类应该拥有姓名，年龄等属性</p>
+<p>成员方法就是用来描述事物的行为的，比如人类能够聊天、运动等行为</p>
+<h5 id="1-1-1-类的定义及使用"><a href="#1-1-1-类的定义及使用" class="headerlink" title="1.1_1 类的定义及使用"></a><strong>1.1_1 类的定义及使用</strong></h5><p>我们了解了类和对象的基本定义和概念</p>
+<p>下面我们就通过一个实例 来了解到底如定义一个类</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-002.png" alt></p>
+<p><strong>A: 类的定义</strong></p>
+<p><strong>成员变量：</strong>定义格式和普通变量一样，只是位置不同，在<strong>类中，方法外</strong>。</p>
+<p><strong>成员方法：</strong>定义格式和普通方法一样，只是去<strong>掉了static</strong>（后期讲解原因）</p>
+<p><strong>B: 创建并且使用类</strong></p>
+<p><strong>a: 创建对象格式</strong></p>
+<pre class=" language-java"><code class="language-java">类名 对象名 <span class="token operator">=</span>  <span class="token keyword">new</span> 类名<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Eg：Person p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>b:如何使用成员变量和成员方法呢</strong></p>
+<p>对象名.成员变量</p>
+<p>对象名.成员方法()</p>
+<pre><code>Eg：p.reading();
+p.sleeping();</code></pre><p>其实我们可以看出来，类的定义还是很简单的，结合了我们前面的知识，只是一些位置上的不同罢了，至于创建对象格式中每部分的意义我们在下面马上就要讲解了（我们还需要补充一些知识点）</p>
+<p>我们先来看这么一个话题</p>
+<p>经常听说有一个词叫做局部变量，它和类中的成员变量有什么关系吗？</p>
+<h4 id="1-1-2-成员变量和局部变量的区别："><a href="#1-1-2-成员变量和局部变量的区别：" class="headerlink" title="1.1_2 成员变量和局部变量的区别："></a>1.1_2 成员变量和局部变量的区别：</h4><p><strong>(1) 在类中的位置不同</strong></p>
+<p>成员变量：类中方法外</p>
+<p>局部变量：方法定义中或者方法声明上</p>
+<p><strong>(2) 在内存中的位置不同</strong></p>
+<p>成员变量：在堆中</p>
+<p>局部变量：在栈中</p>
+<p><strong>(3) 生命周期不同</strong></p>
+<p>成员变量：随着对象的创建而存在，随着对象的消失而消失</p>
+<p>局部变量：随着方法的调用而存在，随着方法的调用完毕而消失</p>
+<p><strong>(4) 初始化值不同</strong></p>
+<p><strong>成员变量：有默认值（下面会详讲这一点）</strong></p>
+<p>局部变量：没有默认值，必须定义，赋值，然后才能使用</p>
+<blockquote>
+<p>关于初始化问题我们在下面详细讲解，但是我现在还有一个问题，在我们学习java中内存分配的时候，有这样一&gt;句话，“堆内存用来存放new创建的对象和数组” 换句话说对象存在于堆中，而成员变量存在于类中而且对象是类&gt;的个体，所以成员变量也存在于堆中，那么问题就来了，按照同样的方式推导的时候，则会发现方法也和成员变&gt;量一样存在于对象中，岂不就是说，局部变量也存在于堆中呢? 这明显与我们上面的定义有区别</p>
+</blockquote>
+<blockquote>
+<p>一个类可以创建n个不同的对象，当我们new一个对象后，这个对象实体，已经在堆上分配了内存空间，由于类&gt;的成员变量在不同的对象中各不相同（例如，小李和老王的姓名不同），都需要自己各自的存储空间，所以类的成员变量会随着对象存储在堆中，而由于类的方法是所有对象通用的，所以创建对象时，方法里面的局部变量并没有被创建，只有等到对象使用方法的时候才会被压入栈。</p>
+</blockquote>
+<h4 id="1-1-3-形式参数的问题："><a href="#1-1-3-形式参数的问题：" class="headerlink" title="1.1_3 形式参数的问题："></a>1.1_3 形式参数的问题：</h4><p>我们知道堆中存放着new出来的对象以及数组，两者均为引用类型</p>
+<p>在讲数组的相关知识的时候，我们已经讲过了基本类型和数组这一种引用类型，形式参数对实际参数的影响</p>
+<p>跳转—第三章 3.3_1参数传递问题</p>
+<p>在我们学习对象后，我们继续来看一下这个问题</p>
+<p><strong>基本类型</strong>：形式参数的改变不影响实际参数(值传递)<br><strong>引用类型</strong>：形式参数的改变直接影响实际参数(引用传递)</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-003.png" alt></p>
+<h4 id="1-1-4-匿名对象-理解"><a href="#1-1-4-匿名对象-理解" class="headerlink" title="1.1_4 匿名对象(理解)"></a>1.1_4 匿名对象(理解)</h4><p>我们先来了解一下如何创建匿名对象</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-004.png" alt></p>
+<p>(1)简单的理解就是：<strong>没有名字的对象</strong></p>
+<p>(2)应用场景</p>
+<p>A:调用方法，仅仅只调用一次的时候。</p>
+<p>B:可以作为实际参数传递</p>
+<p>好处：匿名对象调用完就是垃圾，可以被垃圾回收器回收，并且这样写比较简化。</p>
+<p>注意：如果对一个对象的多个成员进行调用，就必须给这个对象起名字（即上图中的 s），即使用普通创建对象的方法</p>
+<p>我们下面来看一个实例来看一下如何具体使用匿名对象</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-005.png" alt></p>
+<h4 id="1-1-5-封装的概述和使用"><a href="#1-1-5-封装的概述和使用" class="headerlink" title="1.1_5 封装的概述和使用"></a>1.1_5 封装的概述和使用</h4><p>首先我们先来简单举一个例子：</p>
+<p>例如：夏天宿舍很热，我们（用户）只需要操作遥控器即可使用空调，并不需要了解空调内部是如何运行的</p>
+<p>现在由于知识掌握较少，所以对于封装的概念理解不是很深，不要着急，先过一遍，针对封装的意义及问题我会写一篇具体的文章，现在只需要有一个印象即可。</p>
+<p><strong>封装概述</strong>：是指隐藏对象的属性和实现细节，仅对外提供公共访问方式</p>
+<p><strong>封装好处</strong>：</p>
+<ul>
+<li><p>隐藏实现细节，提供公共的访问方式</p>
+</li>
+<li><p>提高了代码的复用性</p>
+</li>
+<li><p>提高安全性</p>
+</li>
+</ul>
+<p><strong>封装原则：</strong></p>
+<ul>
+<li><p>将不需要对外提供的内容都隐藏起来</p>
+</li>
+<li><p>把属性隐藏，提供公共方法对其访问</p>
+</li>
+</ul>
+<p><strong>思考过程：</strong></p>
+<p>通过对象去给成员变量赋值，可以赋值一些非法的数据</p>
+<p>这是不合理的。所以在赋值之前应该先对数据进行判断</p>
+<p>StudenDemo是一个测试类，测试类一般只创建对象，调用方法</p>
+<p>所以这个判断应该定义在Student类中。需要使用逻辑语句</p>
+<p>逻辑语句应该定义在方法中。所以在Student类中提供一个方法来对数据进行校验</p>
+<p>但是如果偏偏不调用方法来赋值，还是直接赋值</p>
+<p>这样我们的方法就没有起作用</p>
+<p>所以我们必须强制要求使用我的方法，而不能直接调用成员变量</p>
+<p>针对这种情况 Java提供了一个关键字 private</p>
+<p>Private：私有的，可以修饰成员变量和成员方法</p>
+<p>被private修饰的成员只能在本类中访问，所以外界想要操作类中的成员变量就必须通过调用类中的方法来实现</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-006.png" alt></p>
+<h4 id="1-1-6-访问修饰符"><a href="#1-1-6-访问修饰符" class="headerlink" title="1.1_6 访问修饰符"></a>1.1_6 访问修饰符</h4><p>客户端程序员：即在其应用中使用数据类型的类消费者，他的目标是收集各种用来实现快速应用开发的类。</p>
+<p>类创建者：即创建新数据类型的程序员，目标是构建类。　　</p>
+<p>访问控制存在的原因：</p>
+<p>a、让客户端程序员无法触及他们不应该触及的部分  ；</p>
+<p>b、允许库设计者可以改变类内部的工作方式而不用担心会影响到客户端程序员</p>
+<p>java的四个关键字：public、protected、default、private</p>
+<p>（他们决定了紧跟其后被定义的东西可以被谁使用）</p>
+<p>适用范围&lt;访问权限范围越小，安全性越高&gt;</p>
+<table>
+<thead>
+<tr>
+<th>访问权限</th>
+<th><strong>类</strong></th>
+<th><strong>包</strong></th>
+<th><strong>子类</strong></th>
+<th>其他包</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>对任何人都是可用的</td>
+</tr>
+<tr>
+<td>protect</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td>继承的类可以访问以及和private一样的权限</td>
+</tr>
+<tr>
+<td>default</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td></td>
+<td>继承的类可以访问以及和private一样的权限</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td></td>
+<td></td>
+<td></td>
+<td>除类型创建者和类型的内部方法之外的任何人都不能访问的元素</td>
+</tr>
+</tbody></table>
+<h4 id="1-1-7-private的应用标准案例"><a href="#1-1-7-private的应用标准案例" class="headerlink" title="1.1_7 private的应用标准案例"></a>1.1_7 private的应用标准案例</h4><p>可用this关键字进行完善（一般都是使用完善后的）</p>
+<p>this的内容在下面马上介绍</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-007.png" alt></p>
+<h4 id="1-1-8-this关键字的概述和应用"><a href="#1-1-8-this关键字的概述和应用" class="headerlink" title="1.1_8 this关键字的概述和应用"></a>1.1_8 this关键字的概述和应用</h4><p>这里的调用只能<strong>通过对象名</strong>，这里它应该代表的是student的一个对象</p>
+<p><strong>this</strong>：代表所在类的对象引用</p>
+<p><strong>记住：</strong> 方法被哪个对象调用，this就代表哪个对象</p>
+<p><strong>适用</strong>：局部变量隐藏成员变量（稍后补充）</p>
+<h3 id="1-2-构造方法"><a href="#1-2-构造方法" class="headerlink" title="1.2 构造方法"></a>1.2 构造方法</h3><p><strong>构造方法和它所在类的名字相同</strong>，但构造方法没有返回值。</p>
+<p>通常会使用构造方法给一个类的实例变量赋初值，或者执行其它必要的步骤来创建一个完整的对象</p>
+<p>怎么理解呢？</p>
+<p>当一个对象被创建时候，构造方法用来初始化该对象。</p>
+<p>那么什么叫做初始化呢？</p>
+<p>我们要知道吗，构造函数又被叫做<strong>构造器</strong>，它就是为了<strong>初始化类</strong>，当调用该构造器，会用值去<strong>初始化成员</strong>，当使用<strong>带参构造</strong>时，会将<strong>参数中的值传递给成员</strong>，而使用无参构造时，即会用一些<strong>默认的值</strong>来进行成员的初始化</p>
+<p><strong>例如：</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> String name；
+<span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token keyword">public</span> bool flag<span class="token punctuation">;</span></code></pre>
+<p>上面的三个成员变量被无参构造进行默认初始化的时候，会被初始化</p>
+<p>name = <strong>null</strong>； age = <strong>0</strong>； flag = <strong>false</strong>；</p>
+<p><strong>注意：</strong></p>
+<p>A:如果我们没有给出构造方法，系统将自动提供一个无参构造方法</p>
+<p>B:如果我们给出了构造方法，系统将不再提供默认的无参构造方法</p>
+<p>如果这个时候我们还想使用无参构造方法，就必须自己给出，建议永远 给出无参构造方法（所以我们习惯于在类中同时给出无参和带参构造方法）</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-008.png" alt> </p>
+<p><strong>给成员变量赋值的两种方法：</strong></p>
+<p>A:setXxx()</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-009.png" alt></p>
+<p>B:构造方法</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-010.png" alt></p>
+<p>讲到这里我们不得不提一下，get、set方法，在今后写代码的时候，我们需要频繁的用到，其实这里就体现了<strong>封装</strong>，<strong>不让用户直接操作成员</strong>，可以起到<strong>安全</strong>的作用，具体内容可以看前封装部分的知识</p>
+<p>构造方法是为了创建对象时，传入一些必要的参数用来初始化对象。</p>
+<p>setter/getter是为了控制属性可不可以读写</p>
+<p>两者不矛盾</p>
+<p><strong>之前在讲解类的时候，我们由于缺少一些知识的铺垫，所以我们将类的初始化过程讲一下：</strong></p>
+<p><strong>类的初始化过程</strong></p>
+<p><strong>Student s = new Student();在内存中做了哪些事情？</strong></p>
+<ul>
+<li><p>加载Student.class文件进内存</p>
+</li>
+<li><p>在栈内存为s开辟空间</p>
+</li>
+<li><p>在堆内存为学生对象开辟空间</p>
+</li>
+<li><p>对学生对象的成员变量进行默认初始化</p>
+</li>
+<li><p>对学生对象的成员变量进行显示初始化</p>
+</li>
+<li><p>通过构造方法对学生对象的成员变量赋值</p>
+</li>
+<li><p>学生对象初始化完毕，把对象地址赋值给s变量</p>
+</li>
+</ul>
+<h3 id="1-3-static关键字"><a href="#1-3-static关键字" class="headerlink" title="1.3 static关键字"></a>1.3 static关键字</h3><p>Static关键字注意事项</p>
+<p><strong>A: 在静态方法中是没有this关键字的</strong></p>
+<p>静态是随着类的加载而加载，this是随着对象的创建而  存在的 → 静态比对象先存在</p>
+<p><strong>B: 静态方法只能访问静态的成员变量和静态的成员方法</strong></p>
+<p><strong>静态方法：</strong></p>
+<p><strong>A：成员变量：</strong>只能访问静态变量</p>
+<p><strong>B：成员方法：</strong>只能访问静态成员方法</p>
+<p><strong>非静态方法：</strong></p>
+<p><strong>A: 成员变量：</strong>可以是静态的，也可以是非静态的</p>
+<p><strong>B: 成员方法：</strong>可以是静态的成员方法，也可以是非静态的成员方法</p>
+<p><strong>为什么静态方法不能访问非静态方法呢？</strong></p>
+<p>因为静态方法是随着类的加载而加载的，静态是优于对象存在的，你要访问非静态的东西，可是这时候可能它还不存在。</p>
+<p><strong>总结起来一句话：静态只能访问静态</strong></p>
+<h3 id="1-4-静态变量和成员变量"><a href="#1-4-静态变量和成员变量" class="headerlink" title="1.4 静态变量和成员变量"></a>1.4 静态变量和成员变量</h3><p>趁热打铁，我们来对静态变量和成员变量做一些区分</p>
+<p><strong>所属不同</strong></p>
+<ul>
+<li><p>静态变量属于类，所以也称为类变量</p>
+</li>
+<li><p>成员变量属于对象。所以也称为实例变量（对象变量）</p>
+</li>
+</ul>
+<p><strong>内存中位置不同</strong></p>
+<ul>
+<li><p>静态变量存储于方法区的静态区</p>
+</li>
+<li><p>成员变量存储于堆内存</p>
+</li>
+</ul>
+<p><strong>·内存出现时间不一样</strong></p>
+<ul>
+<li><p>静态变量随着类的加载而加载，随着类的消失而消失</p>
+</li>
+<li><p>成员变量随着对象的创建而存在，随着对象的消失而消失</p>
+</li>
+</ul>
+<p><strong>调用不同·</strong></p>
+<ul>
+<li><p>静态变量可以通过类名调用，也可以通过对象调用</p>
+</li>
+<li><p>成员变量只能通过对象名调用</p>
+</li>
+</ul>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-011.png" alt></p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-012.png" alt></p>
+<p>方式一 是用对象调用成员方法</p>
+<p>方式二 是用类调用成员方法（推荐方式二【需要将对应成员方法写为静态的】）</p>
+<p>如果不想让用户创建对象调用成员方法：</p>
+<p>只需要把构造方法私有，外界就不能创建对象了</p>
+<p>在同一个文件夹下，类定义两个文件夹中和一个文件夹中是一样的</p>
+<h3 id="1-4-制作文档注释和说明书"><a href="#1-4-制作文档注释和说明书" class="headerlink" title="1.4 制作文档注释和说明书"></a>1.4 制作文档注释和说明书</h3><p><strong>(一)</strong></p>
+<p>制作文档注释，文档说明书工具解析文档注释<br>javadoc工具<br>D:格式<br>javadoc -d 目录 -author -version ArrayTool.java<br>目录：就可以写一个文件夹的路径<br>制作帮助文<strong>档出</strong>错：<br>找不到可以文档化的公共或受保护的类：告诉我们类的权限不够(解决办法： 在class前面加public)</p>
+<p><strong>(二)</strong></p>
+<p><strong>API(Application Programming Interface)</strong></p>
+<p><strong>应用程序编程接口(帮助文档)</strong></p>
+<p><strong>Jdk可以帮助我们查阅一些类、方法的详细用法以及参数说明，学会查阅文档也是一项很重要的本领（网络上自行下载）</strong></p>
+<p>下面试着自己通过查阅文档使用一个类  </p>
+<p>Math类</p>
+<p>A:是针对数学进行操作的类</p>
+<p>B:没有构造方法，因为它的成员都是静态的</p>
+<p>C:产生随机数</p>
+<p>public static double random(): [0.0,1.0)</p>
+<p>D:如何产生一个1-100之间的随机数</p>
+<p>int number = (int)(Math.random()*100)+1;</p>
+<p>E:猜数字小游戏</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-013.png" alt></p>
+<h3 id="1-5-代码块"><a href="#1-5-代码块" class="headerlink" title="1.5 代码块"></a>1.5 代码块</h3><p>我们下面来讲解这一部分的最后一个知识点</p>
+<p>(1)用{}括起来的代码。</p>
+<p>(2)分类：</p>
+<p><strong>A: 静态代码块</strong></p>
+<p><strong>概念：</strong> 在java类中（方法中不能存在静态代码块）</p>
+<p>使用static关 键字和{} 声明的代码块：</p>
+<p><strong>执行：</strong> 静态代码块在类被加载的时候就运行了，而且只运行一次，并且优 先于各种代码块以及构造函数。</p>
+<p><strong>作用：</strong> 一般情况下，如果有些代码需要在项目启动的时候就执行，   这时候 就需要静态代码块。比如一个项目启动需要加载的   很多配置文件等 资源，我们就可以都放入静态代码块中。</p>
+<p>对类的数据进行初始化，仅仅只执行一次。</p>
+<p><strong>B: 构造代码块</strong></p>
+<p><strong>概念：</strong>在java类中使用{}声明的代码块（和静态代码块的  区   别是少了static关键字）:</p>
+<p><strong>执行：</strong> 构造代码块在创建对象时被调用，每次创建对象都会调用一   次，但是优先于构造函数执行。</p>
+<p><strong>作用：</strong> 和构造函数的作用类似，都能对对象进行初始化，并且只要   创建一个对象，构造代码块都会执行一次。但是反过来，构   造函数则不一定每个对象建立时都执行（多个构造函数情况   下，建立对象时传入的参数不同则初始化使用对应的构造函   数）。</p>
+<p>把多个构造方法中相同的代码可以放到这里，每个构造方法     执行前， 首先执行构造代码块。</p>
+<p><strong>C: 局部代码块</strong></p>
+<p>用于限定变量的生命周期，及早释放，提高内存利用率。</p>
+<p>静态代码块,构造代码块,构造方法的顺序问题</p>
+<p>·静态代码块 &gt; 构造代码块 &gt; 构造方法</p>
+<p><img src="http://image.ideal-20.cn/basic/1.2-01-014.png" alt></p>
+<h3 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h3><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！^_^</p>
+<p>如果能帮到你的话，那就来关注我吧！</p>
+<blockquote>
+<p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
+<p>一个坚持推送原创Java技术的公众号：理想二旬不止</p>
+</blockquote>
+<p><img src="http://image.ideal-20.cn/img/QRcode258.jpg" alt> </p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《001-Java面向对象》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/16/1.2-java-mian-xiang-dui-xiang/001-mian-xiang-dui-xiang/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                BWH_Steven
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80NjIzNy8yMjc0OA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/09/16/1.2-java-mian-xiang-dui-xiang/002-ji-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="002-Java继承">
+                        
+                        <span class="card-title">002-Java继承</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            继承——面向对象三大特性之一
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-2-Java面向对象/" class="post-category" target="_blank">
+                                    1.2-Java面向对象
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Java继承/" target="_blank">
+                        <span class="chip bg-color">Java继承</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/16/1.1-java-ji-chu-zhi-shi/004-fang-fa-he-shu-zu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="004-Java方法和数组">
+                        
+                        <span class="card-title">004-Java方法和数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java方法和数组知识讲解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-Java基础知识/" class="post-category" target="_blank">
+                                    1.1-Java基础知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/方法/" target="_blank">
+                        <span class="chip bg-color">方法</span>
+                    </a>
+                    
+                    <a href="/tags/数组/" target="_blank">
+                        <span class="chip bg-color">数组</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            <div>@2019 BWH_Steven · 版权所有</div>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">112.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
+            
+
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">    
+    <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ideal_bwh@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

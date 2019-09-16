@@ -1,0 +1,1377 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="002-会话技术, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="description" content="会话技术、Cookies、Session详解会话技术(一) 概述、用途以及分类(1) 基本概述概述：会话是浏览器和服务器之间的多次请求和响应
+也就是说，从浏览器访问服务器开始，到访问服务器结束，浏览器关闭为止的这段时间内容产生的多次请求和响">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>002-会话技术 | 理想二旬不止|Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">理想二旬不止|Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">理想二旬不止|Blog</div>
+        <div class="logo-desc">
+            
+            这城市总是风很大 孤独的人总是晚回家
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        002-会话技术
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaWeb/" target="_blank">
+                                <span class="chip bg-color">JavaWeb</span>
+                            </a>
+                        
+                            <a href="/tags/会话技术/" target="_blank">
+                                <span class="chip bg-color">会话技术</span>
+                            </a>
+                        
+                            <a href="/tags/Cookies/" target="_blank">
+                                <span class="chip bg-color">Cookies</span>
+                            </a>
+                        
+                            <a href="/tags/Session/" target="_blank">
+                                <span class="chip bg-color">Session</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/5-3-会话技术/" class="post-category" target="_blank">
+                                5.3-会话技术
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-17
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        5.8k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        22 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="会话技术、Cookies、Session详解"><a href="#会话技术、Cookies、Session详解" class="headerlink" title="会话技术、Cookies、Session详解"></a>会话技术、Cookies、Session详解</h1><h2 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h2><h3 id="一-概述、用途以及分类"><a href="#一-概述、用途以及分类" class="headerlink" title="(一) 概述、用途以及分类"></a>(一) 概述、用途以及分类</h3><h4 id="1-基本概述"><a href="#1-基本概述" class="headerlink" title="(1) 基本概述"></a>(1) 基本概述</h4><p><strong>概述：会话是浏览器和服务器之间的多次请求和响应</strong></p>
+<p>也就是说，从浏览器<strong>访问服务器开始</strong>，到<strong>访问服务器结束</strong>，<strong>浏览器关闭为止</strong>的这段时间内容产生的<strong>多次请求和响应</strong>，合起来叫做浏览器和服务器之间的一次会话</p>
+<h4 id="2-为什么要使用会话技术呢？"><a href="#2-为什么要使用会话技术呢？" class="headerlink" title="(2) 为什么要使用会话技术呢？"></a>(2) 为什么要使用会话技术呢？</h4><p>实际上会话问题解决的还是客户端与服务器之间的通信问题，通过一些会话技术，可以将每个用户的数据以例如cookie/session的形式存储，方便以后用户访问web资源的时候使用</p>
+<blockquote>
+<p>假定场景：A和B两人在某个网上购物商场登陆账号后，A买了一个HHKB的键盘，而B则购买了一把民谣吉他，这些信息都会被保存下来</p>
+<p>用途是：保存账户信息，登录时询问日后是否自动登录，或者根据之前浏览，购买过的商品，分析用户喜欢什么类型的商品，做出精准推送</p>
+</blockquote>
+<p>那么能不能用我们之前学过的 HttpServletRequest 对象和 ServletContext 对象来保存这些数据呢？答案是否定的</p>
+<p><strong>不能用 HttpServletRequest 的原因：</strong>我们的一次会话中，存在多次请求和响应，而浏览器客户端的每一次请求都会产生一个 HttpServletRequest 对象，它只会保存此次请求的信息，例如放入购物车与购买付款是不同的请求，很显然数据没有得到很好的保存处理</p>
+<p><strong>不能用 ServletContext 的原因：</strong>ServletContext对象是被整个web应用所共享的，将数据都存到这里，无疑会无法区分具体信息的归属</p>
+<h4 id="3-分类"><a href="#3-分类" class="headerlink" title="(3) 分类"></a>(3) 分类</h4><p>客户端会话技术 —— Cookie</p>
+<p>服务器会话技术 —— Session</p>
+<h2 id="Cookie-技术"><a href="#Cookie-技术" class="headerlink" title="Cookie 技术"></a>Cookie 技术</h2><h3 id="一-基本认识"><a href="#一-基本认识" class="headerlink" title="(一) 基本认识"></a>(一) 基本认识</h3><h4 id="1-概述"><a href="#1-概述" class="headerlink" title="(1) 概述"></a>(1) 概述</h4><p>Cookies 可以简单的理解为服务器暂存在你浏览器中的一些信息文件，它将你在网站上所输入的一些内容，或者一些选项记录下来，当下一次你访问同一个网站的时候，服务器就会主动去查询这个cookie资料，如果存在的话，将会根据其中的内容，提供一些特别的功能，例如记住账号密码等</p>
+<p>总结一下就是：</p>
+<ul>
+<li>网页之间的交互是通过HTTP协议传输数据的，而Http协议是无状态的协议 (数据提交后，浏览器和服务器的链接就会关闭，在此交互的时候    需要重新建立新的连接)</li>
+<li>服务器无法确认用户的信息，于是给每一个用户发一个通行证，通过此确认用户的信息</li>
+</ul>
+<h4 id="2-具体流程"><a href="#2-具体流程" class="headerlink" title="(2) 具体流程"></a>(2) 具体流程</h4><p>浏览器访问服务器，如果服务器需要记录该用户的状态，就用response向浏览器发送一个cookie，浏览器会把Cookie保存起来。当浏览器再次访问服务器的时候，浏览器会把请求的网址以及Cookie一同提交给服务器</p>
+<h4 id="3-规范"><a href="#3-规范" class="headerlink" title="(3) 规范"></a>(3) 规范</h4><ul>
+<li><p>Cookie大小上限为4KB；</p>
+</li>
+<li><p>一个服务器最多在客户端浏览器上保存20个Cookie；</p>
+</li>
+<li><p>一个浏览器最多保存300个Cookie</p>
+</li>
+</ul>
+<pre><code>面的数据是HTTP对Cookie的规范，但是现在一些浏览器可能会对Cookie规范    做了一些扩展，例如每个Cookie的大小为8KB，最多可保存500个Cookie等</code></pre><p>不同的浏览器之间是不共享Cookie的</p>
+<h3 id="二-常用-API"><a href="#二-常用-API" class="headerlink" title="(二) 常用 API"></a>(二) 常用 API</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//用于在其响应头中增加一个相应的Set-Cookie头字段</span>
+addCookie
+
+<span class="token comment" spellcheck="true">//用于获取客户端提交的Cookie</span>
+GetCookie
+<span class="token keyword">public</span> <span class="token function">Cookie</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span>String value<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//该方法设置与 cookie 关联的值。</span>
+setValue
+
+<span class="token comment" spellcheck="true">//该方法获取与 cookie 关联的值。</span>
+getValue
+
+<span class="token comment" spellcheck="true">//该方法设置 cookie 过期的时间（以秒为单位）。如果不这样设置，cookie只会在当前 session 会话中持续有效。</span>
+setMaxAge
+
+<span class="token comment" spellcheck="true">//该方法返回 cookie 的最大生存周期（以秒为单位），默认情况下，-1 表示 cookie 将持续下去，直到浏览器关闭</span>
+getMaxAge
+
+<span class="token comment" spellcheck="true">//该方法设置 cookie 适用的路径。如果您不指定路径，与当前页面相同目录下的（包括子目录下的）所有 URL 都会返回 cookie。</span>
+setPath
+
+<span class="token comment" spellcheck="true">//该方法获取 cookie 适用的路径。</span>
+getPath
+
+<span class="token comment" spellcheck="true">//该方法设置 cookie 适用的域</span>
+setDomain
+
+<span class="token comment" spellcheck="true">//该方法获取 cookie 适用的域</span>
+getDomain</code></pre>
+<h4 id="1-注意："><a href="#1-注意：" class="headerlink" title="(1) 注意："></a>(1) 注意：</h4><ul>
+<li>Cookie具有不可跨域名性</li>
+<li>ookie保存中文乱码问题：中文属于Unicode字符，英文数据Ascii字符，中文占4个字符或者3个字符，英文占2个字符，Cookie使用Unicode字符时需要对Unicode字符进行编码</li>
+</ul>
+<pre class=" language-java"><code class="language-java">Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">,</span>URLEncoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="2-有效期"><a href="#2-有效期" class="headerlink" title="(2) 有效期"></a>(2) 有效期</h4><p>通过setMaxAge()方法可以设置Cookie的有效期</p>
+<ul>
+<li>如果MaxAge为正数，浏览器会把Cookie写到硬盘中，只要还在MaxAge秒之前，登录网站时该Cookie就有效【不论关闭了浏览器还是电脑】<br>   如果MaxAge为负数，Cookie是临时性的，尽在本浏览器内有效，关闭浏览器Cookie    就失效了，Cookie不会写到硬盘中。Cookie默认值就是 -1 </li>
+<li>如果MaxAge为0，则表示删除该Cookie</li>
+</ul>
+<h4 id="3-删除和修改"><a href="#3-删除和修改" class="headerlink" title="(3) 删除和修改"></a>(3) 删除和修改</h4><p>Cookie存储的方式类似于Map集合，分为名字和值，只不过两者都是String类型的</p>
+<p><strong>修改</strong></p>
+<pre class=" language-java"><code class="language-java">String name <span class="token operator">=</span> <span class="token string">"刮风这天"</span>；
+Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"country"</span><span class="token punctuation">,</span>URLEncoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>删除</strong></p>
+<pre class=" language-java"><code class="language-java">String name <span class="token operator">=</span> <span class="token string">"刮风这天"</span>；
+Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"country"</span><span class="token punctuation">,</span>URLEncoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+response<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+printWriter<span class="token punctuation">.</span><span class="token function">writer</span><span class="token punctuation">(</span><span class="token string">"Cookie已经被删除了"</span><span class="token punctuation">)</span></code></pre>
+<h3 id="三-Cookie的域名"><a href="#三-Cookie的域名" class="headerlink" title="(三) Cookie的域名"></a>(三) Cookie的域名</h3><p>Cookie的domain属性决定运行访问Cookie的域名，Deomain的值规定为“.域名”</p>
+<p>Cookie的隐私安全机制决定Cookie是不可跨域名的。及时是同一级域名，不同的二级域名也不能交接，eg：<code>www.ideal.com 和 www.image..com</code></p>
+<p>如果我希望一级域名相同的网页之间的Cookie之间可以互相访问，需要使用到domain方法</p>
+<pre class=" language-java"><code class="language-java">Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cookie<span class="token punctuation">.</span><span class="token function">setDomain</span><span class="token punctuation">(</span>"<span class="token punctuation">.</span>ideal<span class="token punctuation">.</span>com<span class="token punctuation">)</span><span class="token punctuation">;</span>
+response<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+printWriter<span class="token punctuation">.</span><span class="token function">writer</span><span class="token punctuation">(</span><span class="token string">"使用www.ideal.com域名添加了一个Cookie，只要一级域名是ideal.com即可访问"</span><span class="token punctuation">)</span></code></pre>
+<h3 id="四-Cookie的路径"><a href="#四-Cookie的路径" class="headerlink" title="(四) Cookie的路径"></a>(四) Cookie的路径</h3><p>Cookie的path属性决定允许访问Cookie的路径</p>
+<p>一般来说，Cookie发布出来，整个网页的资源都可以使用，但是如果只需要某一个Servlet可以获取到Cookie，其他的资源不能或不需要获取</p>
+<pre class=" language-java"><code class="language-java">Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cookie<span class="token punctuation">.</span><span class="token function">setPath</span><span class="token punctuation">(</span>"<span class="token operator">/</span>Servlet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+response<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+printWriter<span class="token punctuation">.</span><span class="token function">writer</span><span class="token punctuation">(</span><span class="token string">"该Cookie只能在Servlet1中可以访问到"</span><span class="token punctuation">)</span></code></pre>
+<h3 id="五-Cookie的安全属性"><a href="#五-Cookie的安全属性" class="headerlink" title="(五) Cookie的安全属性"></a>(五) Cookie的安全属性</h3><p>HTTP协议不仅是无状态的，而且是不安全的！如果不希望Cookie在非安全协议中传输，可以设置Cookie的secure属性为true，浏览器只会在HTTPS和SSL等安全协议中传输该Cookie</p>
+<p>设置secure属性不会将Cookie的内容加密，如果想保证安全，最好使用md5算法加密</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//设置响应的消息体的数据格式以及编码</span>
+        resp<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//获取所有Cookie</span>
+        Cookie<span class="token punctuation">[</span><span class="token punctuation">]</span> cookies <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token function">getCookies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">////没有cookie为lastTime</span>
+        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//遍历cookie数组</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cookies <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> cookies<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>Cookie cookie <span class="token operator">:</span> cookies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//获取cookie的名称</span>
+                String name <span class="token operator">=</span> cookie<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//判断名称是否是：lastTime</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"lastTime"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//非第一次访问</span>
+
+                    flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//有访问记录的time</span>
+
+                    <span class="token comment" spellcheck="true">//设置Cookie的value</span>
+                    <span class="token comment" spellcheck="true">//获取当前时间的字符串，重新设置Cookie的值，重新发送cookie</span>
+                    Date date  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    SimpleDateFormat sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy年MM月dd日 HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    String str_date <span class="token operator">=</span> sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"编码前："</span><span class="token operator">+</span>str_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//URL编码</span>
+                    str_date <span class="token operator">=</span> URLEncoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>str_date<span class="token punctuation">,</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"编码后："</span><span class="token operator">+</span>str_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    cookie<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span>str_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//设置cookie的存活时间</span>
+                    cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//一个月</span>
+                    resp<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment" spellcheck="true">//响应数据</span>
+                    <span class="token comment" spellcheck="true">//获取Cookie的value，时间</span>
+                    String value <span class="token operator">=</span> cookie<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"解码前："</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//URL解码：</span>
+                    value <span class="token operator">=</span> URLDecoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"解码后："</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    resp<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>欢迎回来，您上次访问时间为:"</span><span class="token operator">+</span>value<span class="token operator">+</span><span class="token string">"&lt;/h1>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cookies <span class="token operator">==</span> null <span class="token operator">||</span> cookies<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> flag <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//没有，第一次访问</span>
+
+            <span class="token comment" spellcheck="true">//设置Cookie的value</span>
+            <span class="token comment" spellcheck="true">//获取当前时间的字符串，重新设置Cookie的值，重新发送cookie</span>
+            Date date  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            SimpleDateFormat sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy年MM月dd日 HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String str_date <span class="token operator">=</span> sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"编码前："</span><span class="token operator">+</span>str_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//URL编码</span>
+            str_date <span class="token operator">=</span> URLEncoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>str_date<span class="token punctuation">,</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"编码后："</span><span class="token operator">+</span>str_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Cookie cookie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookie</span><span class="token punctuation">(</span><span class="token string">"lastTime"</span><span class="token punctuation">,</span>str_date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//设置cookie的存活时间</span>
+            cookie<span class="token punctuation">.</span><span class="token function">setMaxAge</span><span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//一个月</span>
+            resp<span class="token punctuation">.</span><span class="token function">addCookie</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            resp<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>您好，欢迎您首次访问&lt;/h1>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>Character[32]在ASSCI码中代表空格 所以在日期表示格式中尽量不要出现空格，但若想要要求出现空格，或者特殊字符，</p>
+<p>此外呢，我么你还可以做一个模拟显示上次浏览过商品记录的Demo，自行练习</p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><h3 id="一-概述"><a href="#一-概述" class="headerlink" title="(一) 概述"></a>(一) 概述</h3><p>Session是另一种记录浏览器状态的机制，Cookie保存在浏览器中，Session保存在服务器中。用户使用浏览器访问服务器的时候，服务把用户的信息，以某种形式记录在服务器，这就是Session</p>
+<p>为何使用Session因为Session可以存储对象，Cookie只能存储字符串可以解决很多Cookie解决不了的问题</p>
+<h3 id="二-API"><a href="#二-API" class="headerlink" title="(二) API"></a>(二) API</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//获取Session被创建时间</span>
+<span class="token keyword">long</span> <span class="token function">getCreationTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//获取Session的id</span>
+String <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//返回Session最后活跃的时间</span>
+<span class="token keyword">long</span> <span class="token function">getLastAccessedTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//获取ServletContext对象</span>
+ServletContext <span class="token function">getServletContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//设置Session超时时间</span>
+<span class="token keyword">void</span> <span class="token function">setMaxInactiveInterval</span><span class="token punctuation">(</span><span class="token keyword">int</span> var1<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//获取Session超时时间</span>
+<span class="token keyword">int</span> <span class="token function">getMaxInactiveInterval</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//获取Session属性</span>
+Object <span class="token function">getAttribute</span><span class="token punctuation">(</span>String var1<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//获取Session所有的属性名</span>
+Enumeration <span class="token function">getAttributeNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//设置Session属性</span>
+<span class="token keyword">void</span> <span class="token function">setAttribute</span><span class="token punctuation">(</span>String var1<span class="token punctuation">,</span> Object var2<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//移除Session属性</span>
+<span class="token keyword">void</span> <span class="token function">removeAttribute</span><span class="token punctuation">(</span>String var1<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//销毁该Session</span>
+<span class="token keyword">void</span> <span class="token function">invalidate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//该Session是否为新的</span>
+<span class="token keyword">boolean</span> <span class="token function">isNew</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Session有着request和ServletContext类似的方法。其实<strong>Session也是一个域对象</strong>。Session作为一种记录浏览器状态的机制，<strong>只要Session对象没有被销毁，Servlet之间就可以通过Session对象实现通讯</strong></p>
+<p><strong>设置</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        HttpSession httpSession <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        httpSession<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><strong>获取</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        HttpSession httpSession <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String value <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> httpSession<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h3 id="三-生命周期和有效期"><a href="#三-生命周期和有效期" class="headerlink" title="(三) 生命周期和有效期"></a>(三) 生命周期和有效期</h3><p>用户第一次访问服务器Servlet，jsp等动态资源就会自动创建Session，Session对象保存在内存里，这也就为什么上面的例子可以直接使用request对象获取得到Session对象</p>
+<p>如果访问HTML,Image等静态资源Session不会被创建</p>
+<p>Session生成后，只要用户继续访问，服务器就会更新Session的最后访问时间，无论是否对Session进行读写，服务器都会认为Session活跃了一次。</p>
+<p>由于会有越来越多的用户访问服务器，因此Session也会越来越多。为了防止内存溢出，服务器会把长时间没有活跃的Session从内存中删除，这个时间也就是Session的超时时间</p>
+<p>Session的超时时间默认是30分钟，有三种方式可以对Session的超时时间进行修改</p>
+<p><strong>第一种方式：</strong>在tomcat/conf/web.xml文件中设置，时间值为20分钟，所有的WEB应用都有效————<code>&lt;session-timeout&gt;20&lt;session-timeout&gt;</code></p>
+<p><strong>第二种方式：</strong>在单个的web.xml文件中设置，对单个web应用有效，如果有冲突，以自己的web应用为准</p>
+<p><strong>第三种方式：通过setMaxInactiveInterval()方法设置</strong></p>
+<pre><code>httpSession.setMaxInactiveInterval(60);</code></pre><h3 id="四-Session-和-Cookie的小区别"><a href="#四-Session-和-Cookie的小区别" class="headerlink" title="(四) Session 和 Cookie的小区别"></a>(四) Session 和 Cookie的小区别</h3><ul>
+<li>Session周期指的是不活动的时间，如果我们设置Session是10s，在10s内，没有访问session，session中属性失效，如果在9s的时候，你访问了session，则会重新计时</li>
+<li>如果重启了tomcat，或者reload web应用，或者关机了，Session也会失效，我们也可以通过函数让Session失效，invalidate()该方法是让Session中的所有属性失效，常常用于安全退出</li>
+<li>如果你希望某个Session属性失效，可以使用方法removeAttribute</li>
+</ul>
+<ul>
+<li>Cookie的生命周期就是按累积的时间来算的，不管用户有没有访问过Session</li>
+</ul>
+<h3 id="五-Session"><a href="#五-Session" class="headerlink" title="(五) Session"></a>(五) Session</h3><p>问题：我再Aservlet中设置了Session属性，在Bservlet中获取A的属性</p>
+<p>在浏览器中新建一个页面再次访问Bservlet 报空指针异常</p>
+<p>现在问题来了：服务器是如何实现一个session为一个用户浏览器服务的？换个说法：为什么服务器能够为不同的用户浏览器提供不同session？</p>
+<p>HTTP协议是无状态的，Session不能依据HTTP连接来判断是否为同一个用户。于是乎：服务器向用户浏览器发送了一个名为JESSIONID的Cookie，它的值是Session的id值。其实Session依据Cookie来识别是否是同一个用户。</p>
+<p>简单来说：Session 之所以可以识别不同的用户，依靠的就是Cookie</p>
+<p>该Cookie是服务器自动颁发给浏览器的，不用我们手工创建的。该Cookie的maxAge值默认是-1，也就是说仅当前浏览器使用，不将该Cookie存在硬盘中</p>
+<p><strong>流程概述：</strong> </p>
+<ul>
+<li>访问Aservlet时，服务器就会创建一个Session对象，执行我们的程序代码，执行我们的程序代码，并自动颁发一个Cookie给用户浏览器</li>
+<li>当我用同一个浏览器访问BServlet的时候，浏览器会把Cookie的值通过Http协议带过去给服务器，服务器就知道用哪一个Session</li>
+<li>而当我们使用新会话的浏览器访问BServlet的时候，该新浏览器并没有Cookie，服务器无法辨认使用哪一个Session，所以获取不到值。</li>
+</ul>
+<h3 id="六-浏览器禁用Cookie后Session的使用"><a href="#六-浏览器禁用Cookie后Session的使用" class="headerlink" title="(六) 浏览器禁用Cookie后Session的使用"></a>(六) 浏览器禁用Cookie后Session的使用</h3><p>遇到两种情况：1.用户浏览器禁用了Cookie绝大多数手机浏览器都不支持Cookie</p>
+<p>Java Web提供了解决方法：URL地址重写</p>
+<p>HttpServletResponse类提供了两个URL地址重写的方法：</p>
+<pre class=" language-java"><code class="language-java"><span class="token function">encodeURL</span><span class="token punctuation">(</span>String url<span class="token punctuation">)</span>
+
+<span class="token function">encodeRedirectURL</span><span class="token punctuation">(</span>String url<span class="token punctuation">)</span></code></pre>
+<p>需要值得注意的是：这两个方法会自动判断该浏览器是否支持Cookie，如果支持Cookie，重写后的URL地址就不会带有jsessionid了【当然了，即使浏览器支持Cookie，第一次输出URL地址的时候还是会出现jsessionid（因为没有任何Cookie可带）】</p>
+<p>例子</p>
+<pre class=" language-java"><code class="language-java">String url <span class="token operator">=</span> <span class="token string">"/web-01/Servlet5"</span><span class="token punctuation">;</span>
+response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span><span class="token function">encodeURL</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>URL地址重写的原理：</p>
+<p>将Session的id信息重写到URL地址汇总，服务器解析重写后URL获取Session的id，这样一来即使浏览器禁用掉了Cookie，但是Session的id通过服务端传递，还是可以使用Session来记录用户的状态。</p>
+<h3 id="七-Session案例"><a href="#七-Session案例" class="headerlink" title="(七) Session案例"></a>(七) Session案例</h3><p><strong>案例一：使用Session完成用户简单登录</strong></p>
+<p>先创建User类</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String username <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String password <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">User</span><span class="token punctuation">(</span>String username<span class="token punctuation">,</span> String password<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>username <span class="token operator">=</span> username<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>password <span class="token operator">=</span> password<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>各种set get方法</code></pre>
+<p>使用简单的集合模拟一个数据库</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserDB</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"888"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">,</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">,</span><span class="token string">"222"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//通过用户名密码查找用户</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> User <span class="token function">find</span><span class="token punctuation">(</span>String username<span class="token punctuation">,</span> String password<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>User user<span class="token operator">:</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>表单提交我们写在jsp里面(模仿即可后期说jsp)</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserDB</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"888"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">,</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">,</span><span class="token string">"222"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//通过用户名密码查找用户</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> User <span class="token function">find</span><span class="token punctuation">(</span>String username<span class="token punctuation">,</span> String password<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>User user<span class="token operator">:</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>获取表单提交的数据，查找数据库是否有相对应的用户名和密码</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String username <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String password <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        User user <span class="token operator">=</span> UserDB<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>username<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//如果找不到，就是用户名或者密码出错了</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>user <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"用户名或者密码错误，登陆失败 ！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//标志着用户已经登录</span>
+        HttpSession httpSession <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        httpSession<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//跳转到其他页面，告诉用户已经登录成功</span>
+        response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span><span class="token function">encodeURL</span><span class="token punctuation">(</span><span class="token string">"test.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><img src="http://image.ideal-20.cn/basic/5.3-02-001.png" alt></p>
+<p><img src="http://image.ideal-20.cn/basic/5.3-02-002.png" alt></p>
+<p><img src="http://image.ideal-20.cn/basic/5.3-02-003.png" alt></p>
+<p><strong>案例二：利用Session防止表单重复提交</strong></p>
+<p>重复提交的危害：</p>
+<p>在投票的网页上不停地提交，实现了刷票的效果。</p>
+<p>注册多个用户，不断发帖子，扰乱正常发帖秩序。</p>
+<p>常见的两种重复提交</p>
+<p>第一种：后退再提交</p>
+<p><img src="http://image.ideal-20.cn/basic/5.3-02-004.png" alt></p>
+<p>第二种：网络延迟，多次点击提交按钮</p>
+<p>略图</p>
+<p>解决方案：</p>
+<p><strong>网络延迟问题：</strong></p>
+<p>对于第二种网络延而造成多次提交数据给服务器，其实是客户端的问题，我们可以使用javaScript来防止</p>
+<p>→ 当用户第一次点击提交按钮是，把数据提交给服务器，当用户再次点击提交按钮时，就不把数据提交给服务器了</p>
+<p>监听用监听事件。只能让用户提交一次表单：</p>
+<pre class=" language-jsp"><code class="language-jsp"><%@ page language="java" import="java.util.*" pageencoding="UTF-8" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<title>表单提交</title>
+<script type="text/javascript">
+    //定义一个全局标识量：是否已经提交过表单数据
+    var isCommitted = false;
+
+    function doSubmit() {
+        //false表示的是没有提交过，于是就可以让表单提交给Servlet
+        if (isCommited == false){
+            is Commited = true;
+            return true;
+        }else{
+            return false;
+        }    
+    }
+</script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body>
+    <form action="/web-01/Lservlet" method="post" onsubmit="return doSubmit()">
+        用户名：<input type="text" name="username"><br> <input type="submit" value="提交">
+    </form>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html></%@></code></pre>
+<p><strong>刷新后退再提交问题：</strong></p>
+<p>我们知道Session可以用来标识一个用户是否登陆了。Session的原理也说了：不同的用户浏览器会拥有不同的Session。而request和ServletContext为什么就不行呢？request的域对象只能是一次http请求，提交表单数据的时候request域对象的数据取不出来。ServletContext代表整个web应用，如果有几个用户浏览器同时访问，ServletContext域对象的数据会被多次覆盖掉，也就是说域对象的数据就毫无意义了。</p>
+<p>此时，我们就想到了，在表单中还有一个隐藏域，可以通过隐藏域把数据交给服务器。</p>
+<p>A：判断Session域对象的数据和jsp隐藏域提交的数据是否对应。</p>
+<p>B：判断隐藏域的数据是否为空【如果为空，就是直接访问表单处理页面的Servlet】</p>
+<p>C：判断Session的数据是否为空【servlet判断完是否重复提交，最好能立马移除Session的数据，不然还没有移除的时候，客户端那边儿的请求又来了，就又能匹配了，产生了重复提交。如果Session域对象数据为空，证明已经提交过数据了！】</p>
+<p>D：我们向Session域对象的存入数据究竟是什么呢？简单的一个数字？好像也行啊。因为只要Session域对象的数据和jsp隐藏域带过去的数据对得上号就行了呀，反正在Servlet上判断完是否重复提交，会立马把Session的数据移除掉的。更专业的做法是：向Session域对象存入的数据是一个随机数【Token–令牌】</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TokenProcessor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token function">TokenProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> TokenProcessor TOKEN_PROCESSOR <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TokenProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> TokenProcessor <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> TOKEN_PROCESSOR<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">makeToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 这个随机生成出来的Token的长度是不确定的</span>
+        String token <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">99999999</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 我们想要随机数的长度一致，就要获取到数据指纹</span>
+            MessageDigest messageDigest <span class="token operator">=</span> MessageDigest<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token string">"md5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> md5 <span class="token operator">=</span> messageDigest<span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span>token<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 如果我们直接 return new String(md5)出去，得到的随机数会乱码</span>
+            <span class="token comment" spellcheck="true">// 因为随机数是任意的01010101010，在转换成字符串的时候，会差gb2312的码表</span>
+            <span class="token comment" spellcheck="true">// gb2312码表不一定支持该二进制数据，得到的就是乱码</span>
+            <span class="token comment" spellcheck="true">// 于是经过base64编码成了明文的数据</span>
+            BASE64Encoder base64Encoder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BASE64Encoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> base64Encoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>md5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NoSuchAlgorithmException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>创建Token随机数，利用getRequestDispatcher跳转到jsp页面（地址还是Servlet的）</strong></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 生出随机数</span>
+        TokenProcessor tokenProcessor <span class="token operator">=</span> TokenProcessor<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String token <span class="token operator">=</span> tokenProcessor<span class="token punctuation">.</span><span class="token function">makeToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 将随机数存进Session中</span>
+        request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">,</span> token<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 跳转到显示页面</span>
+        request<span class="token punctuation">.</span><span class="token function">getRequestDispatcher</span><span class="token punctuation">(</span><span class="token string">"/login3.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>Jsp隐藏域获取到Session的值</strong></p>
+<pre class=" language-jsp"><code class="language-jsp"><form action="/web-01/Mservlet">
+
+    用户名：<input type="text" name="username">
+    <input type="submit" value="提交" id="button">
+
+    <%--使用el表达式取出session中的token--%>
+    <input type="hidden" name="token" value="${token}">
+
+</%--使用el表达式取出session中的token--%></form></code></pre>
+<p><strong>在处理表单提交页面中判断：jsp隐藏域是否有带值过来，Session中的值是否为空，Session中的值和jsp隐藏域带过来的值是否相等</strong></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"text/html;charset=UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        PrintWriter printWriter <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String serverValue <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String clienValue <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>serverValue <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> clienValue <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> serverValue<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>clienValue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            printWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"处理请求"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 清除Session域对象数据</span>
+            request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            printWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"请不要重复提交数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><img src="http://image.ideal-20.cn/basic/5.3-02-005.png" alt></p>
+<p><strong>实现原理是非常简单的</strong></p>
+<p>在session域中存储一个token</p>
+<p>然后前台页面的隐藏域获取得到这个token</p>
+<p>在第一次访问的时候，我们就判断seesion有没有值，如果有就比对。对比正确后我们就处理请求，接着就把session存储的数据给删除了</p>
+<p>等到再次访问的时候，我们session就没有值了，就不受理前台的请求了！</p>
+<h3 id="八-Session和Cookie的区别"><a href="#八-Session和Cookie的区别" class="headerlink" title="(八) Session和Cookie的区别"></a>(八) Session和Cookie的区别</h3><p><strong>从存储方式上比较</strong></p>
+<p>Cookie只能存储字符串，如果要存储非ASCII字符串还要对其编码。</p>
+<p>Session可以存储任何类型的数据，可以把Session看成是一个容器</p>
+<p><strong>从隐私安全上比较</strong></p>
+<p>Cookie存储在浏览器中，对客户端是可见的。信息容易泄露出去。如果使用Cookie，最好将Cookie加密</p>
+<p>Session存储在服务器上，对客户端是透明的。不存在敏感信息泄露问题。</p>
+<p><strong>从有效期上比较</strong></p>
+<p>Cookie保存在硬盘中，只需要设置maxAge属性为比较大的正整数，即使关闭浏览器，Cookie还是存在的</p>
+<p>Session的保存在服务器中，设置maxInactiveInterval属性值来确定Session的有效期。并且Session依赖于名为JSESSIONID的Cookie，该Cookie默认的maxAge属性为-1。如果关闭了浏览器，该Session虽然没有从服务器中消亡，但也就失效了。</p>
+<p><strong>从对服务器的负担比较</strong></p>
+<p>Session是保存在服务器的，每个用户都会产生一个Session，如果是并发访问的用户非常多，是不能使用Session的，Session会消耗大量的内存。</p>
+<p>Cookie是保存在客户端的。不占用服务器的资源。像baidu、Sina这样的大型网站，一般都是使用Cookie来进行会话跟踪。</p>
+<p><strong>从浏览器的支持上比较</strong></p>
+<p>如果浏览器禁用了Cookie，那么Cookie是无用的了！</p>
+<p>如果浏览器禁用了Cookie，Session可以通过URL地址重写来进行会话跟踪。</p>
+<p><strong>从跨域名上比较</strong></p>
+<p>Cookie可以设置domain属性来实现跨域名</p>
+<p>Session只在当前的域名内有效，不可跨域名</p>
+<h3 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h3><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！^_^</p>
+<p>如果能帮到你的话，那就来关注我吧！（系列文章均会在公众号第一时间更新）</p>
+<blockquote>
+<p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
+<p>一个坚持推送原创Java技术的公众号：理想二旬不止</p>
+</blockquote>
+<p><img src="http://image.ideal-20.cn/img/QRcode258.jpg" alt></p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                </a>
+            </div>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+                    《002-会话技术》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/" property="cc:attributionName" rel="cc:attributionURL">
+                BWH_Steven
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80NjIzNy8yMjc0OA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/09/17/6.1-jsp/001-jsp-quan-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="001-JSP整合">
+                        
+                        <span class="card-title">001-JSP整合</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JSP确实有一些过时了，但是还是了解一下吧
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/6-1-JSP/" class="post-category" target="_blank">
+                                    6.1-JSP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaWeb/" target="_blank">
+                        <span class="chip bg-color">JavaWeb</span>
+                    </a>
+                    
+                    <a href="/tags/JSP/" target="_blank">
+                        <span class="chip bg-color">JSP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="001-HTTP协议">
+                        
+                        <span class="card-title">001-HTTP协议</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTTP协议是web的基础知识
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/5-3-会话技术/" class="post-category" target="_blank">
+                                    5.3-会话技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaWeb/" target="_blank">
+                        <span class="chip bg-color">JavaWeb</span>
+                    </a>
+                    
+                    <a href="/tags/Servlet/" target="_blank">
+                        <span class="chip bg-color">Servlet</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            <div>@2019 BWH_Steven · 版权所有</div>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">112.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
+            
+
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">    
+    <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ideal_bwh@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
