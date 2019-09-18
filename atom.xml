@@ -5,9 +5,9 @@
   <subtitle>🐬初心不负</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://ideal-20.github.io/"/>
+  <link href="http://www.ideal-20.cn/"/>
   <updated>2019-09-16T17:15:57.253Z</updated>
-  <id>https://ideal-20.github.io/</id>
+  <id>http://www.ideal-20.cn/</id>
   
   <author>
     <name>BWH_Steven</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>001-Filter</title>
-    <link href="https://ideal-20.github.io/2019/09/17/7.1-fiter/001-filter/"/>
-    <id>https://ideal-20.github.io/2019/09/17/7.1-fiter/001-filter/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/7.1-fiter/001-filter/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/7.1-fiter/001-filter/</id>
     <published>2019-09-16T17:08:00.000Z</published>
     <updated>2019-09-16T17:15:57.253Z</updated>
     
@@ -35,21 +35,21 @@
     
     </summary>
     
-      <category term="7.1-Fiter" scheme="https://ideal-20.github.io/categories/7-1-Fiter/"/>
+      <category term="7.1-Fiter" scheme="http://www.ideal-20.cn/categories/7-1-Fiter/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="Filter" scheme="https://ideal-20.github.io/tags/Filter/"/>
+      <category term="Filter" scheme="http://www.ideal-20.cn/tags/Filter/"/>
     
-      <category term="过滤器" scheme="https://ideal-20.github.io/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
+      <category term="过滤器" scheme="http://www.ideal-20.cn/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>001-JSP整合</title>
-    <link href="https://ideal-20.github.io/2019/09/17/6.1-jsp/001-jsp-quan-ji/"/>
-    <id>https://ideal-20.github.io/2019/09/17/6.1-jsp/001-jsp-quan-ji/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/6.1-jsp/001-jsp-quan-ji/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/6.1-jsp/001-jsp-quan-ji/</id>
     <published>2019-09-16T17:06:00.000Z</published>
     <updated>2019-09-16T17:12:58.019Z</updated>
     
@@ -65,19 +65,19 @@
     
     </summary>
     
-      <category term="6.1-JSP" scheme="https://ideal-20.github.io/categories/6-1-JSP/"/>
+      <category term="6.1-JSP" scheme="http://www.ideal-20.cn/categories/6-1-JSP/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="JSP" scheme="https://ideal-20.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="http://www.ideal-20.cn/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>002-会话技术</title>
-    <link href="https://ideal-20.github.io/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/"/>
-    <id>https://ideal-20.github.io/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</id>
     <published>2019-09-16T17:05:00.000Z</published>
     <updated>2019-09-16T17:08:49.863Z</updated>
     
@@ -93,23 +93,23 @@
     
     </summary>
     
-      <category term="5.3-会话技术" scheme="https://ideal-20.github.io/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
+      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="会话技术" scheme="https://ideal-20.github.io/tags/%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
+      <category term="会话技术" scheme="http://www.ideal-20.cn/tags/%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Cookies" scheme="https://ideal-20.github.io/tags/Cookies/"/>
+      <category term="Cookies" scheme="http://www.ideal-20.cn/tags/Cookies/"/>
     
-      <category term="Session" scheme="https://ideal-20.github.io/tags/Session/"/>
+      <category term="Session" scheme="http://www.ideal-20.cn/tags/Session/"/>
     
   </entry>
   
   <entry>
     <title>001-HTTP协议</title>
-    <link href="https://ideal-20.github.io/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
-    <id>https://ideal-20.github.io/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
     <published>2019-09-16T17:05:00.000Z</published>
     <updated>2019-09-16T17:06:02.493Z</updated>
     
@@ -126,19 +126,19 @@
     
     </summary>
     
-      <category term="5.3-会话技术" scheme="https://ideal-20.github.io/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
+      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="Servlet" scheme="https://ideal-20.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>002-Servlet技术2</title>
-    <link href="https://ideal-20.github.io/2019/09/17/5.2-servlet/002-servlet-zhi-request-respone-xiang-jie/"/>
-    <id>https://ideal-20.github.io/2019/09/17/5.2-servlet/002-servlet-zhi-request-respone-xiang-jie/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.2-servlet/002-servlet-zhi-request-respone-xiang-jie/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.2-servlet/002-servlet-zhi-request-respone-xiang-jie/</id>
     <published>2019-09-16T17:02:00.000Z</published>
     <updated>2019-09-16T17:04:07.014Z</updated>
     
@@ -154,19 +154,19 @@
     
     </summary>
     
-      <category term="5.2-Servlet" scheme="https://ideal-20.github.io/categories/5-2-Servlet/"/>
+      <category term="5.2-Servlet" scheme="http://www.ideal-20.cn/categories/5-2-Servlet/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="Servlet" scheme="https://ideal-20.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>001-Servlet技术1</title>
-    <link href="https://ideal-20.github.io/2019/09/17/5.2-servlet/001-servlet-gai-shu-shi-xian-xi-jie-huo-qu-zi-yuan-servletconfig-servletcontext/"/>
-    <id>https://ideal-20.github.io/2019/09/17/5.2-servlet/001-servlet-gai-shu-shi-xian-xi-jie-huo-qu-zi-yuan-servletconfig-servletcontext/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.2-servlet/001-servlet-gai-shu-shi-xian-xi-jie-huo-qu-zi-yuan-servletconfig-servletcontext/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.2-servlet/001-servlet-gai-shu-shi-xian-xi-jie-huo-qu-zi-yuan-servletconfig-servletcontext/</id>
     <published>2019-09-16T17:01:00.000Z</published>
     <updated>2019-09-16T17:02:21.472Z</updated>
     
@@ -182,19 +182,19 @@
     
     </summary>
     
-      <category term="5.2-Servlet" scheme="https://ideal-20.github.io/categories/5-2-Servlet/"/>
+      <category term="5.2-Servlet" scheme="http://www.ideal-20.cn/categories/5-2-Servlet/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="Servlet" scheme="https://ideal-20.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>001-Tomcat</title>
-    <link href="https://ideal-20.github.io/2019/09/17/5.1-tomcat/001-tomcat/"/>
-    <id>https://ideal-20.github.io/2019/09/17/5.1-tomcat/001-tomcat/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.1-tomcat/001-tomcat/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.1-tomcat/001-tomcat/</id>
     <published>2019-09-16T16:59:00.000Z</published>
     <updated>2019-09-16T17:16:16.549Z</updated>
     
@@ -210,19 +210,19 @@
     
     </summary>
     
-      <category term="5.1-Tomcat" scheme="https://ideal-20.github.io/categories/5-1-Tomcat/"/>
+      <category term="5.1-Tomcat" scheme="http://www.ideal-20.cn/categories/5-1-Tomcat/"/>
     
     
-      <category term="JavaWeb" scheme="https://ideal-20.github.io/tags/JavaWeb/"/>
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
     
-      <category term="Tomcat" scheme="https://ideal-20.github.io/tags/Tomcat/"/>
+      <category term="Tomcat" scheme="http://www.ideal-20.cn/tags/Tomcat/"/>
     
   </entry>
   
   <entry>
     <title>001-jQuery</title>
-    <link href="https://ideal-20.github.io/2019/09/17/4.3-jquery/001-jquery/"/>
-    <id>https://ideal-20.github.io/2019/09/17/4.3-jquery/001-jquery/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/4.3-jquery/001-jquery/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/4.3-jquery/001-jquery/</id>
     <published>2019-09-16T16:57:00.000Z</published>
     <updated>2019-09-16T16:50:06.328Z</updated>
     
@@ -238,17 +238,17 @@
     
     </summary>
     
-      <category term="4.3-JQuery" scheme="https://ideal-20.github.io/categories/4-3-JQuery/"/>
+      <category term="4.3-JQuery" scheme="http://www.ideal-20.cn/categories/4-3-JQuery/"/>
     
     
-      <category term="jQuery" scheme="https://ideal-20.github.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="http://www.ideal-20.cn/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>001-JavaScript</title>
-    <link href="https://ideal-20.github.io/2019/09/17/4.2-javascript/001-javascript/"/>
-    <id>https://ideal-20.github.io/2019/09/17/4.2-javascript/001-javascript/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/4.2-javascript/001-javascript/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/4.2-javascript/001-javascript/</id>
     <published>2019-09-16T16:55:00.000Z</published>
     <updated>2019-09-16T16:48:25.534Z</updated>
     
@@ -264,17 +264,17 @@
     
     </summary>
     
-      <category term="4.2-JavaScript" scheme="https://ideal-20.github.io/categories/4-2-JavaScript/"/>
+      <category term="4.2-JavaScript" scheme="http://www.ideal-20.cn/categories/4-2-JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://ideal-20.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://www.ideal-20.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>001-HTML5及CSS</title>
-    <link href="https://ideal-20.github.io/2019/09/17/4.1-html-css/001-html-css/"/>
-    <id>https://ideal-20.github.io/2019/09/17/4.1-html-css/001-html-css/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/4.1-html-css/001-html-css/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/4.1-html-css/001-html-css/</id>
     <published>2019-09-16T16:52:00.000Z</published>
     <updated>2019-09-16T16:45:13.922Z</updated>
     
@@ -290,19 +290,19 @@
     
     </summary>
     
-      <category term="4.1-HTML&amp;CSS" scheme="https://ideal-20.github.io/categories/4-1-HTML-CSS/"/>
+      <category term="4.1-HTML&amp;CSS" scheme="http://www.ideal-20.cn/categories/4-1-HTML-CSS/"/>
     
     
-      <category term="HTML5" scheme="https://ideal-20.github.io/tags/HTML5/"/>
+      <category term="HTML5" scheme="http://www.ideal-20.cn/tags/HTML5/"/>
     
-      <category term="CSS" scheme="https://ideal-20.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="http://www.ideal-20.cn/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>003-数据库连接池 &amp; JDBCTemplate</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.2-jdbc/003-shu-ju-ku-lian-jie-chi/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.2-jdbc/003-shu-ju-ku-lian-jie-chi/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.2-jdbc/003-shu-ju-ku-lian-jie-chi/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/003-shu-ju-ku-lian-jie-chi/</id>
     <published>2019-09-16T16:50:00.000Z</published>
     <updated>2019-09-16T17:16:47.486Z</updated>
     
@@ -318,21 +318,21 @@
     
     </summary>
     
-      <category term="3.2-JDBC" scheme="https://ideal-20.github.io/categories/3-2-JDBC/"/>
+      <category term="3.2-JDBC" scheme="http://www.ideal-20.cn/categories/3-2-JDBC/"/>
     
     
-      <category term="Java" scheme="https://ideal-20.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
-      <category term="数据库连接池" scheme="https://ideal-20.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
+      <category term="数据库连接池" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
     
-      <category term="JDBCTemplate" scheme="https://ideal-20.github.io/tags/JDBCTemplate/"/>
+      <category term="JDBCTemplate" scheme="http://www.ideal-20.cn/tags/JDBCTemplate/"/>
     
   </entry>
   
   <entry>
     <title>002-JDBC控制事务</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/</id>
     <published>2019-09-16T16:48:00.000Z</published>
     <updated>2019-09-16T17:16:42.547Z</updated>
     
@@ -348,21 +348,21 @@
     
     </summary>
     
-      <category term="3.2-JDBC" scheme="https://ideal-20.github.io/categories/3-2-JDBC/"/>
+      <category term="3.2-JDBC" scheme="http://www.ideal-20.cn/categories/3-2-JDBC/"/>
     
     
-      <category term="Java" scheme="https://ideal-20.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
-      <category term="JDBC" scheme="https://ideal-20.github.io/tags/JDBC/"/>
+      <category term="JDBC" scheme="http://www.ideal-20.cn/tags/JDBC/"/>
     
-      <category term="事务" scheme="https://ideal-20.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
+      <category term="事务" scheme="http://www.ideal-20.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>001-JDBC</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.2-jdbc/001-jdbc/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.2-jdbc/001-jdbc/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.2-jdbc/001-jdbc/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/001-jdbc/</id>
     <published>2019-09-16T16:47:00.000Z</published>
     <updated>2019-09-16T17:16:37.093Z</updated>
     
@@ -378,19 +378,19 @@
     
     </summary>
     
-      <category term="3.2-JDBC" scheme="https://ideal-20.github.io/categories/3-2-JDBC/"/>
+      <category term="3.2-JDBC" scheme="http://www.ideal-20.cn/categories/3-2-JDBC/"/>
     
     
-      <category term="Java" scheme="https://ideal-20.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
-      <category term="JDBC" scheme="https://ideal-20.github.io/tags/JDBC/"/>
+      <category term="JDBC" scheme="http://www.ideal-20.cn/tags/JDBC/"/>
     
   </entry>
   
   <entry>
     <title>001-数据库设计</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/</id>
     <published>2019-09-16T16:45:00.000Z</published>
     <updated>2019-09-16T17:17:21.080Z</updated>
     
@@ -407,17 +407,17 @@
     
     </summary>
     
-      <category term="3.1-MySQL" scheme="https://ideal-20.github.io/categories/3-1-MySQL/"/>
+      <category term="3.1-MySQL" scheme="http://www.ideal-20.cn/categories/3-1-MySQL/"/>
     
     
-      <category term="数据库设计" scheme="https://ideal-20.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
+      <category term="数据库设计" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>003-MySQL多表查询以及事务</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/</id>
     <published>2019-09-16T16:44:00.000Z</published>
     <updated>2019-09-16T17:17:12.046Z</updated>
     
@@ -433,19 +433,19 @@
     
     </summary>
     
-      <category term="3.1-MySQL" scheme="https://ideal-20.github.io/categories/3-1-MySQL/"/>
+      <category term="3.1-MySQL" scheme="http://www.ideal-20.cn/categories/3-1-MySQL/"/>
     
     
-      <category term="事务" scheme="https://ideal-20.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
+      <category term="事务" scheme="http://www.ideal-20.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
     
-      <category term="多表查询" scheme="https://ideal-20.github.io/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
+      <category term="多表查询" scheme="http://www.ideal-20.cn/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
     
   </entry>
   
   <entry>
     <title>002-MySQL约束</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.1-mysql/002-mysql-yue-shu/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.1-mysql/002-mysql-yue-shu/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.1-mysql/002-mysql-yue-shu/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.1-mysql/002-mysql-yue-shu/</id>
     <published>2019-09-16T16:43:00.000Z</published>
     <updated>2019-09-16T17:17:04.390Z</updated>
     
@@ -461,17 +461,17 @@
     
     </summary>
     
-      <category term="3.1-MySQL" scheme="https://ideal-20.github.io/categories/3-1-MySQL/"/>
+      <category term="3.1-MySQL" scheme="http://www.ideal-20.cn/categories/3-1-MySQL/"/>
     
     
-      <category term="MySQL约束" scheme="https://ideal-20.github.io/tags/MySQL%E7%BA%A6%E6%9D%9F/"/>
+      <category term="MySQL约束" scheme="http://www.ideal-20.cn/tags/MySQL%E7%BA%A6%E6%9D%9F/"/>
     
   </entry>
   
   <entry>
     <title>001-MySQL数据库</title>
-    <link href="https://ideal-20.github.io/2019/09/17/3.1-mysql/001-mysql-ji-chu/"/>
-    <id>https://ideal-20.github.io/2019/09/17/3.1-mysql/001-mysql-ji-chu/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/3.1-mysql/001-mysql-ji-chu/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/3.1-mysql/001-mysql-ji-chu/</id>
     <published>2019-09-16T16:42:00.000Z</published>
     <updated>2019-09-16T17:16:58.887Z</updated>
     
@@ -487,17 +487,17 @@
     
     </summary>
     
-      <category term="3.1-MySQL" scheme="https://ideal-20.github.io/categories/3-1-MySQL/"/>
+      <category term="3.1-MySQL" scheme="http://www.ideal-20.cn/categories/3-1-MySQL/"/>
     
     
-      <category term="MySQL" scheme="https://ideal-20.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://www.ideal-20.cn/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>003-注解</title>
-    <link href="https://ideal-20.github.io/2019/09/17/2.1-java-guo-du-zhi-shi/003-zhu-jie/"/>
-    <id>https://ideal-20.github.io/2019/09/17/2.1-java-guo-du-zhi-shi/003-zhu-jie/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/003-zhu-jie/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/003-zhu-jie/</id>
     <published>2019-09-16T16:40:00.000Z</published>
     <updated>2019-09-16T17:17:59.478Z</updated>
     
@@ -513,19 +513,19 @@
     
     </summary>
     
-      <category term="2.1-Java过渡知识" scheme="https://ideal-20.github.io/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
+      <category term="2.1-Java过渡知识" scheme="http://www.ideal-20.cn/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="Java" scheme="https://ideal-20.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
-      <category term="注解" scheme="https://ideal-20.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
+      <category term="注解" scheme="http://www.ideal-20.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>002-Junit单元测试</title>
-    <link href="https://ideal-20.github.io/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/"/>
-    <id>https://ideal-20.github.io/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/</id>
     <published>2019-09-16T16:38:00.000Z</published>
     <updated>2019-09-16T17:17:54.151Z</updated>
     
@@ -541,21 +541,21 @@
     
     </summary>
     
-      <category term="2.1-Java过渡知识" scheme="https://ideal-20.github.io/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
+      <category term="2.1-Java过渡知识" scheme="http://www.ideal-20.cn/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="Java" scheme="https://ideal-20.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
-      <category term="Junit" scheme="https://ideal-20.github.io/tags/Junit/"/>
+      <category term="Junit" scheme="http://www.ideal-20.cn/tags/Junit/"/>
     
-      <category term="单元测试" scheme="https://ideal-20.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+      <category term="单元测试" scheme="http://www.ideal-20.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>001-反射</title>
-    <link href="https://ideal-20.github.io/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/"/>
-    <id>https://ideal-20.github.io/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/</id>
+    <link href="http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/</id>
     <published>2019-09-16T16:36:00.000Z</published>
     <updated>2019-09-16T17:17:45.568Z</updated>
     
@@ -571,12 +571,12 @@
     
     </summary>
     
-      <category term="2.1-Java过渡知识" scheme="https://ideal-20.github.io/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
+      <category term="2.1-Java过渡知识" scheme="http://www.ideal-20.cn/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
     
     
-      <category term="Java" scheme="https://ideal-20.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
-      <category term="反射" scheme="https://ideal-20.github.io/tags/%E5%8F%8D%E5%B0%84/"/>
+      <category term="反射" scheme="http://www.ideal-20.cn/tags/%E5%8F%8D%E5%B0%84/"/>
     
   </entry>
   

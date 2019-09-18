@@ -1,368 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.1-java-ji-chu-zhi-shi/003-java-ji-chu-yu-fa/</loc>
-    
-    <lastmod>2019-09-16T17:20:16.589Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.1-java-ji-chu-zhi-shi/002-java-kai-fa-huan-jing-bu-zai-xu-yao-pei-zhi-classpath/</loc>
-    
-    <lastmod>2019-09-16T17:20:13.974Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.1-java-ji-chu-zhi-shi/004-fang-fa-he-shu-zu/</loc>
-    
-    <lastmod>2019-09-16T17:20:09.711Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.1-java-ji-chu-zhi-shi/001-dos-ming-ling-yu-kai-fa-huan-jing-de-pei-zhi/</loc>
-    
-    <lastmod>2019-09-16T17:20:06.887Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/001-mian-xiang-dui-xiang/</loc>
-    
-    <lastmod>2019-09-16T17:19:53.907Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/002-ji-cheng/</loc>
-    
-    <lastmod>2019-09-16T17:19:51.573Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/004-chou-xiang-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:47.950Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/003-duo-tai/</loc>
-    
-    <lastmod>2019-09-16T17:19:45.821Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/005-jie-kou/</loc>
-    
-    <lastmod>2019-09-16T17:19:43.557Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/006-bao/</loc>
-    
-    <lastmod>2019-09-16T17:19:40.903Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/008-feng-zhuang/</loc>
-    
-    <lastmod>2019-09-16T17:19:38.206Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.2-java-mian-xiang-dui-xiang/007-nei-bu-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:35.723Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/003-string-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:20.239Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/005-arrays-gong-ju-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:17.644Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/004-stringbuffer-he-stringbuilder/</loc>
-    
-    <lastmod>2019-09-16T17:19:15.373Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/006-ji-ben-lei-xing-bao-zhuang-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:12.842Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/008-system-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:10.146Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/007-zheng-ze-biao-da-shi/</loc>
-    
-    <lastmod>2019-09-16T17:19:07.539Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/009-math-random-lei/</loc>
-    
-    <lastmod>2019-09-16T17:19:04.371Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/010-biginteger-he-bigdecimal-lei/</loc>
-    
-    <lastmod>2019-09-16T17:18:58.846Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.3-java-chang-jian-dui-xiang/011-date-dateformat-he-calendar-lei/</loc>
-    
-    <lastmod>2019-09-16T17:18:56.326Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.3-java-chang-jian-dui-xiang/001-object-lei/</loc>
-    
-    <lastmod>2019-09-16T17:18:52.644Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/16/1.3-java-chang-jian-dui-xiang/002-scanner-lei/</loc>
-    
-    <lastmod>2019-09-16T17:18:49.560Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.4-io/002-file-lei/</loc>
-    
-    <lastmod>2019-09-16T17:18:34.748Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.4-io/001-yi-chang/</loc>
-    
-    <lastmod>2019-09-16T17:18:32.073Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.4-io/003-io-liu/</loc>
-    
-    <lastmod>2019-09-16T17:18:28.714Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.4-io/004-io-liu-bu-chong-nei-rong/</loc>
-    
-    <lastmod>2019-09-16T17:18:26.102Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.5-duo-xian-cheng/001-duo-xian-cheng/</loc>
-    
-    <lastmod>2019-09-16T17:18:15.635Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/1.6-wang-luo-bian-cheng/001-wang-luo-bian-cheng/</loc>
-    
-    <lastmod>2019-09-16T17:18:06.307Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/003-zhu-jie/</loc>
-    
-    <lastmod>2019-09-16T17:17:59.478Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/</loc>
-    
-    <lastmod>2019-09-16T17:17:54.151Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/</loc>
-    
-    <lastmod>2019-09-16T17:17:45.568Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/</loc>
-    
-    <lastmod>2019-09-16T17:17:21.080Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/</loc>
-    
-    <lastmod>2019-09-16T17:17:12.046Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.1-mysql/002-mysql-yue-shu/</loc>
-    
-    <lastmod>2019-09-16T17:17:04.390Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.1-mysql/001-mysql-ji-chu/</loc>
-    
-    <lastmod>2019-09-16T17:16:58.887Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/003-shu-ju-ku-lian-jie-chi/</loc>
-    
-    <lastmod>2019-09-16T17:16:47.486Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/</loc>
-    
-    <lastmod>2019-09-16T17:16:42.547Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/001-jdbc/</loc>
-    
-    <lastmod>2019-09-16T17:16:37.093Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/5.1-tomcat/001-tomcat/</loc>
-    
-    <lastmod>2019-09-16T17:16:16.549Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/7.1-fiter/001-filter/</loc>
-    
-    <lastmod>2019-09-16T17:15:57.253Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/6.1-jsp/001-jsp-quan-ji/</loc>
-    
-    <lastmod>2019-09-16T17:12:58.019Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</loc>
-    
-    <lastmod>2019-09-16T17:08:49.863Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</loc>
-    
-    <lastmod>2019-09-16T17:06:02.493Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/5.2-servlet/002-servlet-zhi-request-respone-xiang-jie/</loc>
-    
-    <lastmod>2019-09-16T17:04:07.014Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/5.2-servlet/001-servlet-gai-shu-shi-xian-xi-jie-huo-qu-zi-yuan-servletconfig-servletcontext/</loc>
-    
-    <lastmod>2019-09-16T17:02:21.472Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/4.3-jquery/001-jquery/</loc>
-    
-    <lastmod>2019-09-16T16:50:06.328Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/4.2-javascript/001-javascript/</loc>
-    
-    <lastmod>2019-09-16T16:48:25.534Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
     <loc>http://www.ideal-20.cn/2019/09/17/4.1-html-css/001-html-css/</loc>
-    
-    <lastmod>2019-09-16T16:45:13.922Z</lastmod>
-    
+    <lastmod>2019-09-16</lastmod>
   </url>
-  
-  <url>
-    <loc>http://www.ideal-20.cn/friends/index.html</loc>
-    
-    <lastmod>2019-08-22T13:11:16.460Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.ideal-20.cn/about/index.html</loc>
-    
-    <lastmod>2019-08-22T13:10:57.957Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.ideal-20.cn/categories/index.html</loc>
-    
-    <lastmod>2019-08-22T13:10:00.705Z</lastmod>
-    
-  </url>
-  
 </urlset>
