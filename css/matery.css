@@ -555,11 +555,12 @@ header .go-back i {
     margin-top: -30px;
 }
 
+.guide .title,
 .dream {
     margin-top: 20px;
     margin-bottom: 40px;
 }
-
+.guide .title,
 .dream .title,
 .music-player .title,
 .video-player .title {
@@ -568,6 +569,7 @@ header .go-back i {
     font-weight: 700;
 }
 
+.guide .text,
 .dream .text {
     opacity: .6;
     font-size: 1.1rem;
