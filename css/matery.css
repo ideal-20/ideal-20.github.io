@@ -17,6 +17,7 @@
         width: 95%;
     }
 
+
     .my-introduction-blog .info {
         width: 95%;
         /*让div水平居中*/
@@ -224,6 +225,7 @@ mark {
 .container .row {
     margin-bottom: 0px;
 }
+
 
 .bg-color {
     background-image: linear-gradient(to right, #623AA2 0%, #F97794 100%);
