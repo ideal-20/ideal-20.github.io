@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ideal-20.cn/"/>
-  <updated>2019-09-16T17:15:57.253Z</updated>
+  <updated>2019-09-19T12:25:16.015Z</updated>
   <id>http://www.ideal-20.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>001-算法与数据结构开篇</title>
+    <link href="http://www.ideal-20.cn/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/001-suan-fa-yu-shu-ju-jie-gou-kai-pian/"/>
+    <id>http://www.ideal-20.cn/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/001-suan-fa-yu-shu-ju-jie-gou-kai-pian/</id>
+    <published>2019-09-19T12:26:00.000Z</published>
+    <updated>2019-09-19T12:25:16.015Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;算法与数据结构开篇&quot;&gt;&lt;a href=&quot;#算法与数据结构开篇&quot; class=&quot;headerlink&quot; title=&quot;算法与数据结构开篇&quot;&gt;&lt;/a&gt;算法与数据结构开篇&lt;/h1&gt;&lt;h2 id=&quot;注意-算法与数据结构部分语言选用C&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="9.1-算法与数据结构" scheme="http://www.ideal-20.cn/categories/9-1-%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="算法" scheme="http://www.ideal-20.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>001-Filter</title>
@@ -75,6 +103,35 @@
   </entry>
   
   <entry>
+    <title>001-HTTP协议</title>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
+    <published>2019-09-16T17:05:00.000Z</published>
+    <updated>2019-09-16T17:06:02.493Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议&quot;&gt;&lt;/a&gt;HTTP协议&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;HTTP (HyperText Transfer Protocol)
+        
+      
+    
+    </summary>
+    
+      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
+    
+      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
     <title>002-会话技术</title>
     <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/"/>
     <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</id>
@@ -103,35 +160,6 @@
       <category term="Cookies" scheme="http://www.ideal-20.cn/tags/Cookies/"/>
     
       <category term="Session" scheme="http://www.ideal-20.cn/tags/Session/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>001-HTTP协议</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
-    <published>2019-09-16T17:05:00.000Z</published>
-    <updated>2019-09-16T17:06:02.493Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议&quot;&gt;&lt;/a&gt;HTTP协议&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;HTTP (HyperText Transfer Protocol)
-        
-      
-    
-    </summary>
-    
-      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
-    
-      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
     
   </entry>
   
@@ -549,34 +577,6 @@
       <category term="Junit" scheme="http://www.ideal-20.cn/tags/Junit/"/>
     
       <category term="单元测试" scheme="http://www.ideal-20.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>001-反射</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/001-fan-she/</id>
-    <published>2019-09-16T16:36:00.000Z</published>
-    <updated>2019-09-16T17:17:45.568Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Java反射：Web学习的灵魂&quot;&gt;&lt;a href=&quot;#Java反射：Web学习的灵魂&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="2.1-Java过渡知识" scheme="http://www.ideal-20.cn/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
-    
-      <category term="反射" scheme="http://www.ideal-20.cn/tags/%E5%8F%8D%E5%B0%84/"/>
     
   </entry>
   
