@@ -1,0 +1,1271 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="002-顺序表原来这么简单, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="description" content="线性表引言新生安排体检，为了 便管理与统一数据，学校特地规定了排队的方式，即按照学号排队，谁在前谁在后，这都是规定好的，所以谁在谁不在，都是非常方便统计的，同学们就像被一条线（学号）联系起来了，这种组织数据（同学）的方式我们可以称作线性表结">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>002-顺序表原来这么简单 | 理想二旬不止|Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">理想二旬不止|Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">理想二旬不止|Blog</div>
+        <div class="logo-desc">
+            
+            这城市总是风很大 孤独的人总是晚回家
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        002-顺序表原来这么简单
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/数据结构/" target="_blank">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                            <a href="/tags/线性表/" target="_blank">
+                                <span class="chip bg-color">线性表</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/9-1-算法与数据结构/" class="post-category" target="_blank">
+                                9.1-算法与数据结构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-23
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3.9k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        14 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>新生安排体检，为了 便管理与统一数据，学校特地规定了排队的方式，即按照学号排队，谁在前谁在后，这都是规定好的，所以谁在谁不在，都是非常方便统计的，同学们就像被一条线（学号）联系起来了，这种组织数据（同学）的方式我们可以称作线性表结构</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>线性表</strong>：具有零个或多个（具有相同性质，属于同一元素的）数据元素的有限序列</p>
+<p>若将线性表记为 ( a<sub>0</sub> , a<sub>1</sub> <strong>,a<sub>i -1</sub> a<sub>i</sub> ,a<sub>i +1</sub></strong>  ,  … , a<sub>n - 1</sub> , a<sub>n</sub> ) </p>
+<ul>
+<li><p>注意：i 是任意数字，只为了说明相对位置，下标即其在线性表中的位置)</p>
+</li>
+<li><p><strong>前继和后继</strong>：由于前后元素之间存在的是<strong>顺序关系</strong>，所以除了首尾元素外，每个元素均含有<strong>前驱</strong>和<strong>后继</strong>，简单的理解就是<strong>前一个 元素和后一个元素</strong></p>
+</li>
+<li><p><strong>空表</strong>：如果线性表中元素的个数 n 为线性表长度，那么 n = 0 的时候，线性表为空</p>
+</li>
+<li><p><strong>首节点、尾节点</strong>： 上面表示中的 ：a<sub>0</sub> 称作首节点，a<sub>n</sub> 称作尾节点</p>
+</li>
+</ul>
+<h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><ul>
+<li><p><strong>数据类型</strong>：一组<strong>性质相同</strong>的值的集合及定义在此集合上的一些操作的<strong>总称</strong></p>
+</li>
+<li><p><strong>抽象数据类型</strong>：是指一个数学模型及定义在该模型上的一组操作</p>
+</li>
+</ul>
+<p>关于数据类型我们可以举这样一个例子</p>
+<ul>
+<li>例如：我们常常用到的 整数型 浮点型 数据 这些都是数据的总称，所有符合其性质特征的都可以用其对应数据类型来定义，例如 520是一个满足整数特征的数据，所以可以赋值给 一个int型的变量 <code>int love = 520;</code> </li>
+</ul>
+<p>像这些<strong>一般的数据类型</strong>通常在编程语言的内部定义封装，直接提供给用户，供其调用进行运算，而抽象数据类型一般由用户自己<strong>根据已有的数据类型进行定义</strong></p>
+<p><strong>抽象数据类型和高级编程语言中的数据类型实际上是一个概念，但其含义要比普通的数据类型更加广泛、抽象</strong></p>
+<p>为什么说抽象呢？是因为它是我们用户为了解决实际的问题，与描述显示生活且现实生活中的实体所对应的一种数据类型，我可以定义其存储的结构，也可以定义它所能够，或者说需要进行的一些操作，例如在员工表中，添加或删除员工信息，这两部分就组成了 “员工” 这个抽象的数据类型</p>
+<p><strong>大致流程就是：</strong></p>
+<ul>
+<li><p>A：一般用户会编写一个自定义数据类型作为基础类型</p>
+</li>
+<li><p>B：其中一些抽象操作就可以定义为该类型的成员函数，然后实现这些函数</p>
+</li>
+<li><p>C：如果对外的接口在公有域中，就可以通过对象来调用这些操作了</p>
+</li>
+<li><p>当然，我们在使用抽象数据类型的时候，我们更加注意数据本身的API描述，而不会关心数据的表示，这些都是实现该抽象数据类型的开发者应该考虑的事情</p>
+</li>
+</ul>
+<p>线性表分为两种——顺序存储结构和链式存储结构，我们先来学习第一种</p>
+<h2 id="顺序存储结构"><a href="#顺序存储结构" class="headerlink" title="顺序存储结构"></a>顺序存储结构</h2><h3 id="什么是顺序存储结构呢？"><a href="#什么是顺序存储结构呢？" class="headerlink" title="什么是顺序存储结构呢？"></a>什么是顺序存储结构呢？</h3><p><strong>顺序存储结构</strong>：用一段地址连续的存储单元依次存储线性表的数据元素</p>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-001.png" alt></p>
+<h3 id="怎么理解这这种存储方式呢？"><a href="#怎么理解这这种存储方式呢？" class="headerlink" title="怎么理解这这种存储方式呢？"></a>怎么理解这这种存储方式呢？</h3><p>例如在一个菜园子中，有一片空地，我们在其中找一小块种蔬菜，因为土地不够平整疏松所以我们需要耕地，同时将种子按照一定的顺序种下去，这就是对表的初始化</p>
+<p>菜园子可以理解为内存空间，空地可以理解为可以使用的内存空间，我们通过种蔬菜种子的方式，将一定的内存空间所占据，当然，这片空间中你所放置的数据元素都必须是相同类型的 也就是说都得是蔬菜种子，有时候有些种子被虫子咬坏了，我们就需要移除一些种子，买来以后再在空出来的位置中选地方种好，这也就是增加和删除数元素</p>
+<h3 id="地址计算方式"><a href="#地址计算方式" class="headerlink" title="地址计算方式"></a>地址计算方式</h3><p>从定义中我们可以知道 这种存储方式，存储的数据是连续的，而且相同类型，所以每一个数据元素占据的存储空间是一致的，假设每个数据 占据 L个存储单元那么我们可以的出这样的结论公式</p>
+<p>$$Loc(a_i) = Loc(a_1) + (i -1)*L$$</p>
+<ul>
+<li>i 代表所求元素的下标</li>
+<li>也就是单位长度乘以对应的个数</li>
+</ul>
+<h3 id="线性表的抽象数据类型"><a href="#线性表的抽象数据类型" class="headerlink" title="线性表的抽象数据类型"></a>线性表的抽象数据类型</h3><pre class=" language-c++"><code class="language-c++">#ifndef _LIST_H_
+#define _LIST_H_
+#include<iostream>
+using namespace std;
+
+class outOfRange{};
+class badSize{};
+template<class T>
+class List {
+public:
+    // 清空线性表
+    virtual void clear()=0;
+    // 判空，表空返回true，非空返回false
+    virtual bool empty()const=0;
+    // 求线性表的长度
+    virtual int size()const=0;
+    // 在线性表中，位序为i[0..n]的位置插入元素value
+    virtual void insert(int i,const T &value)=0;
+    // 在线性表中，位序为i[0..n-1]的位置删除元素
+    virtual void remove(int i)=0;
+    // 在线性表中，查找值为value的元素第一次出现的位序
+    virtual int search(const T&value)const=0;
+    // 在线性表中，查找位序为i的元素并返回其值
+    virtual T visit(int i)const=0;
+    // 遍历线性表
+    virtual void traverse()const=0;
+    // 逆置线性表
+    virtual void inverse()=0;                    
+    virtual ~List(){};
+};
+
+/*自定义异常处理类*/ 
+
+
+class outOfRange :public exception {  //用于检查范围的有效性
+public:
+    const char* what() const throw() {
+        return "ERROR! OUT OF RANGE.\n";
+    }
+};
+
+class badSize :public exception {   //用于检查长度的有效性
+public:
+    const char* what() const throw() {
+        return "ERROR! BAD SIZE.\n";
+    }
+};
+
+#endif</code></pre>
+<p>在上面线性表的抽象数据类型中，定义了一些常用的方法，我们可以在其中根据需要，增删函数</p>
+<p>有了这样的抽象数据类型List 我们就可以写出线性表其下的顺序结构和链式结构表的定义写出来</p>
+<blockquote>
+<p>异常语句说明：如果new在调用分配器分配存储空间的时候出现了错误（错误信息被保存了一下），就会catch到一个bad_alloc类型的异常，其中的what函数，就是提取这个错误的基本信息的，就是一串文字，应该是const char*或者string</p>
+</blockquote>
+<h3 id="顺序表——顺序存储结构的定义"><a href="#顺序表——顺序存储结构的定义" class="headerlink" title="顺序表——顺序存储结构的定义"></a>顺序表——顺序存储结构的定义</h3><pre class=" language-c++"><code class="language-c++">#ifndef _SEQLIST_H_
+#define _SEQLIST_H_
+#include "List.h"
+#include<iostream>
+using namespace std;
+
+//celemType为顺序表存储的元素类型
+template <class elemType>
+class seqList: public List<elemType> { 
+private:
+    // 利用数组存储数据元素
+    elemType *data;
+    // 当前顺序表中存储的元素个数
+    int curLength;
+    // 顺序表的最大长度
+    int maxSize;
+    // 表满时扩大表空间
+    void resize();                            
+public:
+    // 构造函数
+    seqList(int initSize = 10);                
+     // 拷贝构造函数
+    seqList(seqList & sl);
+    // 析构函数
+    ~seqList()  {delete [] data;}
+    // 清空表，只需修改curLength
+    void clear()  {curLength = 0;}
+    // 判空
+    bool empty()const{return curLength == 0;}
+    // 返回顺序表的当前存储元素的个数
+    int size() const  {return curLength;}
+    // 在位置i上插入一个元素value，表的长度增1
+    void insert(int i,const elemType &value);
+    // 删除位置i上的元素value，若删除位置合法，表的长度减1 
+    void remove(int i);
+    // 查找值为value的元素第一次出现的位序
+    int search(const elemType &value) const ;
+    // 访问位序为i的元素值，“位序”0表示第一个元素，类似于数组下标
+    elemType visit(int i) const;            
+    // 遍历顺序表
+    void traverse() const;
+    // 逆置顺序表
+    void inverse();                            
+    bool Union(seqList<elemType> &B);
+};</code></pre>
+<h3 id="顺序表基本运算的实现"><a href="#顺序表基本运算的实现" class="headerlink" title="顺序表基本运算的实现"></a>顺序表基本运算的实现</h3><h4 id="一-构造函数"><a href="#一-构造函数" class="headerlink" title="(一) 构造函数"></a>(一) 构造函数</h4><p>在构造函数中，我们需要完成这个空顺序表的初始化，即创建出一张空的顺序表</p>
+<pre class=" language-c++"><code class="language-c++">template <class elemType>
+seqList<elemType>::seqList(int initSize) { 
+
+    if(initSize <= 0) throw badSize();
+    maxSize = initSize;
+    data = new elemType[maxSize];
+    curLength = 0;
+
+} </code></pre>
+<p>在这里我们注意区分 initSize 和 curLenght 这两个变量</p>
+<ul>
+<li><strong>initSize</strong> ：初始化 (指定) 数组长度<ul>
+<li>数组长度是<strong>存放线性表的存储空间的长度</strong>，一般来说这个值是固定的，但是为了满足需要很多情况下，我们会选择动态的分配数组，即定义扩容机制，虽然很方便，但是确带来了效率的损失，我们在扩容的函数中会再提到这一问题</li>
+</ul>
+</li>
+<li><strong>curLenght</strong>：线性表长度，即<strong>数据元素的个数</strong></li>
+</ul>
+<h4 id="二-拷贝构造函数"><a href="#二-拷贝构造函数" class="headerlink" title="(二) 拷贝构造函数"></a>(二) 拷贝构造函数</h4><pre class=" language-c++"><code class="language-c++">template <class elemType>
+seqList<elemType>::seqList(seqList & sl) { 
+
+    maxSize = sl.maxSize;
+    curLength = sl.curLength;
+    data = new elemType[maxSize];
+    for(int i = 0; i < curLength; ++i)
+        data[i] = sl.data[i];
+
+}</code></pre>
+<h4 id="三-插入"><a href="#三-插入" class="headerlink" title="(三) 插入"></a>(三) 插入</h4><p>我们下面来谈一个非常常用的操作——插入操作，接着用我们一开始的例子，学校安排体检，大家自觉的按照学号顺讯排好了队伍，但是迟到的某个学生Z和认识前面队伍中的C同学，过去想套近乎，插个队，如果该同学同意了，这意味着原来C同学前面的人变成了Z，B同学后面的人也从C变成了Z同学，同时从所插入位置后面的所有同学都需要向后移动一个位置，后面的同学莫名其妙的就退后了一个位置 </p>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-002.png" alt></p>
+<p>我们来想一下如何用代码实现它呢，并且有些什么需要特别考虑到的事情呢？</p>
+<ul>
+<li><strong>1、插入元素位置的合法以及有效性</strong><ul>
+<li>插入的有效范围：[0,curLength]   说明：curLength：当前有效位置</li>
+</ul>
+</li>
+<li><strong>2、检查是否表满，表满不能继续添加，否则发生溢出错误</strong><ul>
+<li>A：不执行操作，报错退出 (为避免可以将数组初始大小设置大一些)</li>
+<li>B：动态扩容，扩大数组容量 (下例采用)</li>
+</ul>
+</li>
+<li><strong>3、首尾节点的特殊插入情况考虑</strong></li>
+<li><strong>4、移动方向</strong><ul>
+<li>利用循环，从表尾开始逐次移动，如果从插入位置开始，会将后面的未移动元素覆盖掉</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">template <class elemType>
+void seqList<elemType>::insert(int i, const elemType &value) { 
+
+    //合法的插入范围为【0..curlength】
+    if (i < 0 || i > curLength) throw outOfRange(); 
+    //表满，扩大数组容量
+    if (curLength == maxSize) resize();            
+    for (int j = curLength; j > i; j--)
+        //下标在【curlength-1..i】范围内的元素往后移动一步
+        data[j] = data[j - 1];
+    //将值为value的元素放入位序为i的位置
+    data[i] = value;
+    //表长增加
+    ++curLength;    
+
+}</code></pre>
+<h4 id="四-删除"><a href="#四-删除" class="headerlink" title="(四) 删除"></a>(四) 删除</h4><p>既然理解了插入操作，趁热打铁，先认识一下对应的删除操作，这个操作是什么流程呢？还是上面的例子，插队后的同学被管理人员发现，不得不离开队伍，这样刚才被迫集体后移的那些同学就都又向前移动了一步，当然删除位置的前后继关系也发生了改变</p>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-003.png" alt></p>
+<p>与插入相同，它又有什么注意之处呢?</p>
+<ul>
+<li><p><strong>1、删除元素位置的合法以及有效性</strong></p>
+<ul>
+<li>删除的有效范围：[0,curLength - 1]   </li>
+<li><code>i &lt; 0 || i &gt; curLength- 1</code>隐性的解决了判断空表的问题</li>
+</ul>
+</li>
+<li><p><strong>2、移动方向</strong></p>
+<ul>
+<li>利用循环，从删除元素的位置后开始逐次前移</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-c++"><code class="language-c++">template <class elemType>
+void seqList<elemType>::remove(int i) { 
+
+    //合法的删除范围
+    if(i < 0 || i > curLength- 1) throw outOfRange();  
+    for(int j = i; j < curLength - 1; j++)
+        data[j] = data[j+1];
+    --curLength; 
+}</code></pre>
+<h4 id="五-扩容操作"><a href="#五-扩容操作" class="headerlink" title="(五) 扩容操作"></a>(五) 扩容操作</h4><p>还记得吗，我们在构造函数中，定义了数组的长度<br><code>seqList&lt;elemType&gt;::seqList(int initSize) { 代码内容}</code> </p>
+<p>同时我们将这个初始化的指定参数值做为了 数组的长度 </p>
+<p><code>maxSize = initSize;</code> </p>
+<p><strong>为什么我们不直接指定构造函数中的参数为 maxSize呢？</strong> </p>
+<p>从变量名可以看出这是为了说明初始值和最大值不是同一个数据，也可以说是为了扩容做准备，</p>
+<p><strong>为什么要扩容呢？</strong></p>
+<p>数组中存放着线性表，但是如果线性表的长度（数据元素的个数）达到了数组长度会怎么样？很显然我们已经没有多余的空间进行例如插入这种操作，也称作表满了，所以我们定义一个扩容的操作，当涉及到可能表满的情况，就执行扩容操作</p>
+<p><strong>扩容是不是最好的方式？</strong></p>
+<p>虽然数组看起来有一丝不太灵光，但是数组确实也是存储对象或者数据的有效方式，我们也推荐这种方式，但是由于其长度固定，导致它在很多时候会受到一些限制，就例如我们上面的表满问题，那么如何解决呢？方法之一就是我们设置初始值比实际值多一些，但是由于实际值往往会有一些波动，就会导致占用过多的内存空间造成浪费，或者仍发生表满问题，为了解决实际问题，很显然还是扩容更加符合需要，但是代价就是一定的效率损失</p>
+<blockquote>
+<p>数组就是一个简单的线性序列，这使得元素访问非常快速。但是为这种速度所付出的代价是数组对象的大小被固定，并且在其生命周期中不可改变</p>
+</blockquote>
+<p><strong>我们看一下扩容的基本原理你就知道原因了！</strong></p>
+<p><strong>扩容思想：</strong></p>
+<p>由于数组空间在内存中是必须连续的，因此，扩大数组空间的操作需要重新申请一个规模更大的新数组，将原有数组的内容复制到新数组中，释放原有数组空间，将新数组作为线性表的存储区</p>
+<p>所以为了实现空间的自动分配，尽管我们还是会首选动态扩容的方式，但是这种弹性显然需要一定的开销</p>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-004.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template <class elemType>
+void seqList<elemType>::resize() { 
+
+    elemType *p = data;
+    maxSize *= 2;
+    data = new elemType[maxSize];
+    for(int i = 0; i < curLength; ++i)
+        data[i] = p[i];
+    delete[] p; 
+
+}</code></pre>
+<h4 id="六-按值查找元素"><a href="#六-按值查找元素" class="headerlink" title="(六) 按值查找元素"></a>(六) 按值查找元素</h4><p>顺序查找值为value的元素第一次出现的位置，只需要遍历线性表中的每一个元素数据，依次与指定value值比较</p>
+<ul>
+<li>相同：返回值的位序<ul>
+<li>注意查询的有效范围</li>
+</ul>
+</li>
+<li>找不到或错误：返回 -1</li>
+</ul>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-005.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+int seqList<elemType>::search(const elemType & value) const
+{
+
+    for(int i = 0; i < curLength; i++)
+        if(value == data[i])return i;
+    return - 1;
+
+}</code></pre>
+<h4 id="七-按位置-下标-查找元素"><a href="#七-按位置-下标-查找元素" class="headerlink" title="(七) 按位置(下标)查找元素"></a>(七) 按位置(下标)查找元素</h4><p>这个就真的很简单了，直接返回结果即可</p>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-006.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+elemType seqList<elemType>::visit(int i) const {
+
+    return data[i];                                                                   
+
+}</code></pre>
+<h4 id="八-遍历元素"><a href="#八-遍历元素" class="headerlink" title="(八) 遍历元素"></a>(八) 遍历元素</h4><p>遍历是什么意思呢？遍历其实就是每一个元素都访问一次，从头到尾过一遍，所以我们就可以利用遍历实现查询，或者输出等功能，如果表是空表，就输出信息提示，并且注意遍历的有效范围是[0，最后一个元素 - 1]</p>
+<p><img src="http://image.ideal-20.cn/DataStructuresAndAlgorithms/9.2-02-007.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void seqList<elemType>::traverse()const {
+
+    if (empty())
+        cout << "is empty" << endl;    
+    else {
+        cout << "output element:\n";
+        //依次访问顺序表中的所有元素
+        for (int i = 0; i < curLength; i++)    
+            cout << data[i] << " ";
+        cout << endl;
+    }
+
+}</code></pre>
+<h4 id="九-逆置运算"><a href="#九-逆置运算" class="headerlink" title="(九) 逆置运算"></a>(九) 逆置运算</h4><p>逆置运算顾名思义 ，就是将线性表中的数据颠倒一下，也就是说首元素和尾元素调换位置，然后就是第二个元素和倒数第二个元素调换，接着向中间以对为单位继续调换，也可以称作收尾对称交换，需要注意的就是循环的次数仅仅是线性表长度的一半而已</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void seqList<elemType>::inverse() {
+
+    elemType tem;
+    for(int i = 0; i < curLength/2; i++) {
+        //调换的具体方式，可以设置一个中间值
+        tem = data[i];
+        //对称的两个数据
+        data[i] = data[curLength - i -1];
+        data[curLength - i -1] = tem;
+    }
+
+}</code></pre>
+<h4 id="十-合并顺序表"><a href="#十-合并顺序表" class="headerlink" title="(十) 合并顺序表"></a>(十) 合并顺序表</h4><p>现在给出两个线性表，表A和表B，其中的元素均为正序存储，如何可以合并两个表，放于A表中，但是表中的元素仍然保证正序存储</p>
+<p>算法思想：我们分别设置三个指针，分别代表了A B C，C 代表新表，我们分别让三个指针指向三个表的末尾，将A表和B表的尾元素进行比较，然后将大的移入新A表中，然后将大的元素所在线性表的指针和新表的指针，前移一位 ，这样A和B表继续比较元素大小，重复操作，直到一方表空，将还有剩余的那个表的剩余元素移入新A表中</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+bool seqList<elemType>::Union(seqList<elemType> &B) {    
+
+    int m, n, k, i, j;    
+    //当前对象为线性表A
+    //m,n分别为线性表A和B的长度
+    m = this->curLength;                          
+    n = B.curLength;
+    //k为结果线性表的工作指针（下标）新A表中
+    k = n + m - 1;    
+    //i,j分别为线性表A和B的工作指针（下标）
+    i = m - 1, j = n - 1;
+    //判断表A空间是否足够大，不够则扩容
+    if (m + n > this->maxSize)                      
+        resize();
+    //合并顺序表，直到一个表为空
+    while (i >= 0 && j >= 0)                      
+        if (data[i] >= B.data[j])
+            data[k--] = data[i--];
+        //默认当前对象，this指针可省略
+        else data[k--] = B.data[j--];              
+    //将表B中的剩余元素复制到表A中
+    while (j >= 0)                                  
+        data[k--] = B.data[j--];
+    //修改表A长度
+    curLength = m + n;                              
+    return true;
+
+}</code></pre>
+<h3 id="顺序表的优缺点"><a href="#顺序表的优缺点" class="headerlink" title="顺序表的优缺点"></a>顺序表的优缺点</h3><p><strong>优点：</strong></p>
+<ol>
+<li>逻辑与物理顺序一致，顺序表能够按照下标直接<strong>快速的存取元素</strong></li>
+<li>无须为了表示表中元素之间的逻辑关系而增加额外的存储空间</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><p>线性表长度需要初始定义，常常难以确定存储空间的容量，所以只能以降低效率的代价使用扩容机制</p>
+</li>
+<li><p>插入和<strong>删除操作需要移动大量的元素，效率较低</strong></p>
+</li>
+</ol>
+<h4 id="时间复杂度证明"><a href="#时间复杂度证明" class="headerlink" title="时间复杂度证明"></a>时间复杂度证明</h4><h5 id="读取："><a href="#读取：" class="headerlink" title="读取："></a>读取：</h5><p>还记的这个公式吗？</p>
+<p>$$Loc(a_i) = Loc(a_1) + (i -1)*L$$</p>
+<p>通过这个公式我们可以在任何时候计算出线性表中任意位置的地址，并且对于计算机所使用的时间都是相同的，即一个常数，这也就意味着，它的时间复杂度为 O(1)</p>
+<h5 id="插入和删除："><a href="#插入和删除：" class="headerlink" title="插入和删除："></a>插入和删除：</h5><p>我们以插入为例子</p>
+<ul>
+<li><p>首先最好的情况是这样的，元素在末尾的位置插入，这样无论该元素进行什么操作，均不会对其他元素产生什么影响，所以它的时间复杂度为 O(1) </p>
+</li>
+<li><p>那么最坏的情况又是这样的，元素正好插入到第一个位置上，这就意味着后面的所有元素全部需要移动一个位置，所以时间复杂度为 O(n)</p>
+</li>
+<li><p>平均的情况呢，由于在每一个位置插入的概率都是相同的，而插入越靠前移动的元素越多，所以平均情况就与中间那个值的一定次数相等，为 (n - 1) / 2 ，平均时间复杂度还是 O(n)</p>
+</li>
+</ul>
+<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><p>读取数据的时候，它的时间复杂度为 O(1)，插入和删除数据的时候，它的时间复杂度为 O(n)，所以线性表中的顺序表更加适合处理一些元素个数比较稳定，查询读取多的问题</p>
+<h3 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h3><p>如果文章中有什么不足，或者错误的地方，欢迎大家留言分享想法，感谢朋友们的支持！</p>
+<p>如果能帮到你的话，那就来关注我吧！如果您更喜欢微信文章的阅读方式，可以关注我的公众号</p>
+<blockquote>
+<p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
+<p>一个坚持推送原创开发技术文章的公众号：理想二旬不止</p>
+</blockquote>
+<p><img src="http://image.ideal-20.cn/img/QRcode-rectangle.png" alt></p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《002-顺序表原来这么简单》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/23/9.1-suan-fa-yu-shu-ju-jie-gou/shun-xu-biao/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                BWH_Steven
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80NjIzNy8yMjc0OA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/09/23/9.1-suan-fa-yu-shu-ju-jie-gou/shun-xu-biao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="002-顺序表原来这么简单">
+                        
+                        <span class="card-title">002-顺序表原来这么简单</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            线性表——顺序表的实现与讲解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/9-1-算法与数据结构/" class="post-category" target="_blank">
+                                    9.1-算法与数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数据结构/" target="_blank">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/线性表/" target="_blank">
+                        <span class="chip bg-color">线性表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/suan-fa-yu-shu-ju-jie-gou-kai-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="001-算法与数据结构开篇">
+                        
+                        <span class="card-title">001-算法与数据结构开篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            算法与数据结构第一篇——入门必看
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/9-1-算法与数据结构/" class="post-category" target="_blank">
+                                    9.1-算法与数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/数据结构/" target="_blank">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            <div>@2019 BWH_Steven · 版权所有</div>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">116.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
+            
+
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">    
+    <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ideal_bwh@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

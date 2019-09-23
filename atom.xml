@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ideal-20.cn/"/>
-  <updated>2019-09-19T12:25:16.015Z</updated>
+  <updated>2019-09-23T12:30:57.352Z</updated>
   <id>http://www.ideal-20.cn/</id>
   
   <author>
@@ -17,9 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>002-顺序表原来这么简单</title>
+    <link href="http://www.ideal-20.cn/2019/09/23/9.1-suan-fa-yu-shu-ju-jie-gou/shun-xu-biao/"/>
+    <id>http://www.ideal-20.cn/2019/09/23/9.1-suan-fa-yu-shu-ju-jie-gou/shun-xu-biao/</id>
+    <published>2019-09-23T12:30:00.000Z</published>
+    <updated>2019-09-23T12:30:57.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h1&gt;&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="9.1-算法与数据结构" scheme="http://www.ideal-20.cn/categories/9-1-%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="线性表" scheme="http://www.ideal-20.cn/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>001-算法与数据结构开篇</title>
-    <link href="http://www.ideal-20.cn/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/001-suan-fa-yu-shu-ju-jie-gou-kai-pian/"/>
-    <id>http://www.ideal-20.cn/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/001-suan-fa-yu-shu-ju-jie-gou-kai-pian/</id>
+    <link href="http://www.ideal-20.cn/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/suan-fa-yu-shu-ju-jie-gou-kai-pian/"/>
+    <id>http://www.ideal-20.cn/2019/09/19/9.1-suan-fa-yu-shu-ju-jie-gou/suan-fa-yu-shu-ju-jie-gou-kai-pian/</id>
     <published>2019-09-19T12:26:00.000Z</published>
     <updated>2019-09-19T12:25:16.015Z</updated>
     
@@ -547,36 +575,6 @@
       <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
     
       <category term="注解" scheme="http://www.ideal-20.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>002-Junit单元测试</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/2.1-java-guo-du-zhi-shi/002-junit-dan-yuan-ce-shi/</id>
-    <published>2019-09-16T16:38:00.000Z</published>
-    <updated>2019-09-16T17:17:54.151Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Junit单元测试&quot;&gt;&lt;a href=&quot;#Junit单元测试&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="2.1-Java过渡知识" scheme="http://www.ideal-20.cn/categories/2-1-Java%E8%BF%87%E6%B8%A1%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
-    
-      <category term="Junit" scheme="http://www.ideal-20.cn/tags/Junit/"/>
-    
-      <category term="单元测试" scheme="http://www.ideal-20.cn/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
