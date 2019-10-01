@@ -1,0 +1,1267 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="002-如何使用C++实现单链表, Java,javaweb,MySQL,JavaScript,HTML,CSS">
+    <meta name="description" content="线性表——链表
+为什么假期也在发文章//TODO NullGirlfrindException
+请忽略以上两行无聊的事实……
+如何弥补顺序表的不足之处？第一次学习线性表一定会马上接触到一种叫做顺序表（顺序存储结构），经过上一篇的分析顺序表的">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>002-如何使用C++实现单链表 | 理想二旬不止|Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">理想二旬不止|Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">理想二旬不止|Blog</div>
+        <div class="logo-desc">
+            
+            这城市总是风很大 孤独的人总是晚回家
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        002-如何使用C++实现单链表
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/数据结构/" target="_blank">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                            <a href="/tags/线性表/" target="_blank">
+                                <span class="chip bg-color">线性表</span>
+                            </a>
+                        
+                            <a href="/tags/单链表/" target="_blank">
+                                <span class="chip bg-color">单链表</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/9-2-数据结构/" class="post-category" target="_blank">
+                                9.2-数据结构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-01
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        15 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="线性表——链表"><a href="#线性表——链表" class="headerlink" title="线性表——链表"></a>线性表——链表</h1><p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-logo.png" alt></p>
+<h2 id="为什么假期也在发文章"><a href="#为什么假期也在发文章" class="headerlink" title="为什么假期也在发文章"></a>为什么假期也在发文章</h2><p><strong>//TODO NullGirlfrindException</strong></p>
+<p>请忽略以上两行无聊的事实……</p>
+<h2 id="如何弥补顺序表的不足之处？"><a href="#如何弥补顺序表的不足之处？" class="headerlink" title="如何弥补顺序表的不足之处？"></a>如何弥补顺序表的不足之处？</h2><p>第一次学习线性表一定会马上接触到一种叫做顺序表（顺序存储结构），经过上一篇的分析顺序表的优缺点是很显然的，它虽然能够很快的访问读取元素，但是在解决如插入和删除等操作的时候，却需要移动大量的元素，效率较低，那么是否有一种方法可以改善或者解决这个问题呢？</p>
+<p><strong>首先我们需要考虑，为什么顺序表中的插入删除操作会涉及到元素的移动呢？</strong></p>
+<p>好家伙，问题就是围绕着顺序表的最大的特点出现的——顺序存储，相邻放置元素，也就是说每个元素都是根据编号一个一个挨着的，这就导致了 插入或删除后，为了仍然呈顺序线性存储，被操作元素后面的元素的位置均需要发生一定的变化，你应该能想象得到，在拥挤的队伍中突然从中插入一个学生的场景，后面浩浩荡荡的人群，口吐芬芳的向后挪了一个空位，如果人群过大，重新排好队也需要一定的时间</p>
+<p>好嘛，人与人之间别这么挤在一起，每个人与人之间都流出一点空隙来，留一定的位置出来，好了，这好像是个办法，但是负责一个一个与学生交流填表的老师可就不干了，这意味着我（找人）遍历的时候，需要多跑好多路，浪费好多时间，先不说这个，体院馆又不行了，你们这么个摆法，我这小馆可放不下，这也就意味着空间复杂度增加了很多</p>
+<p>我们刚才所围绕的都是在 “排队” 的基本前提下的，但我们能想到的方法并不是很理想，那么我们索性就不排队了，是不是能有更好的解决方式呢？</p>
+<p><strong>一个有效的方法：</strong></p>
+<p>让同学们（元素）自己找位置随便站，不过你要知道相对于自己下一位同学的位置，这样既解决了空间上的问题，又能通过这种两两联系的方式访问（遍历）到整个队伍（数组），最重要的是，插入和离开同学，由于同学（元素）之间不存在了那种排队，相邻的特点，所以也不会说影响到过多的同学（元素）只需要和你插入位置的前后两位同学沟通好就行了，反正别人也不知道你们之间发生了什么事</p>
+<p>好了思路是有了，我们来看一种最常见的链表——单链表</p>
+<h2 id="单链表的基本结构"><a href="#单链表的基本结构" class="headerlink" title="单链表的基本结构"></a>单链表的基本结构</h2><p>这种链表为什么被称作单链表呢？这是因为它只含有一个地址域，这是什么意思呢？</p>
+<p>我们在链表中摈弃了顺序表中那种一板一眼的排队方式，但是我们必须让两个应该相邻的元素之间有一定的相互关系，所以我们选择让每一个元素可以联系对应的下一个元素</p>
+<p>而这个时候我们就需要给每个元素安排一个额外的位置，来存储它的<strong>后继元素的存储地址</strong>，这个存储元素信息的域叫做<strong>指针域或地址域</strong>，指针域中储存的信息也叫作<strong>指针或者链</strong>，</p>
+<p>我们用一张图 看一下他的结构</p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-014.png" alt></p>
+<p> <strong>结构中名词解释</strong></p>
+<ul>
+<li><p><strong>头指针</strong>：一个指向第一个节点地址的指针变量</p>
+<ul>
+<li>头指针具有<strong>标识单链表</strong>的作用，所以经常用头指针<strong>代表单链表的名字</strong></li>
+</ul>
+</li>
+<li><p><strong>头结点</strong>：在单链表的第一个结点之前附设一个结点，它没有直接前驱，称之为头结点</p>
+<ul>
+<li>可不存信息，也可以作为监视哨，或用于存放线性表的长度等附加信息</li>
+<li>指针域中存放首元结点的地址</li>
+</ul>
+</li>
+<li><p><strong>首元结点</strong>：存储第一个元素的节点</p>
+</li>
+</ul>
+<h2 id="为什么要附设一个头结点"><a href="#为什么要附设一个头结点" class="headerlink" title="为什么要附设一个头结点"></a>为什么要附设一个头结点</h2><p>我们来解释一下：</p>
+<ul>
+<li><p>链表如果为空的情况下，如果单链表没有头结点，那么头指针就会指向NULL，如果加上头结点，无论单链表是否为空，头指针都会指向头结点，这样使得空链表与非空链表处理一致</p>
+</li>
+<li><p>使首元结点前插入或删除元素的时候，与后面操作相同，不需要产生额外的判断分支，使得算法更加简单</p>
+</li>
+</ul>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-015.png" alt></p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-016.png" alt></p>
+<p>（以插入为例讲解）在带头结点的情况下，在首元结点前插入或者删除元素仍与在其他位置的操作相同，只需要将前一个元素（在这里是头结点）的指针域指向插入元素，同时将插入元素的指针域指向原来的第二的元素      </p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-017.png" alt></p>
+<p>而无头结点的情况由于，首元结点前没有元素，只能通过修改head的前后关系，所以导致了 与在别的位置插入或删除元素的操作不同，在实现这两个功能的时候就需要额外的写一个判断语句来判断插入的位置是不是首元结点之前的位置，增加了分支，代码不够简洁</p>
+<p><strong>总结：头结点的存在使得空链表与非空链表处理一致，也方便对链表首元结点前结点的插入或删除操作</strong></p>
+<h2 id="单链表的类型定义"><a href="#单链表的类型定义" class="headerlink" title="单链表的类型定义"></a>单链表的类型定义</h2><p>###线性表的抽象数据类型定义</p>
+<p>我们在给出单链表的定义之前我们还是需要先引入我们线性表的抽象数据类型定义</p>
+<pre class=" language-c++"><code class="language-c++">#ifndef _LIST_H_
+#define _LIST_H_
+#include<iostream>
+using namespace std;
+
+class outOfRange{};
+class badSize{};
+template<class T>
+class List {
+public:
+    // 清空线性表
+    virtual void clear()=0;
+    // 判空，表空返回true，非空返回false
+    virtual bool empty()const=0;
+    // 求线性表的长度
+    virtual int size()const=0;
+    // 在线性表中，位序为i[0..n]的位置插入元素value
+    virtual void insert(int i,const T &value)=0;
+    // 在线性表中，位序为i[0..n-1]的位置删除元素
+    virtual void remove(int i)=0;
+    // 在线性表中，查找值为value的元素第一次出现的位序
+    virtual int search(const T&value)const=0;
+    // 在线性表中，查找位序为i的元素并返回其值
+    virtual T visit(int i)const=0;
+    // 遍历线性表
+    virtual void traverse()const=0;
+    // 逆置线性表
+    virtual void inverse()=0;                    
+    virtual ~List(){};
+};
+
+/*自定义异常处理类*/ 
+
+
+class outOfRange :public exception {  //用于检查范围的有效性
+public:
+    const char* what() const throw() {
+        return "ERROR! OUT OF RANGE.\n";
+    }
+};
+
+class badSize :public exception {   //用于检查长度的有效性
+public:
+    const char* what() const throw() {
+        return "ERROR! BAD SIZE.\n";
+    }
+};
+
+#endif</code></pre>
+<h3 id="单链表的类型定义-1"><a href="#单链表的类型定义-1" class="headerlink" title="单链表的类型定义"></a>单链表的类型定义</h3><pre class=" language-c++"><code class="language-c++">#ifndef _SEQLIST_H_
+#define _SEQLIST_H_
+#include "List.h"
+#include<iostream>
+using namespace std;
+
+template<class elemType>
+//elemType为单链表存储元素类型 
+class linkList:public List<elemType> {
+private:
+    //节点类型定义 
+    struct Node {
+        //节点的数据域 
+        elemType data;
+        //节点的指针域 
+        Node *next;
+        //两个构造函数 
+        Node(const elemType value, Node *p = NULL) {
+            data = value;
+            next = p;
+        } 
+        Node(Node *p = NULL) {
+            next = p;
+        } 
+    };
+
+    //单链表的头指针 
+    Node *head;
+    //单链表的尾指针 
+    Node *tail;
+    //单链表的当前长度 
+    int curLength;
+    //返回指向位序为i的节点的指针 
+    Node *getPostion(int i)const; 
+public:
+    linkList();
+    ~linkList();
+    //清空单链表，使其成为空表 
+    void clear();
+    //带头结点的单链表，判空 
+    bool empty()const {return head -> next == NULL;} 
+    //返回单链表的当前实际长度
+    int size()const {return curLength;}
+    //在位序i处插入值为value的节点表长增1 
+    void insert(int i, const elemType &value); 
+    //删除位序为i处的节点，表长减1
+    int search(const elemType&value)const;
+    //查找值为value的节点的前驱的位序
+    int prior(const elemType&value)const;
+    //访问位序为i的节点的值，0定位到首元结点
+    elemType visit(int i)const;
+    //遍历单链表
+    void traverse()const;
+    //头插法创建单链表
+    void headCreate();
+    //尾插法创建单链表
+    void tailCreate();
+    //逆置单链表 
+    void inverse();
+};</code></pre>
+<h2 id="单链表上的基本运算实现"><a href="#单链表上的基本运算实现" class="headerlink" title="单链表上的基本运算实现"></a>单链表上的基本运算实现</h2><h3 id="一-单链表的初始化-构造函数"><a href="#一-单链表的初始化-构造函数" class="headerlink" title="(一) 单链表的初始化-构造函数"></a>(一) 单链表的初始化-构造函数</h3><p>单链表的初始化就是创建一个<strong>带头节点</strong>的<strong>空链表</strong>，我们不需要设置其指针域，为空即可</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+linkList<elemType>::linkList() {
+    head = tail = new Node();
+    curLength=0;
+}</code></pre>
+<blockquote>
+<p>注意：new 操作符代表申请堆内存空间，上述代码中应该判断是否申请成功，为简单，默认为申请成功，实际上如果系统没有足够的内存可供使用，那么在申请内存的时候会报出一个 bad_alloc exception 异常</p>
+</blockquote>
+<h3 id="二-析构函数"><a href="#二-析构函数" class="headerlink" title="(二) 析构函数"></a>(二) 析构函数</h3><p>当单链表对象脱离其作用域时，系统自动执行析构函数来释放单链表空间，其实也就是清空单链表内容，同时释放头结点</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+linkList<elemType>::~linkList() {
+    clear();
+    delete head;
+}</code></pre>
+<h3 id="三-清空单链表"><a href="#三-清空单链表" class="headerlink" title="(三) 清空单链表"></a>(三) 清空单链表</h3><p>清空单链表的主要思想就是从头结点开始逐步将后面节点释放掉，但是我们又不想轻易的修改头指针head的指向，所以我们引入一个工作指针，从头结点一直移动到表尾，逐步释放节点</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::clear() {
+    Node *p, *tmp;
+    p - head -> next;
+    while(p != NULL) {
+        tmp = p;
+        p = p -> next();
+        delete tmp; 
+    }
+    head -> next = NULL;
+    tail = head;
+    curLength = 0;    
+}</code></pre>
+<h3 id="四-求表长"><a href="#四-求表长" class="headerlink" title="(四) 求表长"></a>(四) 求表长</h3><p>由于我们的代码中已经定义过一个叫做 curLength 的变量用来记录我们的表长</p>
+<p>所以我们可以直接返回，我们在定义中已经实现了，也就是这句</p>
+<pre class=" language-c++"><code class="language-c++">//返回单链表的当前实际长度
+int size()const {return curLength;}</code></pre>
+<p>但是如果我们没有这样一个变量，我们想要实现这样的功能又是什么样的方法呢？</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+int linkList<elemType>::size()const {
+    Node *p = head -> next;
+    int count;
+    while(p) {count++; p = p -> next;}
+    return count;
+}</code></pre>
+<h3 id="五-遍历单链表"><a href="#五-遍历单链表" class="headerlink" title="(五) 遍历单链表"></a>(五) 遍历单链表</h3><p>我们需要从头到尾访问单链表中的每一个节点，并且输出其中数据域的信息</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::traverse()const {
+    Node *p = head -> next;
+    cout << "traverse:";
+    while (p != NULL) {
+        cout << p -> date << " ";
+        p = p -> next;
+    }
+}</code></pre>
+<h3 id="六-按照位序-i-寻找其元素对应内存地址"><a href="#六-按照位序-i-寻找其元素对应内存地址" class="headerlink" title="(六) 按照位序 i 寻找其元素对应内存地址"></a>(六) 按照位序 i 寻找其元素对应内存地址</h3><p>设置一个移动工作指针，和一个计数器 count，初始时p指向头结点，每当指针p移向下一个结点的时候，计数器count + 1 ，直到 p指向位序为 i的节点为止。返回 p</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+typename linkList<elemType>::Node *linkList<elemType>::getPostion(int i)const {
+    if(i < -1 || i > curLength - 1)
+        return NULL;
+    Node *p = head;
+    int count = 0;
+    while(count <= i) {
+        p = p -> next;
+        count++;
+    }
+    return p;
+}</code></pre>
+<h3 id="七-按值查询节点位序"><a href="#七-按值查询节点位序" class="headerlink" title="(七) 按值查询节点位序"></a>(七) 按值查询节点位序</h3><p>设置一个移动工作指针，和一个计数器 count，从单链表的第一个节点开始，开始于给定的值进行比对，如果相等则查找成功，返回节点的位序，否则继续查询知道单链表结束，查询失败返回 -1</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+int linkList<elemType>::search(const elemType&value)const {
+    Node *p = head -> next;
+    int count = 0; 
+    while (p != NULL && p -> data != value) {
+        p = p -> next;
+        count++;
+    }
+    if (p == NULL) {
+        return -1;
+    }else {
+        return count; 
+    }
+}</code></pre>
+<h3 id="八-插入节点"><a href="#八-插入节点" class="headerlink" title="(八) 插入节点"></a>(八) 插入节点</h3><p>在位序为 i 出插入值为value 的新节点q，我们需要做的就是找到位序为i - 1 的节点p，让q指针域指向原来p的后继，然后修改p的后继为q即可，说白了也就是修改插入元素位置前后的元素指向关系就可以了</p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-015.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::insert(int i,const elemType &value) {
+    Node *p, *q;
+    if(i < 0 || i > curLength)
+        throw outOfRange();
+    p = getPostion(i - 1);
+    q = new Node(value,p -> next);
+    p -> next = q;
+    if (p == tail) tail = q;
+    curLength++;
+}</code></pre>
+<h3 id="九-删除节点"><a href="#九-删除节点" class="headerlink" title="(九) 删除节点"></a>(九) 删除节点</h3><p>能看懂添加节点的方法，理解删除节点也是手到擒来</p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-016.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::remove(int i) {
+    //p是待删节点，pre是其前驱 
+    Node *p, *pre;
+    if(i < 0 || i > curLength)
+        throw outOfRange();
+    pre = getPostion(i - 1);
+    p = pre -> next;
+    if (p == tail) {
+        tail = pre;
+        pre -> next = NULL;
+        delete p;
+    } else {
+        pre -> next = p -> next;
+        delete p;
+    }
+}</code></pre>
+<h2 id="单链表整表的创建"><a href="#单链表整表的创建" class="headerlink" title="单链表整表的创建"></a>单链表整表的创建</h2><p>回顾我们前面认识的顺序表，它其实可以理解为一个数组，我们声明一个类型，同时给定值，初始化其大小，但是单链表就不一样了，它是一种动态组织，它不需要像顺序表一样元素集中，它可以随着实际的情况来动态生成节点，所以也不需要预先分配空间大小和位置</p>
+<h3 id="一-头插法创建单链表"><a href="#一-头插法创建单链表" class="headerlink" title="(一) 头插法创建单链表"></a>(一) 头插法创建单链表</h3><p>头插法的意思就是说，每次新增节点全部插在头结点之后，首元结点之前，你可以这样理解，我先来排队，但是后面来了人，他就会排到我的前面去，我们来借助图看一下</p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-018.png" alt></p>
+<p>我们一次插入元素 123 但实际上输出的是按照321的顺序存储的，也就是说和我们的逻辑顺序是相反的</p>
+<p>我们来看一看怎么实现它</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::headCreate() {
+    Node *p;
+    elemType value, flag;
+    cout << "inputelements, ended with:";
+    cin >> flag;
+    while(cin >> value, value != flag) {
+        //p -> data == value, p -> next = head ->next 
+        p = new Node(value, head -> next);
+        head -> next = p;
+        //原链表为空，新节点p成为为节点 
+        if (head == tail) 
+            tail = p;
+        curLength++; 
+    }
+}</code></pre>
+<h4 id="逆置单链表"><a href="#逆置单链表" class="headerlink" title="逆置单链表"></a>逆置单链表</h4><p>我们知道单链表中元素顺序与读入的顺序是相反的，我们可以通过逆置单链表的算法，帮助我们重新恢复我们的惯有思维顺序</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::inverse() {
+    Node *p, *tmp;
+    //p为工作指针，指向首元结点 
+    p = head -> next;
+    //头结点的指针域置空，构成空链表 
+    head -> next = NULL;
+    //逆置后首元结点将成为尾节点 
+    if (p)
+        tail = p;
+    while (p) {
+        //暂存p的后继 
+        tmp = p -> next;
+        p -> next = head -> next;
+        //节点p插在头结点的后面 
+        head -> next = p;
+        //继续处理下一个节点 
+        p = tmp; 
+    }
+}</code></pre>
+<h3 id="二-尾插法创建单链表"><a href="#二-尾插法创建单链表" class="headerlink" title="(二) 尾插法创建单链表"></a>(二) 尾插法创建单链表</h3><p>看完了头插法，但是感觉这样的顺序与我们一贯的思维总是有一点别扭，而尾插法则是一种，逻辑顺序与我们一致的创建方法</p>
+<p>还是看一下图</p>
+<p><img src="http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-02-019.png" alt></p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+void linkList<elemType>::tailCreate() {
+    Node *p;
+    elemType value, flag;
+    cout << "inputelements, ended with:";
+    cin >> flag;
+    while(cin >> value, value != flag) {
+        p = new Node(value,NULL);
+        tail -> next = p;
+        tail = p;
+        curLength++;
+    }
+}</code></pre>
+<h2 id="合并单链表"><a href="#合并单链表" class="headerlink" title="合并单链表"></a>合并单链表</h2><p>要求：假设我们给出两个仍然是递增的单链表la和lb，我们将其合并为lc 仍保证递增，利用原表空间，但是我们仍在下面将表C称作新表</p>
+<p>因为我们的要求是递增的，所以使用尾插法是非常合适的，我们设计三个工作指针，分别指向两个表的首元结点，然后将第三个指针指向新表的头结点，比较前两个指针指向的值，小的就放到新表的表尾，然后后移动两表中较小的那一个的指针，以此类推，直到其中一个表尾空，将剩余的节点全部链接到新表的末尾</p>
+<pre class=" language-c++"><code class="language-c++">template<class elemType>
+typename linkList<elemType> *linkList<elemType> ::Union(linkList<elemType> *lb) {
+    Node *pa, *pb, *pc;
+    linkList<elemType> *lc = this;
+    pa = head -> next;
+    head -> next = NULL;
+    pb = (lb -> head) -> next;
+    (lb -> head) -> next = NULL;
+
+    pc = lc -> head;
+    while(pa && pb) {
+        if(pa -> data <= pb -> data) {
+            pc-> next = pa;
+            pc = pa;
+            pa = pa -> next;
+        } else {
+            pc -> next = pb;
+            pc = pb;
+            pb = pb -> next;
+        }
+    }
+    if(pa) {
+        pc -> next = pa;
+        lc -> tail = tail;
+    } else {
+        pc -> next = pb;
+        lc -> tail = lb -> tail;
+    }
+    lc -> cuirLength = curLength + lb -> curLength;
+    delete lb;
+    return lc; 
+}</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>单链表，采取了链式存储结构，用一组任意的存储单元存放线性表的元素，尤其对于需要频繁的插入和删除数据的时候更加适用，如果需要进行频繁的查找还是推荐使用顺序表，例如对于一个学生成绩管理系统的制作，学生更多的时候是查看自己的成绩，而录入的老师，也只有在考试后录入一次，所以应该使用顺序表，而例如考勤打卡系统，更多的是打卡信息的记录，所以还是选择使用链表，当然例子可能不是很恰当，同时正常的开发中还会有更多复杂的问题需要考虑，举例子只为了利于理解</p>
+<h2 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h2><p>如果文章中有什么不足，或者错误的地方，欢迎大家留言分享想法，感谢朋友们的支持！</p>
+<p>如果能帮到你的话，那就来关注我吧！如果您更喜欢微信文章的阅读方式，可以关注我的公众号</p>
+<blockquote>
+<p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p>
+<p>一个坚持推送原创开发技术文章的公众号：理想二旬不止</p>
+</blockquote>
+<p><img src="http://image.ideal-20.cn/img/QRcode258.jpg" alt></p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《002-如何使用C++实现单链表》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/01/9.2-shu-ju-jie-gou/002-lian-biao-yuan-lai-ye-zhe-me-jian-dan/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                BWH_Steven
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80NjIzNy8yMjc0OA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/10/01/9.2-shu-ju-jie-gou/002-lian-biao-yuan-lai-ye-zhe-me-jian-dan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="002-如何使用C++实现单链表">
+                        
+                        <span class="card-title">002-如何使用C++实现单链表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            线性表——单链表的实现与讲解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/9-2-数据结构/" class="post-category" target="_blank">
+                                    9.2-数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数据结构/" target="_blank">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/线性表/" target="_blank">
+                        <span class="chip bg-color">线性表</span>
+                    </a>
+                    
+                    <a href="/tags/单链表/" target="_blank">
+                        <span class="chip bg-color">单链表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/23/9.2-shu-ju-jie-gou/001-shun-xu-biao-yuan-lai-zhe-me-jian-dan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="001-顺序表原来这么简单">
+                        
+                        <span class="card-title">001-顺序表原来这么简单</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            线性表——顺序表的实现与讲解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/9-2-数据结构/" class="post-category" target="_blank">
+                                    9.2-数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数据结构/" target="_blank">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/线性表/" target="_blank">
+                        <span class="chip bg-color">线性表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            <div>@2019 BWH_Steven · 版权所有</div>
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">121.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            <br>
+            
+            
+
+			<div><a target="_blank"  href="http://beian.miit.gov.cn">晋ICP备-19010286号</a></div>
+
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">    
+    <a href="https://github.com/ideal-20" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:ideal_bwh@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
