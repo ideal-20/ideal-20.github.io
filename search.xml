@@ -188,9 +188,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -282,33 +282,6 @@
     
     
     <entry>
-      <title>001-HTTP协议</title>
-      <link href="/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
-      <url>/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><blockquote><p>HTTP (HyperText Transfer Protocol) 超文本传输协议，它是一个简单的请求-响应协议 ，它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应 ，所有的WWW文件都遵循这个标准，它是TCP/IP中的一个应用层协议</p></blockquote><h3 id="一-怎么理解-HTTP-协议呢？"><a href="#一-怎么理解-HTTP-协议呢？" class="headerlink" title="(一) 怎么理解 HTTP 协议呢？"></a>(一) 怎么理解 HTTP 协议呢？</h3><p>当我们在浏览器地址栏上输入URL后，浏览器会通过DNS解析到对应IP上，浏览器而根据这个IP将IP地址与WEb服务器进行通信，这个通信的协议就是HTTP协议，说白了，HTTP协议就是规定了客户端和服务器端之间通讯的一种规范和格式，只有两者都遵循这个协议，两者在接受和响应请求的时候才能达到一致</p><h3 id="二-HTTP请求"><a href="#二-HTTP请求" class="headerlink" title="(二) HTTP请求"></a>(二) HTTP请求</h3><p>浏览器向服务器请求某个web资源，称浏览器向服务器发送了一个http请求（客户端 –&gt; 服务器）</p><p><strong>请求格式：</strong></p><p>1、请求首行</p><p>2、请求头</p><p>3、空行</p><p>4、请求体（或称之为请求正文）</p><h4 id="1-请求行"><a href="#1-请求行" class="headerlink" title="(1) 请求行"></a>(1) 请求行</h4><p>常见的请求方法有<strong>GET和POST</strong></p><p>在浏览器<strong>地址栏中发送请求</strong>，以及<strong>点击超链接</strong>都是<strong>GET</strong>请求</p><p><strong>提交表单</strong>既可以使用GET，也可以使用POST方式，<strong>推荐使用POST方式</strong>，<strong>查询数据的时候推荐使用GET方式</strong></p><p>GET：没有请求体，但空行是存在的，附带的参数有限制，数据容量不能超过1k</p><p>POST：存在请求体，可以在请求的实体内容中向服务器发送数据，传送的数据量是无限制的</p><h4 id="2-请求头"><a href="#2-请求头" class="headerlink" title="(2) 请求头"></a>(2) 请求头</h4><ul><li><p>Accept-Charset: ISO-8859-1 ：客户端告诉服务器，所支持的字符集格式</p></li><li><p>Accept-Encoding: gzip,deflate,br ：客户端告诉服务器，所支持的压缩格式</p></li><li><p>Accept-Language: en-us,zh-cn ：客户端告诉服务器，它的语言环境</p></li><li><p>Connection: close/Keep-Alive ：客户端告诉服务器，请求完后是断开链接或保持链接</p></li><li><p>Cookie ：客户端告诉服务器，所带来的的cookie（后面讲）</p></li><li><p>Host:xxxxxx ：客户端告诉服务器，想访问哪台主机</p></li><li><p>User-Agent ：User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36：表示浏览器内核</p></li><li><p>Referer ：xxxxx：客户端告诉服务器，客户机从哪个页面来的，防盗链，前发出请求的地址，例如在浏览器地址栏直接访问服务器，那么没有这个请求头。如果是在<code>www.baidu.com</code>页面上点击链接访问的服务器，那么这个头的值<code>www.baidu.com</code></p></li><li><p>Content-Type：如果是POST请求，会有这个头，默认值为application/x-www-form-urlencoded，表示请求体内容使用url编码</p></li></ul><h4 id="3-HTTP响应"><a href="#3-HTTP响应" class="headerlink" title="(3) HTTP响应"></a>(3) HTTP响应</h4><p>一个HTTP响应代表服务器向客户端回送数据</p><p><strong>响应格式：</strong></p><p>1、响应首行</p><p>2、响应头</p><p>3、空行</p><p>4、响应体（或称之为响应正文）</p><h4 id="1-状态行"><a href="#1-状态行" class="headerlink" title="(1) 状态行"></a>(1) 状态行</h4><p>格式：HTTP版本号 状态码 原因</p><p>状态行：HTTP/1.1 200 OK</p><p><strong>状态码</strong></p><p>响应首行的结构：协议及版本 状态码 状态码说明，例如：HTTP/1.1 200 OK</p><table><thead><tr><th>状态码</th><th>解释</th></tr></thead><tbody><tr><td>200</td><td>请求成功</td></tr><tr><td>302</td><td>请求重定向</td></tr><tr><td>304</td><td>请求资源没有改变</td></tr><tr><td>404</td><td>请求资源补不存在，属性客户端错误</td></tr><tr><td>500</td><td>服务器内部错误</td></tr></tbody></table><h4 id="2-响应头"><a href="#2-响应头" class="headerlink" title="(2) 响应头"></a>(2) 响应头</h4><ul><li>Content-Type：响应正文的MIME类型，例如image/jpeg表示响应正文为jpg图片，例如text/html;charset=utf-8表示响应正文为html，并且编码为utf-8编码。浏览器会通过这一信息来显示响应数据</li><li>Content-Length：响应正文的长度</li><li>Set-Cookie：服务器告诉客户端要<strong>保存Cookie</strong> </li><li>Date：响应时间，可能会有8小时的误差，因为中国的时区问题</li></ul><p>通知客户端浏览器不要缓存页面的响应头：</p><ul><li>Expires:-1</li><li>Cache-Control: no-cache</li><li>Pragma: no-cache</li></ul><p>自动刷新响应头，浏览器会在3秒钟后自动重定向到传智主页</p><ul><li>Refresh: 3;url=<a href="http://www.xxxx" target="_blank" rel="noopener">http://www.xxxx</a></li></ul><p><strong>状态码304</strong></p><p>相关头信息</p><ul><li>Last-Modified：响应头，表示当前资源的最后修改时间；</li><li>If-Modified-Since：请求头，表示缓存的资源最后修改时间；</li></ul><p>状态码304：表示访问的资源没有改变</p><blockquote><ol><li><p>客户端首次访问服务器的静态资源index.html，服务器会把index.html响应给客户端，而且还会添加一个名为Last-Modified的响应头，它说明了当前index.html的最后修改时间</p><ol start="2"><li><p>客户端收到响应后，会把index.html缓存在客户端上，而且还会把Last-Modified缓存起来。</p></li><li><p>客户端第二次请求index.html时，会添加名为If-Modified-Since的请求头，它的值是上次服务器响应头Last-Modified，服务器获取到客户端保存的最后修改时间，以及当前资源的最后修改时间进行比较，如果相同，说明index.html没有改动过，那么服务器不会发送index.html，而是响应状态码304，即通知客户端资源没有改变，你可以使用自己的缓存。</p></li></ol></li></ol></blockquote><h3 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h3><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！^_^</p><p>如果能帮到你的话，那就来关注我吧！（系列文章均会在公众号第一时间更新）</p><blockquote><p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p><p>一个坚持推送原创Java技术的公众号：理想二旬不止</p></blockquote><p><img src="http://image.ideal-20.cn/img/QRcode258.jpg" alt></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 5.3-会话技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaWeb </tag>
-            
-            <tag> Servlet </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>002-会话技术</title>
       <link href="/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/"/>
       <url>/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</url>
@@ -332,6 +305,33 @@
             <tag> Cookies </tag>
             
             <tag> Session </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>001-HTTP协议</title>
+      <link href="/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
+      <url>/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><blockquote><p>HTTP (HyperText Transfer Protocol) 超文本传输协议，它是一个简单的请求-响应协议 ，它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应 ，所有的WWW文件都遵循这个标准，它是TCP/IP中的一个应用层协议</p></blockquote><h3 id="一-怎么理解-HTTP-协议呢？"><a href="#一-怎么理解-HTTP-协议呢？" class="headerlink" title="(一) 怎么理解 HTTP 协议呢？"></a>(一) 怎么理解 HTTP 协议呢？</h3><p>当我们在浏览器地址栏上输入URL后，浏览器会通过DNS解析到对应IP上，浏览器而根据这个IP将IP地址与WEb服务器进行通信，这个通信的协议就是HTTP协议，说白了，HTTP协议就是规定了客户端和服务器端之间通讯的一种规范和格式，只有两者都遵循这个协议，两者在接受和响应请求的时候才能达到一致</p><h3 id="二-HTTP请求"><a href="#二-HTTP请求" class="headerlink" title="(二) HTTP请求"></a>(二) HTTP请求</h3><p>浏览器向服务器请求某个web资源，称浏览器向服务器发送了一个http请求（客户端 –&gt; 服务器）</p><p><strong>请求格式：</strong></p><p>1、请求首行</p><p>2、请求头</p><p>3、空行</p><p>4、请求体（或称之为请求正文）</p><h4 id="1-请求行"><a href="#1-请求行" class="headerlink" title="(1) 请求行"></a>(1) 请求行</h4><p>常见的请求方法有<strong>GET和POST</strong></p><p>在浏览器<strong>地址栏中发送请求</strong>，以及<strong>点击超链接</strong>都是<strong>GET</strong>请求</p><p><strong>提交表单</strong>既可以使用GET，也可以使用POST方式，<strong>推荐使用POST方式</strong>，<strong>查询数据的时候推荐使用GET方式</strong></p><p>GET：没有请求体，但空行是存在的，附带的参数有限制，数据容量不能超过1k</p><p>POST：存在请求体，可以在请求的实体内容中向服务器发送数据，传送的数据量是无限制的</p><h4 id="2-请求头"><a href="#2-请求头" class="headerlink" title="(2) 请求头"></a>(2) 请求头</h4><ul><li><p>Accept-Charset: ISO-8859-1 ：客户端告诉服务器，所支持的字符集格式</p></li><li><p>Accept-Encoding: gzip,deflate,br ：客户端告诉服务器，所支持的压缩格式</p></li><li><p>Accept-Language: en-us,zh-cn ：客户端告诉服务器，它的语言环境</p></li><li><p>Connection: close/Keep-Alive ：客户端告诉服务器，请求完后是断开链接或保持链接</p></li><li><p>Cookie ：客户端告诉服务器，所带来的的cookie（后面讲）</p></li><li><p>Host:xxxxxx ：客户端告诉服务器，想访问哪台主机</p></li><li><p>User-Agent ：User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36：表示浏览器内核</p></li><li><p>Referer ：xxxxx：客户端告诉服务器，客户机从哪个页面来的，防盗链，前发出请求的地址，例如在浏览器地址栏直接访问服务器，那么没有这个请求头。如果是在<code>www.baidu.com</code>页面上点击链接访问的服务器，那么这个头的值<code>www.baidu.com</code></p></li><li><p>Content-Type：如果是POST请求，会有这个头，默认值为application/x-www-form-urlencoded，表示请求体内容使用url编码</p></li></ul><h4 id="3-HTTP响应"><a href="#3-HTTP响应" class="headerlink" title="(3) HTTP响应"></a>(3) HTTP响应</h4><p>一个HTTP响应代表服务器向客户端回送数据</p><p><strong>响应格式：</strong></p><p>1、响应首行</p><p>2、响应头</p><p>3、空行</p><p>4、响应体（或称之为响应正文）</p><h4 id="1-状态行"><a href="#1-状态行" class="headerlink" title="(1) 状态行"></a>(1) 状态行</h4><p>格式：HTTP版本号 状态码 原因</p><p>状态行：HTTP/1.1 200 OK</p><p><strong>状态码</strong></p><p>响应首行的结构：协议及版本 状态码 状态码说明，例如：HTTP/1.1 200 OK</p><table><thead><tr><th>状态码</th><th>解释</th></tr></thead><tbody><tr><td>200</td><td>请求成功</td></tr><tr><td>302</td><td>请求重定向</td></tr><tr><td>304</td><td>请求资源没有改变</td></tr><tr><td>404</td><td>请求资源补不存在，属性客户端错误</td></tr><tr><td>500</td><td>服务器内部错误</td></tr></tbody></table><h4 id="2-响应头"><a href="#2-响应头" class="headerlink" title="(2) 响应头"></a>(2) 响应头</h4><ul><li>Content-Type：响应正文的MIME类型，例如image/jpeg表示响应正文为jpg图片，例如text/html;charset=utf-8表示响应正文为html，并且编码为utf-8编码。浏览器会通过这一信息来显示响应数据</li><li>Content-Length：响应正文的长度</li><li>Set-Cookie：服务器告诉客户端要<strong>保存Cookie</strong> </li><li>Date：响应时间，可能会有8小时的误差，因为中国的时区问题</li></ul><p>通知客户端浏览器不要缓存页面的响应头：</p><ul><li>Expires:-1</li><li>Cache-Control: no-cache</li><li>Pragma: no-cache</li></ul><p>自动刷新响应头，浏览器会在3秒钟后自动重定向到传智主页</p><ul><li>Refresh: 3;url=<a href="http://www.xxxx" target="_blank" rel="noopener">http://www.xxxx</a></li></ul><p><strong>状态码304</strong></p><p>相关头信息</p><ul><li>Last-Modified：响应头，表示当前资源的最后修改时间；</li><li>If-Modified-Since：请求头，表示缓存的资源最后修改时间；</li></ul><p>状态码304：表示访问的资源没有改变</p><blockquote><ol><li><p>客户端首次访问服务器的静态资源index.html，服务器会把index.html响应给客户端，而且还会添加一个名为Last-Modified的响应头，它说明了当前index.html的最后修改时间</p><ol start="2"><li><p>客户端收到响应后，会把index.html缓存在客户端上，而且还会把Last-Modified缓存起来。</p></li><li><p>客户端第二次请求index.html时，会添加名为If-Modified-Since的请求头，它的值是上次服务器响应头Last-Modified，服务器获取到客户端保存的最后修改时间，以及当前资源的最后修改时间进行比较，如果相同，说明index.html没有改动过，那么服务器不会发送index.html，而是响应状态码304，即通知客户端资源没有改变，你可以使用自己的缓存。</p></li></ol></li></ol></blockquote><h3 id="结尾："><a href="#结尾：" class="headerlink" title="结尾："></a>结尾：</h3><p>如果内容中有什么不足，或者错误的地方，欢迎大家给我留言提出意见, 蟹蟹大家 ！^_^</p><p>如果能帮到你的话，那就来关注我吧！（系列文章均会在公众号第一时间更新）</p><blockquote><p>在这里的我们素不相识，却都在为了自己的梦而努力 ❤</p><p>一个坚持推送原创Java技术的公众号：理想二旬不止</p></blockquote><p><img src="http://image.ideal-20.cn/img/QRcode258.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 5.3-会话技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaWeb </tag>
+            
+            <tag> Servlet </tag>
             
         </tags>
       
