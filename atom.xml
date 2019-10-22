@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ideal-20.cn/"/>
-  <updated>2019-10-04T02:48:22.219Z</updated>
+  <updated>2019-10-22T14:35:55.343Z</updated>
   <id>http://www.ideal-20.cn/</id>
   
   <author>
@@ -15,6 +15,95 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>005-如何用C++实现栈</title>
+    <link href="http://www.ideal-20.cn/2019/10/22/9.2-shu-ju-jie-gou/005-zhan/"/>
+    <id>http://www.ideal-20.cn/2019/10/22/9.2-shu-ju-jie-gou/005-zhan/</id>
+    <published>2019-10-22T14:35:00.000Z</published>
+    <updated>2019-10-22T14:35:55.343Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;http://image.ideal-20.cn/AlgorithmAndDataStructure/9.2-01-000.png&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;栈的定义&quot;&gt;&lt;a href=&quot;#栈的定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="9.2-数据结构" scheme="http://www.ideal-20.cn/categories/9-2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="栈" scheme="http://www.ideal-20.cn/tags/%E6%A0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>004-链表补充之循环链表</title>
+    <link href="http://www.ideal-20.cn/2019/10/22/9.2-shu-ju-jie-gou/004-lian-biao-bu-chong-zhi-xun-huan-lian-biao/"/>
+    <id>http://www.ideal-20.cn/2019/10/22/9.2-shu-ju-jie-gou/004-lian-biao-bu-chong-zhi-xun-huan-lian-biao/</id>
+    <published>2019-10-22T12:49:00.000Z</published>
+    <updated>2019-10-22T14:34:44.075Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;循环链表&quot;&gt;&lt;a href=&quot;#循环链表&quot; class=&quot;headerlink&quot; title=&quot;循环链表&quot;&gt;&lt;/a&gt;循环链表&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="9.2-数据结构" scheme="http://www.ideal-20.cn/categories/9-2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="线性表" scheme="http://www.ideal-20.cn/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    
+      <category term="循环链表" scheme="http://www.ideal-20.cn/tags/%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>003-链表进阶之双链表</title>
+    <link href="http://www.ideal-20.cn/2019/10/13/9.2-shu-ju-jie-gou/003-lian-biao-jin-jie-zhi-shuang-lian-biao/"/>
+    <id>http://www.ideal-20.cn/2019/10/13/9.2-shu-ju-jie-gou/003-lian-biao-jin-jie-zhi-shuang-lian-biao/</id>
+    <published>2019-10-13T11:49:00.000Z</published>
+    <updated>2019-10-22T14:37:47.171Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;双链表&quot;&gt;&lt;a href=&quot;#双链表&quot; class=&quot;headerlink&quot; title=&quot;双链表&quot;&gt;&lt;/a&gt;双链表&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="9.2-数据结构" scheme="http://www.ideal-20.cn/categories/9-2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="线性表" scheme="http://www.ideal-20.cn/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    
+      <category term="双链表" scheme="http://www.ideal-20.cn/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>001-Redis从认识安装到实现CURD</title>
@@ -217,6 +306,35 @@
   </entry>
   
   <entry>
+    <title>001-HTTP协议</title>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
+    <published>2019-09-16T17:05:00.000Z</published>
+    <updated>2019-09-16T17:06:02.493Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议&quot;&gt;&lt;/a&gt;HTTP协议&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;HTTP (HyperText Transfer Protocol)
+        
+      
+    
+    </summary>
+    
+      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
+    
+      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
     <title>002-会话技术</title>
     <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/"/>
     <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</id>
@@ -245,35 +363,6 @@
       <category term="Cookies" scheme="http://www.ideal-20.cn/tags/Cookies/"/>
     
       <category term="Session" scheme="http://www.ideal-20.cn/tags/Session/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>001-HTTP协议</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
-    <published>2019-09-16T17:05:00.000Z</published>
-    <updated>2019-09-16T17:06:02.493Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议&quot;&gt;&lt;/a&gt;HTTP协议&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;HTTP (HyperText Transfer Protocol)
-        
-      
-    
-    </summary>
-    
-      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
-    
-      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
     
   </entry>
   
@@ -498,89 +587,6 @@
       <category term="JDBC" scheme="http://www.ideal-20.cn/tags/JDBC/"/>
     
       <category term="事务" scheme="http://www.ideal-20.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>001-JDBC</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/3.2-jdbc/001-jdbc/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/001-jdbc/</id>
-    <published>2019-09-16T16:47:00.000Z</published>
-    <updated>2019-09-16T17:16:37.093Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JDBC-请再爱我一次&quot;&gt;&lt;a href=&quot;#JDBC-请再爱我一次&quot; class=&quot;headerlink&quot; title=&quot;JDBC 请再爱我一次&quot;&gt;&lt;/a&gt;JDBC 请再爱我一次&lt;/h1&gt;&lt;h3 id=&quot;一-JDBC-入门&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="3.2-JDBC" scheme="http://www.ideal-20.cn/categories/3-2-JDBC/"/>
-    
-    
-      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
-    
-      <category term="JDBC" scheme="http://www.ideal-20.cn/tags/JDBC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>001-数据库设计</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/3.1-mysql/004-shu-ju-ku-she-ji/</id>
-    <published>2019-09-16T16:45:00.000Z</published>
-    <updated>2019-09-16T17:17:21.080Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;数据库设计&quot;&gt;&lt;a href=&quot;#数据库设计&quot; class=&quot;headerlink&quot; title=&quot;数据库设计&quot;&gt;&lt;/a&gt;数据库设计&lt;/h1&gt;&lt;p&gt;###(一) 多表之间的关系&lt;/p&gt;
-&lt;h4 id=&quot;1-分类&quot;&gt;&lt;a href=&quot;#1-分类&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="3.1-MySQL" scheme="http://www.ideal-20.cn/categories/3-1-MySQL/"/>
-    
-    
-      <category term="数据库设计" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>003-MySQL多表查询以及事务</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/3.1-mysql/003-duo-biao-cha-xun-yi-ji-shi-wu/</id>
-    <published>2019-09-16T16:44:00.000Z</published>
-    <updated>2019-09-16T17:17:12.046Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;多表查询以及事务&quot;&gt;&lt;a href=&quot;#多表查询以及事务&quot; class=&quot;headerlink&quot; title=&quot;多表查询以及事务&quot;&gt;&lt;/a&gt;多表查询以及事务&lt;/h1&gt;&lt;h3 id=&quot;一-多表查询&quot;&gt;&lt;a href=&quot;#一-多表查询&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="3.1-MySQL" scheme="http://www.ideal-20.cn/categories/3-1-MySQL/"/>
-    
-    
-      <category term="事务" scheme="http://www.ideal-20.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
-    
-      <category term="多表查询" scheme="http://www.ideal-20.cn/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
     
   </entry>
   
