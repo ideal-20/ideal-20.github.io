@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ideal-20.cn/"/>
-  <updated>2019-10-22T14:35:55.343Z</updated>
+  <updated>2019-10-28T13:37:13.108Z</updated>
   <id>http://www.ideal-20.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>006-队列的知识讲解与基本实现</title>
+    <link href="http://www.ideal-20.cn/2019/10/28/9.2-shu-ju-jie-gou/006-dui-lie/"/>
+    <id>http://www.ideal-20.cn/2019/10/28/9.2-shu-ju-jie-gou/006-dui-lie/</id>
+    <published>2019-10-28T13:35:00.000Z</published>
+    <updated>2019-10-28T13:37:13.108Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;队列&quot;&gt;&lt;a href=&quot;#队列&quot; class=&quot;headerlink&quot; title=&quot;队列&quot;&gt;&lt;/a&gt;队列&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="9.2-数据结构" scheme="http://www.ideal-20.cn/categories/9-2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="队列" scheme="http://www.ideal-20.cn/tags/%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
   
   <entry>
     <title>005-如何用C++实现栈</title>
@@ -306,6 +334,35 @@
   </entry>
   
   <entry>
+    <title>001-HTTP协议</title>
+    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
+    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
+    <published>2019-09-16T17:05:00.000Z</published>
+    <updated>2019-09-16T17:06:02.493Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议&quot;&gt;&lt;/a&gt;HTTP协议&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;HTTP (HyperText Transfer Protocol)
+        
+      
+    
+    </summary>
+    
+      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
+    
+      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
     <title>002-会话技术</title>
     <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/"/>
     <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/002-hui-hua-ji-zhu-cookies-session-xiang-jie/</id>
@@ -334,35 +391,6 @@
       <category term="Cookies" scheme="http://www.ideal-20.cn/tags/Cookies/"/>
     
       <category term="Session" scheme="http://www.ideal-20.cn/tags/Session/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>001-HTTP协议</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/5.3-hui-hua-ji-zhu/001-http-xie-yi/</id>
-    <published>2019-09-16T17:05:00.000Z</published>
-    <updated>2019-09-16T17:06:02.493Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议&quot;&gt;&lt;/a&gt;HTTP协议&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;HTTP (HyperText Transfer Protocol)
-        
-      
-    
-    </summary>
-    
-      <category term="5.3-会话技术" scheme="http://www.ideal-20.cn/categories/5-3-%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="JavaWeb" scheme="http://www.ideal-20.cn/tags/JavaWeb/"/>
-    
-      <category term="Servlet" scheme="http://www.ideal-20.cn/tags/Servlet/"/>
     
   </entry>
   
@@ -557,36 +585,6 @@
       <category term="数据库连接池" scheme="http://www.ideal-20.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
     
       <category term="JDBCTemplate" scheme="http://www.ideal-20.cn/tags/JDBCTemplate/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>002-JDBC控制事务</title>
-    <link href="http://www.ideal-20.cn/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/"/>
-    <id>http://www.ideal-20.cn/2019/09/17/3.2-jdbc/002-jdbc-kong-zhi-shi-wu/</id>
-    <published>2019-09-16T16:48:00.000Z</published>
-    <updated>2019-09-16T17:16:42.547Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JDBC控制事务&quot;&gt;&lt;a href=&quot;#JDBC控制事务&quot; class=&quot;headerlink&quot; title=&quot;JDBC控制事务&quot;&gt;&lt;/a&gt;JDBC控制事务&lt;/h1&gt;&lt;h3 id=&quot;一-事务基本认识&quot;&gt;&lt;a href=&quot;#一-事务基本认识&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="3.2-JDBC" scheme="http://www.ideal-20.cn/categories/3-2-JDBC/"/>
-    
-    
-      <category term="Java" scheme="http://www.ideal-20.cn/tags/Java/"/>
-    
-      <category term="JDBC" scheme="http://www.ideal-20.cn/tags/JDBC/"/>
-    
-      <category term="事务" scheme="http://www.ideal-20.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
     
   </entry>
   
